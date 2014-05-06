@@ -107,20 +107,8 @@ Public Class MainForm
             InstallExtras() 'install extras if first run
             Keybindings.FindAllKeybindings(keybindsD) 'find keybinds
             GraphicsSets.FindPossibleGraphhics(graphicsD) 'and graphics
-            Try
-                FileOpen(1, utilityD & "\utilitylist.txt", OpenMode.Input)
-                Dim i As Integer = 0
-                Do Until EOF(1)
-                    UtilityListBox.Items.Add(LineInput(1))
-                    If LineInput(1) = 1 Then
-                        UtilityListBox.SetItemChecked(i, True)
-                    End If
-                    i = +1
-                Loop
-            Catch ex As Exception
-                UtilityList = Utilities.FindAllUtilities(utilityD) 'and utilities
-            End Try
-            FileClose(1)
+            UtilityList = Utilities.FindAllUtilities(utilityD) 'and utilities
+            LoadCheckedUtilities() 'and checked utilities - daveralph1234
         End If
 
     End Sub
@@ -462,10 +450,48 @@ Public Class MainForm
         If GraphicsListBox.SelectedItem <> "" Then
             Dim gfxDir = graphicsD + "\" + GraphicsListBox.SelectedItem
             GraphicsSets.SwitchGraphics(gfxDir, dfDir)
+
+            KeepGUISettingsOnGraphicsChange() 'daveralph1234
+
             LoadAll()
         Else
             MsgBox("Select a graphics set from the list first!", MsgBoxStyle.Information, "Oops!")
         End If
+    End Sub
+
+    Private Sub KeepGUISettingsOnGraphicsChange() 'daveralph1234
+        'get info from newly replaced files
+        init = FileWorking.ReadFile("init.txt", initDir)
+        d_init = FileWorking.ReadFile("d_init.txt", initDir)
+
+        'update with current settings
+        ChangingOptions.stringTagSet("POPULATION_CAP", popCap, d_init)
+        ChangingOptions.stringTagSet("BABY_CHILD_CAP", childCap, d_init)
+        ChangingOptions.booleanTagSet("INVADERS", invaders, d_init)
+        ChangingOptions.booleanTagSet("TEMPERATURE", temperature, d_init)
+        ChangingOptions.booleanTagSet("WEATHER", weather, d_init)
+        ChangingOptions.booleanTagSet("CAVEINS", caveins, d_init)
+        ChangingOptions.booleanTagSet("SHOW_FLOW_AMOUNTS", liquidDepths, d_init)
+        ChangingOptions.booleanTagSet("VARIED_GROUND_TILES", variedGround, d_init)
+        ChangingOptions.stringTagSet("SET_LABOR_LISTS", laborLists, d_init)
+        ChangingOptions.aquifers(aquifers, rawObjectsDir)
+        ChangingOptions.booleanTagSet("SOUND", sound, init)
+        ChangingOptions.stringTagSet("VOLUME", volume, init)
+        ChangingOptions.booleanTagSet("INTRO", introMovie, init)
+        ChangingOptions.stringTagSet("WINDOWED", startWindowed, init)
+        ChangingOptions.booleanTagSet("FPS", fpsCounter, init)
+        ChangingOptions.stringTagSet("G_FPS_CAP", gpsCap, init)
+        ChangingOptions.stringTagSet("FPS_CAP", fpsCap, init)
+        ChangingOptions.stringTagSet("PRIORITY", procPriority, init)
+        ChangingOptions.stringTagSet("AUTOSAVE", autoSave, d_init)
+        ChangingOptions.booleanTagSet("AUTOSAVE_PAUSE", autoSavePause, d_init)
+        ChangingOptions.booleanTagSet("COMPRESSED_SAVES", compressSaves, init)
+        ChangingOptions.booleanTagSet("AUTOBACKUP", autoBackup, d_init)
+        ChangingOptions.booleanTagSet("INITIAL_SAVE", initialSave, d_init)
+        ChangingOptions.booleanTagSet("PAUSE_ON_LOAD", pauseOnLoad, d_init)
+
+        'commit changes
+        SaveAll()
     End Sub
 
     Private Sub UpdateSaveGamesButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateSaveGamesButton.Click
@@ -513,6 +539,47 @@ Public Class MainForm
         End If
     End Sub
 
+    Sub LoadCheckedUtilities()  'daveralph1234
+        For i = 0 To UtilityListBox.Items.Count - 1
+            FileOpen(1, utilityD & "\CheckedUtilityList.txt", OpenMode.Input)
+            Do While Not EOF(1)
+                If LineInput(1) = UtilityListBox.Items(i) Then
+                    UtilityListBox.SetItemChecked(i, True)
+                    Exit Do
+                End If
+            Loop
+            FileClose(1)
+        Next
+    End Sub
+
+    Private Sub UpdateCheckedUtilities() Handles Me.FormClosing   'daveralph1234
+        FileOpen(1, utilityD & "\CheckedUtilityList.txt", OpenMode.Output)
+        For i = 0 To UtilityListBox.CheckedItems.Count - 1
+            PrintLine(1, UtilityListBox.CheckedItems(i))
+        Next
+        FileClose(1)
+    End Sub
+
+    Private Sub RunStartupUtilities()   'daveralph1234
+        For Each item In UtilityListBox.CheckedItems
+            FileWorking.RunFileByBatch(GetUtilityPath(item))
+            System.Threading.Thread.Sleep(1000) 'wait 1 second between programs
+        Next
+    End Sub
+
+    Function GetUtilityPath(ByVal filename As String)   'daveralph1234
+        Dim Path As String
+        Dim dSplit
+        For Each item In UtilityList
+            dSplit = Split(item, "\")
+            If dSplit(dSplit.Length - 1) = filename Then
+                Path = item
+                Exit For
+            End If
+        Next
+        GetUtilityPath = Path
+    End Function
+
 
 
     'MENU ITEMS
@@ -537,32 +604,14 @@ Public Class MainForm
         MsgBox("Press Button. Obtain Lazy.", MsgBoxStyle.Information, "How to Use")
     End Sub
 
-    Private Sub PlayDFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click
-
+    Private Sub PlayDFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click, DwarfFortressToolStripMenuItem.Click
+        UpdateCheckedUtilities()
         RunFileByBatch("Dwarf Fortress.exe", dfDir)
-
-
-        'Run utilities on launch - daveralph1234
-        For i = 0 To UtilityListBox.Items.Count - 1
-            System.Threading.Thread.Sleep(1000) 'wait 1 second between programs
-            If CheckState.Checked Then
-                Try
-                    Shell(UtilityListBox.Items(i).ToString)
-                Catch ex As Exception
-                End Try
-            End If
-        Next
-
-
+        RunStartupUtilities()
 
         'FileWorking.RunFile("runDF.bat", lnpD)
         'FileWorking.RunFile("Dwarf Fortress.exe", dfDir)
     End Sub
-
-    Private Sub DwarfFortressToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DwarfFortressToolStripMenuItem.Click
-        RunFileByBatch("Dwarf Fortress.exe", dfDir)
-    End Sub
-
 
 
     'OPENING FOLDERS
@@ -684,29 +733,4 @@ Public Class MainForm
     '    UpdateButtonText()
     'End Sub
 
-
-    Private Sub UtilityListBox_doubleclick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UtilityListBox.DoubleClick
-        RunSelectedUtility()
-    End Sub
-
-    Private Sub BrowseUtilities_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrowseUtilities.Click
-        'ability to manually add utilities from other directories - daveralph1234
-        OpenFileDialog1.ShowDialog()
-        If OpenFileDialog1.FileName <> "OpenFileDialog1" Then
-            UtilityListBox.Items.Add(OpenFileDialog1.FileName)
-        End If
-    End Sub
-
-    Sub updateutilitylistfile() Handles Me.Closing
-        FileOpen(1, utilityD & "\utilitylist.txt", OpenMode.Output)
-        For i = 0 To UtilityListBox.Items.Count - 1
-            PrintLine(1, UtilityListBox.Items(i).ToString)
-            If UtilityListBox.CheckedIndices.Contains(i) Then
-                PrintLine(1, "1")
-            Else
-                PrintLine(1, "0")
-            End If
-        Next
-        FileClose(1)
-    End Sub
 End Class

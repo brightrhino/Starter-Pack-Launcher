@@ -37,7 +37,7 @@
             If Not skip Then
                 Utilities(j) = item 'add the FULL PATH to the array (to be returned to caller)
                 'Dim text = dSplit(dSplit.Length - 2) + "\" + fileName 'return parent directory and filename
-                MainForm.UtilityListBox.Items.Add(item) 'add them to the list
+                MainForm.UtilityListBox.Items.Add(fileName) 'add them to the list
                 j = j + 1
             End If
 

@@ -36,7 +36,6 @@ Partial Class MainForm
         Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button
         Me.AquiferButton = New System.Windows.Forms.Button
         Me.UtilityGroupBox = New System.Windows.Forms.GroupBox
-        Me.BrowseUtilities = New System.Windows.Forms.Button
         Me.UtilityListBox = New System.Windows.Forms.CheckedListBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.OpenUtilityFolderButton = New System.Windows.Forms.Button
@@ -262,7 +261,6 @@ Partial Class MainForm
         '
         'UtilityGroupBox
         '
-        Me.UtilityGroupBox.Controls.Add(Me.BrowseUtilities)
         Me.UtilityGroupBox.Controls.Add(Me.UtilityListBox)
         Me.UtilityGroupBox.Controls.Add(Me.Label2)
         Me.UtilityGroupBox.Controls.Add(Me.OpenUtilityFolderButton)
@@ -277,23 +275,13 @@ Partial Class MainForm
         Me.UtilityGroupBox.TabStop = False
         Me.UtilityGroupBox.Text = "Programs/Utilities"
         '
-        'BrowseUtilities
-        '
-        Me.BrowseUtilities.Location = New System.Drawing.Point(186, 359)
-        Me.BrowseUtilities.Margin = New System.Windows.Forms.Padding(4)
-        Me.BrowseUtilities.Name = "BrowseUtilities"
-        Me.BrowseUtilities.Size = New System.Drawing.Size(176, 26)
-        Me.BrowseUtilities.TabIndex = 7
-        Me.BrowseUtilities.Text = "Add Utility"
-        Me.BrowseUtilities.UseVisualStyleBackColor = True
-        '
         'UtilityListBox
         '
         Me.UtilityListBox.FormattingEnabled = True
         Me.UtilityListBox.HorizontalScrollbar = True
         Me.UtilityListBox.Location = New System.Drawing.Point(7, 78)
         Me.UtilityListBox.Name = "UtilityListBox"
-        Me.UtilityListBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.UtilityListBox.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.UtilityListBox.Size = New System.Drawing.Size(359, 276)
         Me.UtilityListBox.TabIndex = 6
         '
@@ -334,7 +322,7 @@ Partial Class MainForm
         Me.UpdateUtilsButton.Location = New System.Drawing.Point(8, 359)
         Me.UpdateUtilsButton.Margin = New System.Windows.Forms.Padding(4)
         Me.UpdateUtilsButton.Name = "UpdateUtilsButton"
-        Me.UpdateUtilsButton.Size = New System.Drawing.Size(175, 28)
+        Me.UpdateUtilsButton.Size = New System.Drawing.Size(358, 28)
         Me.UpdateUtilsButton.TabIndex = 3
         Me.UpdateUtilsButton.Text = "Reset List"
         Me.ToolTipMaker.SetToolTip(Me.UpdateUtilsButton, "Refresh the list of utilities")
@@ -525,7 +513,7 @@ Partial Class MainForm
         Me.ChildCapButton.TabIndex = 2
         Me.ChildCapButton.Text = "Child Cap"
         Me.ToolTipMaker.SetToolTip(Me.ChildCapButton, "No new pregnancies when either value is exceeded." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "First is the maximum amount of" & _
-                " children." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Second is the makimum number of children per 100 adults." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+                " children." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Second is the maximum number of children per 100 adults." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         Me.ChildCapButton.UseVisualStyleBackColor = True
         '
         'PopCapButton
@@ -1220,7 +1208,6 @@ Partial Class MainForm
     Friend WithEvents AutoSaveButton As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents UtilityListBox As System.Windows.Forms.CheckedListBox
-    Friend WithEvents BrowseUtilities As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 
 End Class
