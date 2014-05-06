@@ -106,7 +106,6 @@ Public Class MainForm
         UpdateDirectories()
         If dfDir <> "" Then
             LoadAll()
-            SetToolText()
             FormLoaded = True
             InstallExtras() 'install extras if first run
             Keybindings.FindAllKeybindings(keybindsD) 'find keybinds
@@ -215,9 +214,6 @@ Public Class MainForm
         AutoBackupButton.Text = "Backup Saves: " + booleanToYesNo(autoBackup)
         CloseOnLaunchButton.Text = "Close on launch: " + booleanToYesNo(closeOnLaunch)
         LoadCloseOnLaunchValue()
-    End Sub
-
-    Private Sub SetToolText()
     End Sub
 
     Public Sub SaveAll()
@@ -558,20 +554,16 @@ Public Class MainForm
         UtilityList = Utilities.FindAllUtilities(utilityD)
     End Sub
 
-    Private Sub RunProgramButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RunProgramButton.Click
-        RunSelectedUtility()
-    End Sub
-
-    Private Sub UtilityListBox_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UtilityListBox.DoubleClick
-        RunSelectedUtility()
-    End Sub
-
-    Private Sub RunSelectedUtility()
+    Private Sub RunSelectedUtility() Handles RunProgramButton.Click, UtilityListBox.DoubleClick
         If UtilityListBox.SelectedIndices.Count > 0 Then
             Dim pItem = UtilityListBox.SelectedIndices(0)
             If pItem >= 0 Then
-                'FileWorking.RunFile(UtilityList(pItem))
-                FileWorking.RunFileByBatch(UtilityList(pItem))
+                Dim path As String = UtilityList(pItem)
+                If path.EndsWith(".bat") Then
+                    FileWorking.RunFile(path)
+                Else
+                    FileWorking.RunFileByBatch(path)
+                End If
             End If
         End If
     End Sub
@@ -646,7 +638,12 @@ Public Class MainForm
 
     Private Sub RunStartupUtilities()   'daveralph1234
         For Each item In UtilityListBox.CheckedItems
-            FileWorking.RunFileByBatch(GetUtilityPath(item.text))
+            Dim path As String = GetUtilityPath(item.text)
+            If path.EndsWith(".bat") Then
+                FileWorking.RunFile(path)
+            Else
+                FileWorking.RunFileByBatch(path)
+            End If
             System.Threading.Thread.Sleep(1000) 'wait 1 second between programs
         Next
     End Sub

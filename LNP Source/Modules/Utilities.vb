@@ -13,7 +13,9 @@
             dir, FileIO.SearchOption.SearchAllSubDirectories, "*.exe")
         Dim jarCollection = fsp.GetFiles( _
             dir, FileIO.SearchOption.SearchAllSubDirectories, "*.jar")
-        Dim fileCollection = exeCollection.Concat(jarCollection)
+        Dim batCollection = fsp.GetFiles( _
+            dir, FileIO.SearchOption.SearchAllSubDirectories, "*.bat")
+        Dim fileCollection = exeCollection.Concat(jarCollection).Concat(batCollection)
 
         Dim Utilities(fileCollection.Count - 1) As String 'Create array with size of number of files found
 
