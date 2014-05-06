@@ -89,6 +89,12 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\DFDirList.Designer.vb">
+      <DependentUpon>DFDirList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DFDirList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WIP Options.Designer.vb">
       <DependentUpon>WIP Options.vb</DependentUpon>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DFDirList.resx">
+      <DependentUpon>DFDirList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

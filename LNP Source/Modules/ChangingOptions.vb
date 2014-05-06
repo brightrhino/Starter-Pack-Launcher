@@ -82,6 +82,34 @@ Module ChangingOptions
 
     End Sub
 
+    'Sub aquifers(ByVal value As Boolean, ByVal dir As String) - better mod support, currently breaks graphics changing
+    '    'Arrays with all strings to find and replace.
+    '    'In () put upperbound of array ("0" for a 1-item array)
+    '    Dim findList(0) As String
+    '    Dim replaceList(0) As String
+
+    '    'if value is true then TURN ON aquifers. Otherwise disable
+    '    If (value) Then
+    '        findList(0) = "!AQUIFER!"
+    '        replaceList(0) = "[AQUIFER]"
+    '    Else
+    '        findList(0) = "[AQUIFER]"
+    '        replaceList(0) = "!AQUIFER!"
+    '    End If
+
+    '    'define directory
+    '    'Dim dir = "raw\objects\"
+    '    'list of files to do find/replace in
+
+    '    '{"inorganic_stone_layer.txt", _
+    '    '"inorganic_stone_mineral.txt", _
+    '    '"inorganic_stone_soil.txt"}
+
+    '    'Do all find and replaces for for all text files in RAW folder
+    '    FileWorking.ReplaceInAllTextFilesInDirectory(dir, findList, replaceList)
+
+    'End Sub
+
 
     'Sub exotics(ByVal value As Boolean, ByVal dir As String)
     '    'Arrays with all strings to find and replace.

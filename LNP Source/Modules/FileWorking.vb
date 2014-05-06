@@ -5,6 +5,9 @@ Imports System.Text.RegularExpressions
 
 Module FileWorking
 
+    'returns selected DF directory from DFDirList
+    Public DFDirListReturn As Integer
+
     Function findDFDir()
         Dim search = "Dwarf Fortress*"
         Dim directory = My.Computer.FileSystem.CurrentDirectory() 'Programs current dir
@@ -12,10 +15,17 @@ Module FileWorking
                             directory, _
                             FileIO.SearchOption.SearchTopLevelOnly, _
                             search) 'Searches directories in current dir
-        If dirCollection.Any Then 'if it found one
+        If dirCollection.Count = 1 Then 'if it found one
             Dim dfDir = dirCollection.ElementAt(0) 'return first directory
-            'MessageBox.Show(dfDir)
             Return dfDir
+        ElseIf dirCollection.Count > 1 Then 'if multiple - daveralph1234
+            For Each item In dirCollection
+                Dim dSplit = Split(item, "\")
+                Dim folderName = dSplit(dSplit.Length - 1)
+                DFDirList.VersionListBox.Items.Add(folderName)
+            Next
+            DFDirList.ShowDialog() 'ask user to select
+            Return dirCollection.ElementAt(DFDirListReturn)
         End If
         MessageBox.Show("Cannot find Dwarf Fortress directory")
         MainForm.Close()
@@ -146,6 +156,35 @@ Module FileWorking
         'For every file in fileNameArray
         For i = 0 To (num)
             If fileNameArray(i) <> "" Then
+                'load file i into fileArray
+                fileArray(i) = FileWorking.ReadFile(fileNameArray(i), directory)
+                'in current file, find/replace all strings in findList/replaceList
+                For j = 0 To (findList.Length - 1)
+                    fileArray(i) = Replace(fileArray(i), findList(j), replaceList(j))
+                Next
+                'save files
+                FileWorking.SaveFile(fileNameArray(i), directory, fileArray(i))
+            End If
+        Next
+
+    End Sub
+
+
+    'does multiple finds-replaces in multiple files and SAVES THEM
+    Sub ReplaceInAllTextFilesInDirectory(ByVal directory As String, _
+                                         ByVal findList As Array, _
+                                         ByVal replaceList As Array)
+
+        Dim fileNameArray() As String = IO.Directory.GetFiles(directory)
+        Dim num = fileNameArray.Length - 1 'number of files in fileNameArray
+        Dim fileArray(num) As String 'create array of same length to store loaded files
+
+        'For every file in fileNameArray
+        For i = 0 To (num)
+            Dim dSplit = Split(fileNameArray(i), "\")
+            fileNameArray(i) = dSplit(dSplit.Length - 1)
+            Dim eSplit = Split(fileNameArray(i), ".")
+            If eSplit(eSplit.Length - 1) = "txt" Then
                 'load file i into fileArray
                 fileArray(i) = FileWorking.ReadFile(fileNameArray(i), directory)
                 'in current file, find/replace all strings in findList/replaceList
