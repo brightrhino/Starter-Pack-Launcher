@@ -43,6 +43,9 @@ Partial Class MainForm
         Me.PlayDFButton = New System.Windows.Forms.Button
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.OptionsTab = New System.Windows.Forms.TabPage
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox
+        Me.LiquidDepthButton = New System.Windows.Forms.Button
+        Me.VariedGroundButton = New System.Windows.Forms.Button
         Me.GroupBox4 = New System.Windows.Forms.GroupBox
         Me.DeleteKeyBindingButton = New System.Windows.Forms.Button
         Me.RefreshKBButton = New System.Windows.Forms.Button
@@ -51,10 +54,10 @@ Partial Class MainForm
         Me.SaveKeyBindingButton = New System.Windows.Forms.Button
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.LaborButton = New System.Windows.Forms.Button
-        Me.VariedGroundButton = New System.Windows.Forms.Button
-        Me.LiquidDepthButton = New System.Windows.Forms.Button
+        Me.EntombPetsButton = New System.Windows.Forms.Button
         Me.InvadersButton = New System.Windows.Forms.Button
+        Me.ArtifactsButton = New System.Windows.Forms.Button
+        Me.LaborButton = New System.Windows.Forms.Button
         Me.ChildCapButton = New System.Windows.Forms.Button
         Me.PopCapButton = New System.Windows.Forms.Button
         Me.GraphicsTab = New System.Windows.Forms.TabPage
@@ -65,6 +68,7 @@ Partial Class MainForm
         Me.UpdateGraphicsListButton = New System.Windows.Forms.Button
         Me.UtilitiesTab = New System.Windows.Forms.TabPage
         Me.AdvancedTab = New System.Windows.Forms.TabPage
+        Me.CloseOnLaunchButton = New System.Windows.Forms.Button
         Me.SaveGroupBox = New System.Windows.Forms.GroupBox
         Me.OpenSaveGameButton = New System.Windows.Forms.Button
         Me.PauseOnLoadButton = New System.Windows.Forms.Button
@@ -109,6 +113,7 @@ Partial Class MainForm
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.OptionsTab.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -133,12 +138,12 @@ Partial Class MainForm
         Me.CaveInButton.Size = New System.Drawing.Size(175, 28)
         Me.CaveInButton.TabIndex = 6
         Me.CaveInButton.Text = "Cave-ins"
-        Me.ToolTipMaker.SetToolTip(Me.CaveInButton, "If unsupported bits of terrain will collapse")
+        Me.ToolTipMaker.SetToolTip(Me.CaveInButton, "Whether unsupported bits of terrain will collapse.")
         Me.CaveInButton.UseVisualStyleBackColor = True
         '
         'WeatherButton
         '
-        Me.WeatherButton.Location = New System.Drawing.Point(8, 116)
+        Me.WeatherButton.Location = New System.Drawing.Point(191, 85)
         Me.WeatherButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.WeatherButton.Name = "WeatherButton"
         Me.WeatherButton.Size = New System.Drawing.Size(175, 28)
@@ -235,8 +240,8 @@ Partial Class MainForm
         Me.AquiferButton.Size = New System.Drawing.Size(175, 28)
         Me.AquiferButton.TabIndex = 9
         Me.AquiferButton.Text = "Aquifers"
-        Me.ToolTipMaker.SetToolTip(Me.AquiferButton, "Whether newly generated worlds will have Aquifers in them (Infinite sources of un" & _
-                "derground water, but can flood your fort)")
+        Me.ToolTipMaker.SetToolTip(Me.AquiferButton, "Whether newly generated worlds will have aquifers in them (Infinite underground s" & _
+                "ources of water, but can flood your fort)")
         Me.AquiferButton.UseVisualStyleBackColor = True
         '
         'UtilityGroupBox
@@ -264,6 +269,7 @@ Partial Class MainForm
         Me.UtilityListBox.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.UtilityListBox.Size = New System.Drawing.Size(359, 276)
         Me.UtilityListBox.TabIndex = 6
+        Me.ToolTipMaker.SetToolTip(Me.UtilityListBox, "Checked utilities will run when Dwarf Fortress is launched.")
         '
         'Label2
         '
@@ -271,9 +277,9 @@ Partial Class MainForm
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(7, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(210, 20)
+        Me.Label2.Size = New System.Drawing.Size(228, 20)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Check item to run on launch:"
+        Me.Label2.Text = "Check utilities to run on launch:"
         '
         'OpenUtilityFolderButton
         '
@@ -335,6 +341,7 @@ Partial Class MainForm
         '
         'OptionsTab
         '
+        Me.OptionsTab.Controls.Add(Me.GroupBox6)
         Me.OptionsTab.Controls.Add(Me.GroupBox4)
         Me.OptionsTab.Controls.Add(Me.GroupBox2)
         Me.OptionsTab.Controls.Add(Me.GroupBox1)
@@ -347,6 +354,42 @@ Partial Class MainForm
         Me.OptionsTab.Text = "Options"
         Me.OptionsTab.UseVisualStyleBackColor = True
         '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.LiquidDepthButton)
+        Me.GroupBox6.Controls.Add(Me.VariedGroundButton)
+        Me.GroupBox6.Location = New System.Drawing.Point(8, 195)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Size = New System.Drawing.Size(373, 58)
+        Me.GroupBox6.TabIndex = 11
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Display Options"
+        '
+        'LiquidDepthButton
+        '
+        Me.LiquidDepthButton.Location = New System.Drawing.Point(10, 20)
+        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.LiquidDepthButton.Name = "LiquidDepthButton"
+        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
+        Me.LiquidDepthButton.TabIndex = 9
+        Me.LiquidDepthButton.Text = "Liquid Depth"
+        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
+        Me.LiquidDepthButton.UseVisualStyleBackColor = True
+        '
+        'VariedGroundButton
+        '
+        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
+        Me.VariedGroundButton.Location = New System.Drawing.Point(192, 20)
+        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.VariedGroundButton.Name = "VariedGroundButton"
+        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
+        Me.VariedGroundButton.TabIndex = 10
+        Me.VariedGroundButton.Text = "Varied Ground"
+        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
+        Me.VariedGroundButton.UseVisualStyleBackColor = False
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.DeleteKeyBindingButton)
@@ -354,7 +397,7 @@ Partial Class MainForm
         Me.GroupBox4.Controls.Add(Me.KeyBindingList)
         Me.GroupBox4.Controls.Add(Me.LoadKeyBindingButton)
         Me.GroupBox4.Controls.Add(Me.SaveKeyBindingButton)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 311)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 314)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
@@ -420,7 +463,7 @@ Partial Class MainForm
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.AquiferButton)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 204)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 251)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
@@ -431,80 +474,81 @@ Partial Class MainForm
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.LaborButton)
-        Me.GroupBox1.Controls.Add(Me.VariedGroundButton)
-        Me.GroupBox1.Controls.Add(Me.CaveInButton)
-        Me.GroupBox1.Controls.Add(Me.LiquidDepthButton)
+        Me.GroupBox1.Controls.Add(Me.EntombPetsButton)
         Me.GroupBox1.Controls.Add(Me.InvadersButton)
+        Me.GroupBox1.Controls.Add(Me.ArtifactsButton)
+        Me.GroupBox1.Controls.Add(Me.LaborButton)
+        Me.GroupBox1.Controls.Add(Me.CaveInButton)
         Me.GroupBox1.Controls.Add(Me.WeatherButton)
         Me.GroupBox1.Controls.Add(Me.ChildCapButton)
         Me.GroupBox1.Controls.Add(Me.TemperatureButton)
         Me.GroupBox1.Controls.Add(Me.PopCapButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 7)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 5)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(373, 190)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Options"
+        Me.GroupBox1.Text = "Gameplay Options"
         '
-        'LaborButton
+        'EntombPetsButton
         '
-        Me.LaborButton.Location = New System.Drawing.Point(7, 150)
-        Me.LaborButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.LaborButton.Name = "LaborButton"
-        Me.LaborButton.Size = New System.Drawing.Size(357, 28)
-        Me.LaborButton.TabIndex = 9
-        Me.LaborButton.Text = "Labor"
-        Me.ToolTipMaker.SetToolTip(Me.LaborButton, "What labors are enabled by default: By what dwarves are skilled in; By their unit" & _
-                " type, or None")
-        Me.LaborButton.UseVisualStyleBackColor = True
-        '
-        'VariedGroundButton
-        '
-        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
-        Me.VariedGroundButton.Location = New System.Drawing.Point(191, 116)
-        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.VariedGroundButton.Name = "VariedGroundButton"
-        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
-        Me.VariedGroundButton.TabIndex = 8
-        Me.VariedGroundButton.Text = "Varied Ground"
-        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
-        Me.VariedGroundButton.UseVisualStyleBackColor = False
-        '
-        'LiquidDepthButton
-        '
-        Me.LiquidDepthButton.Location = New System.Drawing.Point(191, 85)
-        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.LiquidDepthButton.Name = "LiquidDepthButton"
-        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
-        Me.LiquidDepthButton.TabIndex = 7
-        Me.LiquidDepthButton.Text = "Liquid Depth"
-        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
-        Me.LiquidDepthButton.UseVisualStyleBackColor = True
+        Me.EntombPetsButton.BackColor = System.Drawing.Color.Transparent
+        Me.EntombPetsButton.Location = New System.Drawing.Point(9, 117)
+        Me.EntombPetsButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.EntombPetsButton.Name = "EntombPetsButton"
+        Me.EntombPetsButton.Size = New System.Drawing.Size(175, 28)
+        Me.EntombPetsButton.TabIndex = 13
+        Me.EntombPetsButton.Text = "Entomb Pets"
+        Me.ToolTipMaker.SetToolTip(Me.EntombPetsButton, "Whether deceased pets should be entombed in coffins by default.")
+        Me.EntombPetsButton.UseVisualStyleBackColor = False
         '
         'InvadersButton
         '
-        Me.InvadersButton.Location = New System.Drawing.Point(191, 23)
+        Me.InvadersButton.Location = New System.Drawing.Point(8, 53)
         Me.InvadersButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.InvadersButton.Name = "InvadersButton"
         Me.InvadersButton.Size = New System.Drawing.Size(175, 28)
         Me.InvadersButton.TabIndex = 5
         Me.InvadersButton.Text = "Invaders"
-        Me.ToolTipMaker.SetToolTip(Me.InvadersButton, "Toggles whether invaders (goblins etc) show up")
+        Me.ToolTipMaker.SetToolTip(Me.InvadersButton, "Whether invaders (goblins, megabeasts, etc) show up")
         Me.InvadersButton.UseVisualStyleBackColor = True
+        '
+        'ArtifactsButton
+        '
+        Me.ArtifactsButton.BackColor = System.Drawing.Color.Transparent
+        Me.ArtifactsButton.Location = New System.Drawing.Point(192, 117)
+        Me.ArtifactsButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.ArtifactsButton.Name = "ArtifactsButton"
+        Me.ArtifactsButton.Size = New System.Drawing.Size(175, 28)
+        Me.ArtifactsButton.TabIndex = 12
+        Me.ArtifactsButton.Text = "Artifacts"
+        Me.ToolTipMaker.SetToolTip(Me.ArtifactsButton, "Whether dwarfs should enter artifact producing moods.")
+        Me.ArtifactsButton.UseVisualStyleBackColor = False
+        '
+        'LaborButton
+        '
+        Me.LaborButton.Location = New System.Drawing.Point(9, 151)
+        Me.LaborButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LaborButton.Name = "LaborButton"
+        Me.LaborButton.Size = New System.Drawing.Size(357, 28)
+        Me.LaborButton.TabIndex = 9
+        Me.LaborButton.Text = "Labor"
+        Me.ToolTipMaker.SetToolTip(Me.LaborButton, "What labors are enabled by default for new migrants.")
+        Me.LaborButton.UseVisualStyleBackColor = True
         '
         'ChildCapButton
         '
-        Me.ChildCapButton.Location = New System.Drawing.Point(8, 54)
+        Me.ChildCapButton.Location = New System.Drawing.Point(191, 23)
         Me.ChildCapButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
         Me.ChildCapButton.Name = "ChildCapButton"
         Me.ChildCapButton.Size = New System.Drawing.Size(175, 28)
         Me.ChildCapButton.TabIndex = 2
         Me.ChildCapButton.Text = "Child Cap"
-        Me.ToolTipMaker.SetToolTip(Me.ChildCapButton, "No new pregnancies when either value is exceeded." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "First is the maximum amount of" & _
-                " children." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Second is the maximum number of children per 100 adults." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.ToolTipMaker.SetToolTip(Me.ChildCapButton, "No new pregnancies when either value is exceeded." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "First is the maximum number of" & _
+                " children." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Second is the maximum percentage of the population that can be child" & _
+                "ern." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         Me.ChildCapButton.UseVisualStyleBackColor = True
         '
         'PopCapButton
@@ -515,8 +559,8 @@ Partial Class MainForm
         Me.PopCapButton.Size = New System.Drawing.Size(175, 28)
         Me.PopCapButton.TabIndex = 1
         Me.PopCapButton.Text = "Population Cap"
-        Me.ToolTipMaker.SetToolTip(Me.PopCapButton, "You will only get more migrants/pregnancies if your population is less than this " & _
-                "number")
+        Me.ToolTipMaker.SetToolTip(Me.PopCapButton, "You will only get more migrants if your population is less than this number. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Pr" & _
+                "egnancies are unaffected.")
         Me.PopCapButton.UseVisualStyleBackColor = True
         '
         'GraphicsTab
@@ -607,6 +651,7 @@ Partial Class MainForm
         'AdvancedTab
         '
         Me.AdvancedTab.AutoScroll = True
+        Me.AdvancedTab.Controls.Add(Me.CloseOnLaunchButton)
         Me.AdvancedTab.Controls.Add(Me.SaveGroupBox)
         Me.AdvancedTab.Controls.Add(Me.ProcessPriorityButton)
         Me.AdvancedTab.Controls.Add(Me.FPSGroupBox)
@@ -620,6 +665,17 @@ Partial Class MainForm
         Me.AdvancedTab.TabIndex = 3
         Me.AdvancedTab.Text = "Advanced"
         Me.AdvancedTab.UseVisualStyleBackColor = True
+        '
+        'CloseOnLaunchButton
+        '
+        Me.CloseOnLaunchButton.Location = New System.Drawing.Point(16, 377)
+        Me.CloseOnLaunchButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.CloseOnLaunchButton.Name = "CloseOnLaunchButton"
+        Me.CloseOnLaunchButton.Size = New System.Drawing.Size(357, 28)
+        Me.CloseOnLaunchButton.TabIndex = 11
+        Me.CloseOnLaunchButton.Text = "Close on launch"
+        Me.ToolTipMaker.SetToolTip(Me.CloseOnLaunchButton, "Whether this GUI should close when Dwarf Fortress is launched")
+        Me.CloseOnLaunchButton.UseVisualStyleBackColor = True
         '
         'SaveGroupBox
         '
@@ -718,7 +774,7 @@ Partial Class MainForm
         '
         'ProcessPriorityButton
         '
-        Me.ProcessPriorityButton.Location = New System.Drawing.Point(16, 367)
+        Me.ProcessPriorityButton.Location = New System.Drawing.Point(16, 344)
         Me.ProcessPriorityButton.Margin = New System.Windows.Forms.Padding(4)
         Me.ProcessPriorityButton.Name = "ProcessPriorityButton"
         Me.ProcessPriorityButton.Size = New System.Drawing.Size(357, 28)
@@ -1040,6 +1096,7 @@ Partial Class MainForm
         Me.UtilityGroupBox.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.OptionsTab.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -1139,9 +1196,13 @@ Partial Class MainForm
     Friend WithEvents UtilityListBox As System.Windows.Forms.CheckedListBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents CurrentGraphicsLabel As System.Windows.Forms.Label
-    Friend WithEvents VariedGroundButton As System.Windows.Forms.Button
-    Friend WithEvents LiquidDepthButton As System.Windows.Forms.Button
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents StartWindowedButton As System.Windows.Forms.Button
+    Friend WithEvents EntombPetsButton As System.Windows.Forms.Button
+    Friend WithEvents ArtifactsButton As System.Windows.Forms.Button
+    Friend WithEvents VariedGroundButton As System.Windows.Forms.Button
+    Friend WithEvents LiquidDepthButton As System.Windows.Forms.Button
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents CloseOnLaunchButton As System.Windows.Forms.Button
 
 End Class

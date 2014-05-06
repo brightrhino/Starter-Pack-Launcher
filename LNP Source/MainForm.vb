@@ -65,6 +65,8 @@ Public Class MainForm
     Dim caveins As Boolean = True
     Dim liquidDepths As Boolean = True
     Dim variedGround As Boolean = True
+    Dim artifacts As Boolean = True
+    Dim dontEntombPets As Boolean = False
     Dim laborLists As String = "SKILLS"
     Dim aquifers As Boolean = True
     'Dim exotics As Boolean = True
@@ -90,6 +92,8 @@ Public Class MainForm
     Dim autoSavePause As Boolean = True
     Dim initialSave As Boolean = True
     Dim pauseOnLoad As Boolean = True
+
+    Dim closeOnLaunch As Boolean = False
     ''TO ADD?
     '[TRUETYPE] 'boolean
     '[PRINT_MODE] 'CAN BE MANY THINGS
@@ -137,6 +141,8 @@ Public Class MainForm
             popCap = LoadingOptions.loadTag("POPULATION_CAP", tagArray)
             childCap = LoadingOptions.loadTag("BABY_CHILD_CAP", tagArray)
             variedGround = LoadingOptions.loadTagAsBool("VARIED_GROUND_TILES", tagArray)
+            artifacts = LoadingOptions.loadTagAsBool("ARTIFACTS", tagArray)
+            dontEntombPets = LoadingOptions.loadTagAsBool("COFFIN_NO_PETS_DEFAULT", tagArray)
             laborLists = LoadingOptions.loadTag("SET_LABOR_LISTS", tagArray)
 
             aquifers = LoadingOptions.loadAquifer(rawObjectsDir)
@@ -182,6 +188,8 @@ Public Class MainForm
         PopCapButton.Text = "Population Cap: " + popCap
         ChildCapButton.Text = "Child Cap: " + childCap
         VariedGroundButton.Text = "Varied Ground: " + booleanToYesNo(variedGround)
+        ArtifactsButton.Text = "Artifacts: " + booleanToYesNo(artifacts)
+        EntombPetsButton.text = "Entomb Pets: " + booleanToYesNo(Not dontEntombPets)
         LaborButton.Text = "Starting Labors: " + laborLists
 
         AquiferButton.Text = "Aquifers: " + booleanToYesNo(aquifers)
@@ -205,7 +213,8 @@ Public Class MainForm
         PauseOnLoadButton.Text = "Pause on Load: " + booleanToYesNo(pauseOnLoad)
         CompressSavesButton.Text = "Compress Saves: " + booleanToYesNo(compressSaves)
         AutoBackupButton.Text = "Backup Saves: " + booleanToYesNo(autoBackup)
-
+        CloseOnLaunchButton.Text = "Close on launch: " + booleanToYesNo(closeOnLaunch)
+        LoadCloseOnLaunchValue()
     End Sub
 
     Private Sub SetToolText()
@@ -326,6 +335,19 @@ Public Class MainForm
         UpdateButtonText()
     End Sub
 
+    Private Sub ArtifactsButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ArtifactsButton.Click
+        artifacts = Not artifacts
+        ChangingOptions.booleanTagSet("ARTIFACTS", artifacts, d_init)
+        FileWorking.SaveFile("d_init.txt", initDir, d_init)
+        UpdateButtonText()
+    End Sub
+
+    Private Sub EntombPets_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EntombPetsButton.Click
+        dontEntombPets = Not dontEntombPets
+        ChangingOptions.booleanTagSet("COFFIN_NO_PETS_DEFAULT", dontEntombPets, d_init)
+        FileWorking.SaveFile("d_init.txt", initDir, d_init)
+        UpdateButtonText()
+    End Sub
 
     Private Sub AquiferButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AquiferButton.Click
         aquifers = Not aquifers
@@ -448,6 +470,11 @@ Public Class MainForm
         UpdateButtonText()
     End Sub
 
+    Private Sub CloseOnLaunchButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseOnLaunchButton.Click
+        closeOnLaunch = Not closeOnLaunch
+        SaveOnLaunchSettings()
+        LoadCloseOnLaunchValue()
+    End Sub
 
     'GRAPHICS
 
@@ -479,6 +506,8 @@ Public Class MainForm
         ChangingOptions.booleanTagSet("CAVEINS", caveins, d_init)
         ChangingOptions.booleanTagSet("SHOW_FLOW_AMOUNTS", liquidDepths, d_init)
         ChangingOptions.booleanTagSet("VARIED_GROUND_TILES", variedGround, d_init)
+        ChangingOptions.booleanTagSet("ARTIFACTS", artifacts, d_init)
+        ChangingOptions.booleanTagSet("COFFIN_NO_PETS_DEFAULT", dontEntombPets, d_init)
         ChangingOptions.stringTagSet("SET_LABOR_LISTS", laborLists, d_init)
         ChangingOptions.aquifers(aquifers, rawObjectsDir)
         ChangingOptions.booleanTagSet("SOUND", sound, init)
@@ -546,7 +575,7 @@ Public Class MainForm
     End Sub
 
     Sub LoadCheckedUtilities()  'daveralph1234
-        Dim CheckedUtilityList As String = ReadFile("CheckedUtilityList.txt", utilityD)
+        Dim CheckedUtilityList As String = ReadFile(DFFolderName() + " OnLaunchSettings.txt", utilityD)
         For i = 0 To UtilityListBox.Items.Count - 1
             If CheckedUtilityList.Contains(UtilityListBox.Items(i)) Then
                 UtilityListBox.SetItemChecked(i, True)
@@ -554,14 +583,42 @@ Public Class MainForm
         Next
     End Sub
 
-    Private Sub UpdateCheckedUtilities() Handles Me.FormClosing     'daveralph1234
-        Dim CheckedUtilityList As String = ""
+    Private Sub LoadCloseOnLaunchValue()    'daveralph1234
+
+        'prevents error on first launch
+        If Not My.Computer.FileSystem.FileExists(utilityD + "\" + DFFolderName() + " OnLaunchSettings.txt") Then
+            SaveOnLaunchSettings()
+        End If
+
+        Dim fileContents As String = ReadFile(DFFolderName() + " OnLaunchSettings.txt", utilityD)
+        If fileContents.Contains("Close GUI on launch:YES") Then
+            closeOnLaunch = True
+            CloseOnLaunchButton.Text = "Close GUI on launch:YES"
+        Else
+            closeOnLaunch = False
+            CloseOnLaunchButton.Text = "Close GUI on launch:NO"
+        End If
+    End Sub
+
+    Private Sub SaveOnLaunchSettings() Handles Me.FormClosing     'daveralph1234
+        Dim closeOnLaunchString As String
+        If closeOnLaunch Then
+            closeOnLaunchString = "YES"
+        Else
+            closeOnLaunchString = "NO"
+        End If
+        Dim CheckedUtilityList As String = "Close GUI on launch:" & closeOnLaunchString & vbCrLf
+        CheckedUtilityList = CheckedUtilityList & "Checked utilities:" & vbCrLf
         For i = 0 To UtilityListBox.CheckedItems.Count - 1
             CheckedUtilityList = CheckedUtilityList & UtilityListBox.CheckedItems(i) & vbCrLf
         Next
-        CheckedUtilityList = CheckedUtilityList & " " 'prevents error from saving empty file
-        SaveFile("CheckedUtilityList.txt", utilityD, CheckedUtilityList)
+        SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, CheckedUtilityList)
     End Sub
+
+    Private Function DFFolderName()     'daveralph1234
+        Dim dSplit = Split(dfDir, "\")
+        DFFolderName = dSplit(dSplit.Length - 1)
+    End Function
 
     Private Sub RunStartupUtilities()   'daveralph1234
         For Each item In UtilityListBox.CheckedItems
@@ -606,11 +663,12 @@ Public Class MainForm
         MsgBox("Press Button. Obtain Lazy.", MsgBoxStyle.Information, "How to Use")
     End Sub
 
-    Private Sub PlayDFButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click, DwarfFortressToolStripMenuItem.Click
-        UpdateCheckedUtilities()
+    Private Sub PlayDF(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click, DwarfFortressToolStripMenuItem.Click
         RunFileByBatch("Dwarf Fortress.exe", dfDir)
         RunStartupUtilities()
-
+        If closeOnLaunch Then
+            Me.Close()
+        End If
         'FileWorking.RunFile("runDF.bat", lnpD)
         'FileWorking.RunFile("Dwarf Fortress.exe", dfDir)
     End Sub
@@ -783,4 +841,5 @@ Public Class MainForm
     'Private Sub LNPForumThreadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNPForumThreadToolStripMenuItem.Click
     '    RunFile("http://www.bay12forums.com/smf/index.php?topic=59026.0")
     'End Sub
+
 End Class
