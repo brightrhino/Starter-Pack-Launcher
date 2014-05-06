@@ -1,9 +1,5 @@
 File Exlcusion List
-Any file name inside square brackets will not show up in LNP's utilities list.
-
-Quickfort Exclusions
-[w9xpopen.exe]
-[qfconvert.exe]
+Any file name inside square brackets will not show up in LNP's utilities list, eg:
 
 SoundSense Exclusions
 [soundSense.jar]

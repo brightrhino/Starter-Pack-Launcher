@@ -1,25 +1,47 @@
 folders:
+-  title: Main Folder
+   path: [Root directory]
+-  title: Dwarf Fortress Folder
+   path: Dwarf Fortress
+-  title: LNP Folder
+   path: LNP
+-  separator
 -  title: Savegame Folder
    path: Dwarf Fortress\data\save
 -  title: Utilities Folder
    path: LNP\Utilities
 -  title: Graphics Folder
    path: LNP\Graphics
+-  title: Extras Folder
+   path: LNP\extras
 -  separator
--  title: Main Folder
-   path: [Root directory]
--  title: LNP Folder
-   path: LNP
--  title: Dwarf Fortress Folder
-   path: Dwarf Fortress
 -  title: Init Folder
    path: Dwarf Fortress\data\init
 links:
--  title: DF Homepage
-   path: http://www.bay12games.com/dwarves/
--  title: DF Wiki
-   path: http://df.magmawiki.com/
--  title: DF Forums
-   path: http://www.bay12forums.com/smf/
--  title: LNP Forum Thread
-   path: http://www.bay12forums.com/smf/index.php?topic=59026.0
+-  title: Dwarf Fortress Website
+   path: http://www.bay12games.com/dwarves
+-  title: Donate to keep DF going
+   path: http://www.bay12games.com/support.html
+-  title: Dwarf Fortress Forums
+   path: http://www.bay12forums.com/smf
+-  separator: true
+-  title: Dwarf Fortress on Reddit
+   path: http://en.reddit.com/r/dwarffortress/
+-  title: Dwarf Fortress Wiki
+   path: http://dwarffortresswiki.org/index.php/cv:Quickstart_guide
+-  title: DF Map Archive
+   path: http://mkv25.net/dfma/index.php
+-  separator: true
+-  title: Stories on the wiki
+   path: http://dwarffortresswiki.org/index.php?title=Special:PrefixIndex&from=&namespace=100
+-  title: Stories on dfstories
+   path: http://dfstories.com/all-stories/
+-  title: (more) Dwarf Fortress Stories
+   path: http://dfst.org/
+-  separator: true
+-  title: Captnduck's Tutorial Videos
+   path: https://www.youtube.com/playlist?list=PL06686270DA5FF439
+-  title: Getting Started, paid book
+   path: http://shop.oreilly.com/product/0636920022565.do
+-  title: Free, old basis of book
+   path: http://afteractionreporter.com/2009/02/09/the-complete-and-utter-newby-tutorial-for-dwarf-fortress-part-1-wtf/
