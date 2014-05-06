@@ -109,6 +109,7 @@ Public Class MainForm
             GraphicsSets.FindPossibleGraphhics(graphicsD) 'and graphics
             UtilityList = Utilities.FindAllUtilities(utilityD) 'and utilities
             LoadCheckedUtilities() 'and checked utilities - daveralph1234
+            PopulateMenus() 'and menus - daveralph1234
         End If
     End Sub
 
@@ -545,24 +546,21 @@ Public Class MainForm
     End Sub
 
     Sub LoadCheckedUtilities()  'daveralph1234
+        Dim CheckedUtilityList As String = ReadFile("CheckedUtilityList.txt", utilityD)
         For i = 0 To UtilityListBox.Items.Count - 1
-            FileOpen(1, utilityD & "\CheckedUtilityList.txt", OpenMode.Input)
-            Do While Not EOF(1)
-                If LineInput(1) = UtilityListBox.Items(i) Then
-                    UtilityListBox.SetItemChecked(i, True)
-                    Exit Do
-                End If
-            Loop
-            FileClose(1)
+            If CheckedUtilityList.Contains(UtilityListBox.Items(i)) Then
+                UtilityListBox.SetItemChecked(i, True)
+            End If
         Next
     End Sub
 
-    Private Sub UpdateCheckedUtilities() Handles Me.FormClosing   'daveralph1234
-        FileOpen(1, utilityD & "\CheckedUtilityList.txt", OpenMode.Output)
+    Private Sub UpdateCheckedUtilities() Handles Me.FormClosing     'daveralph1234
+        Dim CheckedUtilityList As String = ""
         For i = 0 To UtilityListBox.CheckedItems.Count - 1
-            PrintLine(1, UtilityListBox.CheckedItems(i))
+            CheckedUtilityList = CheckedUtilityList & UtilityListBox.CheckedItems(i) & vbCrLf
         Next
-        FileClose(1)
+        CheckedUtilityList = CheckedUtilityList & " " 'prevents error from saving empty file
+        SaveFile("CheckedUtilityList.txt", utilityD, CheckedUtilityList)
     End Sub
 
     Private Sub RunStartupUtilities()   'daveralph1234
@@ -584,7 +582,6 @@ Public Class MainForm
         Next
         GetUtilityPath = Path
     End Function
-
 
 
     'MENU ITEMS
@@ -619,44 +616,65 @@ Public Class MainForm
     End Sub
 
 
-    'OPENING FOLDERS
+    'LINKS AND FOLDERS
 
     Private Sub OpenSaveGameButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenSaveGameButton.Click
         FileWorking.RunFile("", saveDir)
     End Sub
-    Private Sub SavegameFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SavegameFolder.Click
-        FileWorking.RunFile("", saveDir)
-    End Sub
+
     Private Sub OpenUtilityFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenUtilityFolderButton.Click
-        FileWorking.RunFile("", utilityD)
-    End Sub
-    Private Sub UtilitiesFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UtilitiesFolder.Click
         FileWorking.RunFile("", utilityD)
     End Sub
 
     Private Sub OpenGraphicsFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenGraphicsFolderButton.Click
         FileWorking.RunFile("", graphicsD)
     End Sub
-    Private Sub GraphicsFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GraphicsFolder.Click
-        FileWorking.RunFile("", graphicsD)
+
+    Private Sub PopulateMenus()   'daveralph1234
+        FileOpen(1, lnpD & "\LNPWin.txt", OpenMode.Input)
+        Dim line As String
+        line = LineInput(1)
+        Do While Not EOF(1)
+            If line.StartsWith("folders:") Or line.StartsWith("links:") Then
+                Dim menu As ToolStripMenuItem
+                If line.StartsWith("folders:") Then
+                    menu = OpenToolStripMenuItem
+                ElseIf line.StartsWith("links:") Then
+                    menu = LinksToolStripMenuItem1
+                End If
+                line = LineInput(1)
+                While line.StartsWith("-")
+                    If line.StartsWith("-  separator") Then
+                        menu.DropDown.Items.Add(New ToolStripSeparator)
+                    Else
+                        Dim NewItem As New ToolStripMenuItem
+                        AddHandler NewItem.Click, AddressOf Me.MenuItem_Click
+                        NewItem.Text = Mid(line, 11) 'display text
+                        Dim path As String = Mid(LineInput(1), 10)
+                        If path.StartsWith("Dwarf Fortress") Then 'supports variable DF folder location
+                            path = dfDir & Mid(path, 15)
+                        ElseIf path = "[Root directory]" Then 'special case for Main Folder
+                            path = My.Application.Info.DirectoryPath
+                        End If
+                        NewItem.Name = path 'directory of folder
+                        menu.DropDown.Items.Add(NewItem)
+                    End If
+                    If EOF(1) Then
+                        FileClose(1)
+                        Exit Sub
+                    End If
+                    line = LineInput(1)
+                End While
+            Else
+                line = LineInput(1)
+            End If
+        Loop
+        FileClose(1)
     End Sub
 
-    Private Sub DwarfFortressFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DwarfFortressFolder.Click
-        FileWorking.RunFile("", dfDir)
+    Sub MenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)   'daveralph1234
+        RunFile(sender.name)
     End Sub
-
-    Private Sub MainFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainFolder.Click
-        FileWorking.RunFile("", My.Application.Info.DirectoryPath)
-    End Sub
-
-    Private Sub LNPFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNPFolder.Click
-        FileWorking.RunFile("", lnpD)
-    End Sub
-
-    Private Sub InitFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InitFolder.Click
-        FileWorking.RunFile("", initDir)
-    End Sub
-
 
 
     'KEYBINDING BUTTONS
@@ -701,28 +719,6 @@ Public Class MainForm
     End Sub
 
 
-
-    'LINKS
-
-    Private Sub DFHomepageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFHomepageToolStripMenuItem.Click
-        RunFile("http://www.bay12games.com/dwarves/")
-    End Sub
-
-    Private Sub DFWikiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFWikiToolStripMenuItem.Click
-        RunFile("http://df.magmawiki.com/")
-    End Sub
-
-    Private Sub DFForumsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFForumsToolStripMenuItem.Click
-        RunFile("http://www.bay12forums.com/smf/")
-    End Sub
-
-    Private Sub LNPForumThreadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNPForumThreadToolStripMenuItem.Click
-        RunFile("http://www.bay12forums.com/smf/index.php?topic=59026.0")
-    End Sub
-
-
-
-
     'DEPRECATED
 
     'Private Sub ExoticButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -738,4 +734,53 @@ Public Class MainForm
     '    UpdateButtonText()
     'End Sub
 
+
+    'OPENING FOLDERS
+
+    'Private Sub SavegameFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", saveDir)
+    'End Sub
+
+    'Private Sub UtilitiesFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", utilityD)
+    'End Sub
+
+    'Private Sub GraphicsFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", graphicsD)
+    'End Sub
+
+    'Private Sub DwarfFortressFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", dfDir)
+    'End Sub
+
+    'Private Sub MainFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", My.Application.Info.DirectoryPath)
+    'End Sub
+
+    'Private Sub LNPFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", lnpD)
+    'End Sub
+
+    'Private Sub InitFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    FileWorking.RunFile("", initDir)
+    'End Sub
+
+
+    'LINKS
+
+    'Private Sub DFHomepageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFHomepageToolStripMenuItem.Click
+    '    RunFile("http://www.bay12games.com/dwarves/")
+    'End Sub
+
+    'Private Sub DFWikiToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFWikiToolStripMenuItem.Click
+    '    RunFile("http://df.magmawiki.com/")
+    'End Sub
+
+    'Private Sub DFForumsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DFForumsToolStripMenuItem.Click
+    '    RunFile("http://www.bay12forums.com/smf/")
+    'End Sub
+
+    'Private Sub LNPForumThreadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LNPForumThreadToolStripMenuItem.Click
+    '    RunFile("http://www.bay12forums.com/smf/index.php?topic=59026.0")
+    'End Sub
 End Class

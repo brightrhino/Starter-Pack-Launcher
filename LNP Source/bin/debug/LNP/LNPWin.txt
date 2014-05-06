@@ -1,0 +1,25 @@
+folders:
+-  title: Savegame Folder
+   path: Dwarf Fortress\data\save
+-  title: Utilities Folder
+   path: LNP\Utilities
+-  title: Graphics Folder
+   path: LNP\Graphics
+-  separator
+-  title: Main Folder
+   path: [Root directory]
+-  title: LNP Folder
+   path: LNP
+-  title: Dwarf Fortress Folder
+   path: Dwarf Fortress
+-  title: Init Folder
+   path: Dwarf Fortress\data\init
+links:
+-  title: DF Homepage
+   path: http://www.bay12games.com/dwarves/
+-  title: DF Wiki
+   path: http://df.magmawiki.com/
+-  title: DF Forums
+   path: http://www.bay12forums.com/smf/
+-  title: LNP Forum Thread
+   path: http://www.bay12forums.com/smf/index.php?topic=59026.0

@@ -52,10 +52,14 @@ Partial Class MainForm
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.LaborButton = New System.Windows.Forms.Button
+        Me.VariedGroundButton = New System.Windows.Forms.Button
+        Me.LiquidDepthButton = New System.Windows.Forms.Button
         Me.InvadersButton = New System.Windows.Forms.Button
         Me.ChildCapButton = New System.Windows.Forms.Button
         Me.PopCapButton = New System.Windows.Forms.Button
         Me.GraphicsTab = New System.Windows.Forms.TabPage
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.OpenGraphicsFolderButton = New System.Windows.Forms.Button
         Me.UpdateGraphicsListButton = New System.Windows.Forms.Button
@@ -77,6 +81,7 @@ Partial Class MainForm
         Me.FPS_CapLabel = New System.Windows.Forms.Label
         Me.FPSCounterButton = New System.Windows.Forms.Button
         Me.StartupGroupBox = New System.Windows.Forms.GroupBox
+        Me.StartWindowedButton = New System.Windows.Forms.Button
         Me.IntroMovieButton = New System.Windows.Forms.Button
         Me.SoundGroupBox = New System.Windows.Forms.GroupBox
         Me.Label1 = New System.Windows.Forms.Label
@@ -91,19 +96,7 @@ Partial Class MainForm
         Me.DwarfFortressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.InitTextEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.SavegameFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.UtilitiesFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.GraphicsFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.MainFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.LNPFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.DwarfFortressFolder = New System.Windows.Forms.ToolStripMenuItem
-        Me.InitFolder = New System.Windows.Forms.ToolStripMenuItem
         Me.LinksToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.DFHomepageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.DFWikiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.DFForumsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.LNPForumThreadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HowToUseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -112,11 +105,6 @@ Partial Class MainForm
         Me.DefaultsButton = New System.Windows.Forms.Button
         Me.PictureBox = New System.Windows.Forms.PictureBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label
-        Me.StartWindowedButton = New System.Windows.Forms.Button
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.LiquidDepthButton = New System.Windows.Forms.Button
-        Me.VariedGroundButton = New System.Windows.Forms.Button
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -125,6 +113,7 @@ Partial Class MainForm
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GraphicsTab.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.UtilitiesTab.SuspendLayout()
         Me.AdvancedTab.SuspendLayout()
@@ -134,7 +123,6 @@ Partial Class MainForm
         Me.SoundGroupBox.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'CaveInButton
@@ -473,6 +461,29 @@ Partial Class MainForm
                 " type, or None")
         Me.LaborButton.UseVisualStyleBackColor = True
         '
+        'VariedGroundButton
+        '
+        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
+        Me.VariedGroundButton.Location = New System.Drawing.Point(191, 116)
+        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.VariedGroundButton.Name = "VariedGroundButton"
+        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
+        Me.VariedGroundButton.TabIndex = 8
+        Me.VariedGroundButton.Text = "Varied Ground"
+        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
+        Me.VariedGroundButton.UseVisualStyleBackColor = False
+        '
+        'LiquidDepthButton
+        '
+        Me.LiquidDepthButton.Location = New System.Drawing.Point(191, 85)
+        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.LiquidDepthButton.Name = "LiquidDepthButton"
+        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
+        Me.LiquidDepthButton.TabIndex = 7
+        Me.LiquidDepthButton.Text = "Liquid Depth"
+        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
+        Me.LiquidDepthButton.UseVisualStyleBackColor = True
+        '
         'InvadersButton
         '
         Me.InvadersButton.Location = New System.Drawing.Point(191, 23)
@@ -521,6 +532,29 @@ Partial Class MainForm
         Me.GraphicsTab.TabIndex = 1
         Me.GraphicsTab.Text = "Graphics"
         Me.GraphicsTab.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
+        Me.GroupBox5.Location = New System.Drawing.Point(8, 11)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox5.Size = New System.Drawing.Size(373, 52)
+        Me.GroupBox5.TabIndex = 3
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Currently installed graphics"
+        '
+        'CurrentGraphicsLabel
+        '
+        Me.CurrentGraphicsLabel.AutoSize = True
+        Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(12, 19)
+        Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(152, 18)
+        Me.CurrentGraphicsLabel.TabIndex = 0
+        Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox3
         '
@@ -776,6 +810,17 @@ Partial Class MainForm
         Me.StartupGroupBox.TabStop = False
         Me.StartupGroupBox.Text = "Startup"
         '
+        'StartWindowedButton
+        '
+        Me.StartWindowedButton.Location = New System.Drawing.Point(8, 54)
+        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.StartWindowedButton.Name = "StartWindowedButton"
+        Me.StartWindowedButton.Size = New System.Drawing.Size(173, 28)
+        Me.StartWindowedButton.TabIndex = 1
+        Me.StartWindowedButton.Text = "Windowed"
+        Me.ToolTipMaker.SetToolTip(Me.StartWindowedButton, "Start windowed or fullscreen")
+        Me.StartWindowedButton.UseVisualStyleBackColor = True
+        '
         'IntroMovieButton
         '
         Me.IntroMovieButton.Location = New System.Drawing.Point(8, 23)
@@ -898,88 +943,15 @@ Partial Class MainForm
         '
         'OpenToolStripMenuItem
         '
-        Me.OpenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SavegameFolder, Me.UtilitiesFolder, Me.GraphicsFolder, Me.ToolStripSeparator1, Me.MainFolder, Me.LNPFolder, Me.DwarfFortressFolder, Me.InitFolder})
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(69, 24)
         Me.OpenToolStripMenuItem.Text = "Folders"
         '
-        'SavegameFolder
-        '
-        Me.SavegameFolder.Name = "SavegameFolder"
-        Me.SavegameFolder.Size = New System.Drawing.Size(219, 24)
-        Me.SavegameFolder.Text = "Savegame Folder"
-        '
-        'UtilitiesFolder
-        '
-        Me.UtilitiesFolder.Name = "UtilitiesFolder"
-        Me.UtilitiesFolder.Size = New System.Drawing.Size(219, 24)
-        Me.UtilitiesFolder.Text = "Utilities Folder"
-        '
-        'GraphicsFolder
-        '
-        Me.GraphicsFolder.Name = "GraphicsFolder"
-        Me.GraphicsFolder.Size = New System.Drawing.Size(219, 24)
-        Me.GraphicsFolder.Text = "Graphics Folder"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(216, 6)
-        '
-        'MainFolder
-        '
-        Me.MainFolder.Name = "MainFolder"
-        Me.MainFolder.Size = New System.Drawing.Size(219, 24)
-        Me.MainFolder.Text = "Main Folder"
-        '
-        'LNPFolder
-        '
-        Me.LNPFolder.Name = "LNPFolder"
-        Me.LNPFolder.Size = New System.Drawing.Size(219, 24)
-        Me.LNPFolder.Text = "LNP Folder"
-        '
-        'DwarfFortressFolder
-        '
-        Me.DwarfFortressFolder.Name = "DwarfFortressFolder"
-        Me.DwarfFortressFolder.Size = New System.Drawing.Size(219, 24)
-        Me.DwarfFortressFolder.Text = "Dwarf Fortress Folder"
-        '
-        'InitFolder
-        '
-        Me.InitFolder.Name = "InitFolder"
-        Me.InitFolder.Size = New System.Drawing.Size(219, 24)
-        Me.InitFolder.Text = "Init Folder"
-        '
         'LinksToolStripMenuItem1
         '
-        Me.LinksToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DFHomepageToolStripMenuItem, Me.DFWikiToolStripMenuItem, Me.DFForumsToolStripMenuItem, Me.LNPForumThreadToolStripMenuItem})
         Me.LinksToolStripMenuItem1.Name = "LinksToolStripMenuItem1"
         Me.LinksToolStripMenuItem1.Size = New System.Drawing.Size(53, 24)
         Me.LinksToolStripMenuItem1.Text = "Links"
-        '
-        'DFHomepageToolStripMenuItem
-        '
-        Me.DFHomepageToolStripMenuItem.Name = "DFHomepageToolStripMenuItem"
-        Me.DFHomepageToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.DFHomepageToolStripMenuItem.Text = "DF Homepage"
-        '
-        'DFWikiToolStripMenuItem
-        '
-        Me.DFWikiToolStripMenuItem.Name = "DFWikiToolStripMenuItem"
-        Me.DFWikiToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.DFWikiToolStripMenuItem.Text = "DF Wiki"
-        '
-        'DFForumsToolStripMenuItem
-        '
-        Me.DFForumsToolStripMenuItem.Name = "DFForumsToolStripMenuItem"
-        Me.DFForumsToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.DFForumsToolStripMenuItem.Text = "DF Forums"
-        '
-        'LNPForumThreadToolStripMenuItem
-        '
-        Me.LNPForumThreadToolStripMenuItem.Name = "LNPForumThreadToolStripMenuItem"
-        Me.LNPForumThreadToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
-        Me.LNPForumThreadToolStripMenuItem.Text = "LNP Forum Thread"
         '
         'HelpToolStripMenuItem
         '
@@ -1044,63 +1016,6 @@ Partial Class MainForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'CurrentGraphicsLabel
-        '
-        Me.CurrentGraphicsLabel.AutoSize = True
-        Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(12, 19)
-        Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
-        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(152, 18)
-        Me.CurrentGraphicsLabel.TabIndex = 0
-        Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
-        Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'StartWindowedButton
-        '
-        Me.StartWindowedButton.Location = New System.Drawing.Point(8, 54)
-        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.StartWindowedButton.Name = "StartWindowedButton"
-        Me.StartWindowedButton.Size = New System.Drawing.Size(173, 28)
-        Me.StartWindowedButton.TabIndex = 1
-        Me.StartWindowedButton.Text = "Windowed"
-        Me.ToolTipMaker.SetToolTip(Me.StartWindowedButton, "Start windowed or fullscreen")
-        Me.StartWindowedButton.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
-        Me.GroupBox5.Location = New System.Drawing.Point(8, 11)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(373, 52)
-        Me.GroupBox5.TabIndex = 3
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Currently installed graphics"
-        '
-        'LiquidDepthButton
-        '
-        Me.LiquidDepthButton.Location = New System.Drawing.Point(191, 85)
-        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.LiquidDepthButton.Name = "LiquidDepthButton"
-        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
-        Me.LiquidDepthButton.TabIndex = 7
-        Me.LiquidDepthButton.Text = "Liquid Depth"
-        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
-        Me.LiquidDepthButton.UseVisualStyleBackColor = True
-        '
-        'VariedGroundButton
-        '
-        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
-        Me.VariedGroundButton.Location = New System.Drawing.Point(191, 116)
-        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.VariedGroundButton.Name = "VariedGroundButton"
-        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
-        Me.VariedGroundButton.TabIndex = 8
-        Me.VariedGroundButton.Text = "Varied Ground"
-        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
-        Me.VariedGroundButton.UseVisualStyleBackColor = False
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1129,6 +1044,8 @@ Partial Class MainForm
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GraphicsTab.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.UtilitiesTab.ResumeLayout(False)
         Me.AdvancedTab.ResumeLayout(False)
@@ -1141,8 +1058,6 @@ Partial Class MainForm
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1209,20 +1124,8 @@ Partial Class MainForm
     Friend WithEvents DefaultsButton As System.Windows.Forms.Button
     Friend WithEvents InitTextEditorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LinksToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DFHomepageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DFWikiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DFForumsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LNPForumThreadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TrueTypeButton As System.Windows.Forms.Button
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SavegameFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UtilitiesFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GraphicsFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents InitFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MainFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LNPFolder As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents DwarfFortressFolder As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaborButton As System.Windows.Forms.Button
     Friend WithEvents SaveGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents OpenSaveGameButton As System.Windows.Forms.Button
