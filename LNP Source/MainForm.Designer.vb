@@ -35,7 +35,7 @@ Partial Class MainForm
         Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button
         Me.AquiferButton = New System.Windows.Forms.Button
         Me.UtilityGroupBox = New System.Windows.Forms.GroupBox
-        Me.UtilityListBox = New System.Windows.Forms.CheckedListBox
+        Me.UtilityListBox = New System.Windows.Forms.ListView
         Me.Label2 = New System.Windows.Forms.Label
         Me.OpenUtilityFolderButton = New System.Windows.Forms.Button
         Me.RunProgramButton = New System.Windows.Forms.Button
@@ -262,14 +262,14 @@ Partial Class MainForm
         '
         'UtilityListBox
         '
-        Me.UtilityListBox.FormattingEnabled = True
-        Me.UtilityListBox.HorizontalScrollbar = True
-        Me.UtilityListBox.Location = New System.Drawing.Point(7, 78)
+        Me.UtilityListBox.CheckBoxes = True
+        Me.UtilityListBox.Location = New System.Drawing.Point(11, 78)
+        Me.UtilityListBox.MultiSelect = False
         Me.UtilityListBox.Name = "UtilityListBox"
-        Me.UtilityListBox.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.UtilityListBox.Size = New System.Drawing.Size(359, 276)
-        Me.UtilityListBox.TabIndex = 6
-        Me.ToolTipMaker.SetToolTip(Me.UtilityListBox, "Checked utilities will run when Dwarf Fortress is launched.")
+        Me.UtilityListBox.Size = New System.Drawing.Size(355, 276)
+        Me.UtilityListBox.TabIndex = 7
+        Me.UtilityListBox.UseCompatibleStateImageBehavior = False
+        Me.UtilityListBox.View = System.Windows.Forms.View.List
         '
         'Label2
         '
@@ -1193,7 +1193,6 @@ Partial Class MainForm
     Friend WithEvents AutoBackupButton As System.Windows.Forms.Button
     Friend WithEvents AutoSaveButton As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents UtilityListBox As System.Windows.Forms.CheckedListBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents CurrentGraphicsLabel As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
@@ -1204,5 +1203,6 @@ Partial Class MainForm
     Friend WithEvents LiquidDepthButton As System.Windows.Forms.Button
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents CloseOnLaunchButton As System.Windows.Forms.Button
+    Friend WithEvents UtilityListBox As System.Windows.Forms.ListView
 
 End Class

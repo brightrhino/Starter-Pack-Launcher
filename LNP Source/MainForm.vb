@@ -562,23 +562,47 @@ Public Class MainForm
         RunSelectedUtility()
     End Sub
 
-    Private Sub UtilityListBox_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+    Private Sub UtilityListBox_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UtilityListBox.DoubleClick
         RunSelectedUtility()
     End Sub
 
     Private Sub RunSelectedUtility()
-        Dim pItem = UtilityListBox.SelectedIndex
-        If pItem >= 0 Then
-            'FileWorking.RunFile(UtilityList(pItem))
-            FileWorking.RunFileByBatch(UtilityList(pItem))
+        If UtilityListBox.SelectedIndices.Count > 0 Then
+            Dim pItem = UtilityListBox.SelectedIndices(0)
+            If pItem >= 0 Then
+                'FileWorking.RunFile(UtilityList(pItem))
+                FileWorking.RunFileByBatch(UtilityList(pItem))
+            End If
         End If
     End Sub
+
+
+
+    'Prevents utilities from being checked/unchecked by clicking in places other than the checkbox
+
+    Dim inhibitAutoCheck As Boolean
+
+    Private Sub UtilityListBox_MouseDown(ByVal sender As System.Object, ByVal e As MouseEventArgs) Handles UtilityListBox.MouseDown
+        inhibitAutoCheck = True
+    End Sub
+
+    Private Sub UtilityListBox_MouseUp(ByVal sender As System.Object, ByVal e As MouseEventArgs) Handles UtilityListBox.MouseUp
+        inhibitAutoCheck = False
+    End Sub
+
+    Private Sub UtilityListBox_ItemCheck(ByVal sender As System.Object, ByVal e As ItemCheckEventArgs) Handles UtilityListBox.ItemCheck
+        If inhibitAutoCheck Then
+            e.NewValue = e.CurrentValue
+        End If
+    End Sub
+
+
 
     Sub LoadCheckedUtilities()  'daveralph1234
         Dim CheckedUtilityList As String = ReadFile(DFFolderName() + " OnLaunchSettings.txt", utilityD)
         For i = 0 To UtilityListBox.Items.Count - 1
-            If CheckedUtilityList.Contains(UtilityListBox.Items(i)) Then
-                UtilityListBox.SetItemChecked(i, True)
+            If CheckedUtilityList.Contains(UtilityListBox.Items(i).Text) Then
+                UtilityListBox.Items(i).Checked = True
             End If
         Next
     End Sub
@@ -607,12 +631,12 @@ Public Class MainForm
         Else
             closeOnLaunchString = "NO"
         End If
-        Dim CheckedUtilityList As String = "Close GUI on launch:" & closeOnLaunchString & vbCrLf
-        CheckedUtilityList = CheckedUtilityList & "Checked utilities:" & vbCrLf
+        Dim text As String = "Close GUI on launch:" & closeOnLaunchString & vbCrLf
+        text = text & "Checked utilities:" & vbCrLf
         For i = 0 To UtilityListBox.CheckedItems.Count - 1
-            CheckedUtilityList = CheckedUtilityList & UtilityListBox.CheckedItems(i) & vbCrLf
+            text = text & UtilityListBox.CheckedItems(i).Text & vbCrLf
         Next
-        SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, CheckedUtilityList)
+        SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, text)
     End Sub
 
     Private Function DFFolderName()     'daveralph1234
@@ -622,13 +646,13 @@ Public Class MainForm
 
     Private Sub RunStartupUtilities()   'daveralph1234
         For Each item In UtilityListBox.CheckedItems
-            FileWorking.RunFileByBatch(GetUtilityPath(item))
+            FileWorking.RunFileByBatch(GetUtilityPath(item.text))
             System.Threading.Thread.Sleep(1000) 'wait 1 second between programs
         Next
     End Sub
 
     Function GetUtilityPath(ByVal filename As String)   'daveralph1234
-        Dim Path As String
+        Dim Path As String = ""
         For Each item In UtilityList
             Dim dSplit = Split(item, "\")
             Dim fileNameWithExtension = dSplit(dSplit.Length - 1)
@@ -694,7 +718,7 @@ Public Class MainForm
         line = LineInput(1)
         Do While Not EOF(1)
             If line.StartsWith("folders:") Or line.StartsWith("links:") Then
-                Dim menu As ToolStripMenuItem
+                Dim menu As ToolStripMenuItem = Nothing
                 If line.StartsWith("folders:") Then
                     menu = OpenToolStripMenuItem
                 ElseIf line.StartsWith("links:") Then
