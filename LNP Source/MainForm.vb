@@ -617,18 +617,20 @@ Public Class MainForm
     End Sub
 
     Private Sub SaveOnLaunchSettings() Handles Me.FormClosing     'daveralph1234
-        Dim closeOnLaunchString As String
-        If closeOnLaunch Then
-            closeOnLaunchString = "YES"
-        Else
-            closeOnLaunchString = "NO"
+        If FormLoaded Then
+            Dim closeOnLaunchString As String
+            If closeOnLaunch Then
+                closeOnLaunchString = "YES"
+            Else
+                closeOnLaunchString = "NO"
+            End If
+            Dim text As String = "Close GUI on launch:" & closeOnLaunchString & vbCrLf
+            text = text & "Checked utilities:" & vbCrLf
+            For i = 0 To UtilityListBox.CheckedItems.Count - 1
+                text = text & UtilityListBox.CheckedItems(i).Text & vbCrLf
+            Next
+            SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, text)
         End If
-        Dim text As String = "Close GUI on launch:" & closeOnLaunchString & vbCrLf
-        text = text & "Checked utilities:" & vbCrLf
-        For i = 0 To UtilityListBox.CheckedItems.Count - 1
-            text = text & UtilityListBox.CheckedItems(i).Text & vbCrLf
-        Next
-        SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, text)
     End Sub
 
     Private Function DFFolderName()     'daveralph1234
