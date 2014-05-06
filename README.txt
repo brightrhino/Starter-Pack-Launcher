@@ -1,4 +1,4 @@
-Lazy Newb Pack GUI V1.6
+Lazy Newb Pack GUI V16
 The Lazy Newb Pack is a third party GUI for the game "Dwarf Fortress"
 It allows users to easily change game settings, run other third party utilities, install graphics packs, and more.
 
