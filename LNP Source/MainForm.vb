@@ -110,7 +110,6 @@ Public Class MainForm
             UtilityList = Utilities.FindAllUtilities(utilityD) 'and utilities
             LoadCheckedUtilities() 'and checked utilities - daveralph1234
         End If
-
     End Sub
 
     Private Sub UpdateDirectories()
@@ -160,6 +159,11 @@ Public Class MainForm
             autoSavePause = LoadingOptions.loadTagAsBool("AUTOSAVE_PAUSE", tagArray)
             initialSave = LoadingOptions.loadTagAsBool("INITIAL_SAVE", tagArray)
             pauseOnLoad = LoadingOptions.loadTagAsBool("PAUSE_ON_LOAD", tagArray)
+
+            If CurrentGraphicsLabel.Text = "CurrentGraphicsLabel" Then 'only on startup - daveralph1234
+                Dim dSplit = Split(LoadingOptions.loadTag("FONT", tagArray), ".")
+                CurrentGraphicsLabel.Text = dSplit(0)
+            End If
 
             UpdateButtonText()
         Else
@@ -452,6 +456,7 @@ Public Class MainForm
             GraphicsSets.SwitchGraphics(gfxDir, dfDir)
 
             KeepGUISettingsOnGraphicsChange() 'daveralph1234
+            CurrentGraphicsLabel.Text = GraphicsListBox.SelectedItem
 
             LoadAll()
         Else
@@ -569,10 +574,10 @@ Public Class MainForm
 
     Function GetUtilityPath(ByVal filename As String)   'daveralph1234
         Dim Path As String
-        Dim dSplit
         For Each item In UtilityList
-            dSplit = Split(item, "\")
-            If dSplit(dSplit.Length - 1) = filename Then
+            Dim dSplit = Split(item, "\")
+            Dim fileNameWithExtension = dSplit(dSplit.Length - 1)
+            If Mid(fileNameWithExtension, 1, (Len(fileNameWithExtension) - 4)) = filename Then
                 Path = item
                 Exit For
             End If

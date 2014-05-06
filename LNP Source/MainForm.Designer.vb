@@ -24,7 +24,6 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.LiquidDepthButton = New System.Windows.Forms.Button
         Me.CaveInButton = New System.Windows.Forms.Button
         Me.WeatherButton = New System.Windows.Forms.Button
         Me.TemperatureButton = New System.Windows.Forms.Button
@@ -53,7 +52,6 @@ Partial Class MainForm
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.LaborButton = New System.Windows.Forms.Button
-        Me.VariedGroundButton = New System.Windows.Forms.Button
         Me.InvadersButton = New System.Windows.Forms.Button
         Me.ChildCapButton = New System.Windows.Forms.Button
         Me.PopCapButton = New System.Windows.Forms.Button
@@ -79,7 +77,6 @@ Partial Class MainForm
         Me.FPS_CapLabel = New System.Windows.Forms.Label
         Me.FPSCounterButton = New System.Windows.Forms.Button
         Me.StartupGroupBox = New System.Windows.Forms.GroupBox
-        Me.StartWindowedButton = New System.Windows.Forms.Button
         Me.IntroMovieButton = New System.Windows.Forms.Button
         Me.SoundGroupBox = New System.Windows.Forms.GroupBox
         Me.Label1 = New System.Windows.Forms.Label
@@ -115,6 +112,11 @@ Partial Class MainForm
         Me.DefaultsButton = New System.Windows.Forms.Button
         Me.PictureBox = New System.Windows.Forms.PictureBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label
+        Me.StartWindowedButton = New System.Windows.Forms.Button
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.LiquidDepthButton = New System.Windows.Forms.Button
+        Me.VariedGroundButton = New System.Windows.Forms.Button
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -132,18 +134,8 @@ Partial Class MainForm
         Me.SoundGroupBox.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'LiquidDepthButton
-        '
-        Me.LiquidDepthButton.Location = New System.Drawing.Point(191, 85)
-        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.LiquidDepthButton.Name = "LiquidDepthButton"
-        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
-        Me.LiquidDepthButton.TabIndex = 7
-        Me.LiquidDepthButton.Text = "Liquid Depth"
-        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
-        Me.LiquidDepthButton.UseVisualStyleBackColor = True
         '
         'CaveInButton
         '
@@ -184,7 +176,7 @@ Partial Class MainForm
         Me.GraphicsGroupBox.Controls.Add(Me.UpdateSaveGamesButton)
         Me.GraphicsGroupBox.Controls.Add(Me.ChangeGraphicsButton)
         Me.GraphicsGroupBox.Controls.Add(Me.GraphicsListBox)
-        Me.GraphicsGroupBox.Location = New System.Drawing.Point(8, 7)
+        Me.GraphicsGroupBox.Location = New System.Drawing.Point(8, 66)
         Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.GraphicsGroupBox.Name = "GraphicsGroupBox"
         Me.GraphicsGroupBox.Padding = New System.Windows.Forms.Padding(4)
@@ -481,18 +473,6 @@ Partial Class MainForm
                 " type, or None")
         Me.LaborButton.UseVisualStyleBackColor = True
         '
-        'VariedGroundButton
-        '
-        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
-        Me.VariedGroundButton.Location = New System.Drawing.Point(191, 116)
-        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.VariedGroundButton.Name = "VariedGroundButton"
-        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
-        Me.VariedGroundButton.TabIndex = 8
-        Me.VariedGroundButton.Text = "Varied Ground"
-        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
-        Me.VariedGroundButton.UseVisualStyleBackColor = False
-        '
         'InvadersButton
         '
         Me.InvadersButton.Location = New System.Drawing.Point(191, 23)
@@ -530,6 +510,7 @@ Partial Class MainForm
         '
         'GraphicsTab
         '
+        Me.GraphicsTab.Controls.Add(Me.GroupBox5)
         Me.GraphicsTab.Controls.Add(Me.GroupBox3)
         Me.GraphicsTab.Controls.Add(Me.GraphicsGroupBox)
         Me.GraphicsTab.Location = New System.Drawing.Point(4, 25)
@@ -794,17 +775,6 @@ Partial Class MainForm
         Me.StartupGroupBox.TabIndex = 7
         Me.StartupGroupBox.TabStop = False
         Me.StartupGroupBox.Text = "Startup"
-        '
-        'StartWindowedButton
-        '
-        Me.StartWindowedButton.Location = New System.Drawing.Point(8, 54)
-        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
-        Me.StartWindowedButton.Name = "StartWindowedButton"
-        Me.StartWindowedButton.Size = New System.Drawing.Size(173, 28)
-        Me.StartWindowedButton.TabIndex = 1
-        Me.StartWindowedButton.Text = "Windowed"
-        Me.ToolTipMaker.SetToolTip(Me.StartWindowedButton, "Start windowed or fullscreen")
-        Me.StartWindowedButton.UseVisualStyleBackColor = True
         '
         'IntroMovieButton
         '
@@ -1074,6 +1044,63 @@ Partial Class MainForm
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'CurrentGraphicsLabel
+        '
+        Me.CurrentGraphicsLabel.AutoSize = True
+        Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(12, 19)
+        Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(152, 18)
+        Me.CurrentGraphicsLabel.TabIndex = 0
+        Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'StartWindowedButton
+        '
+        Me.StartWindowedButton.Location = New System.Drawing.Point(8, 54)
+        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.StartWindowedButton.Name = "StartWindowedButton"
+        Me.StartWindowedButton.Size = New System.Drawing.Size(173, 28)
+        Me.StartWindowedButton.TabIndex = 1
+        Me.StartWindowedButton.Text = "Windowed"
+        Me.ToolTipMaker.SetToolTip(Me.StartWindowedButton, "Start windowed or fullscreen")
+        Me.StartWindowedButton.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
+        Me.GroupBox5.Location = New System.Drawing.Point(8, 11)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox5.Size = New System.Drawing.Size(373, 52)
+        Me.GroupBox5.TabIndex = 3
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Currently installed graphics"
+        '
+        'LiquidDepthButton
+        '
+        Me.LiquidDepthButton.Location = New System.Drawing.Point(191, 85)
+        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.LiquidDepthButton.Name = "LiquidDepthButton"
+        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
+        Me.LiquidDepthButton.TabIndex = 7
+        Me.LiquidDepthButton.Text = "Liquid Depth"
+        Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
+        Me.LiquidDepthButton.UseVisualStyleBackColor = True
+        '
+        'VariedGroundButton
+        '
+        Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
+        Me.VariedGroundButton.Location = New System.Drawing.Point(191, 116)
+        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.VariedGroundButton.Name = "VariedGroundButton"
+        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
+        Me.VariedGroundButton.TabIndex = 8
+        Me.VariedGroundButton.Text = "Varied Ground"
+        Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
+        Me.VariedGroundButton.UseVisualStyleBackColor = False
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1114,13 +1141,14 @@ Partial Class MainForm
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents GraphicsGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents UtilityGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents LiquidDepthButton As System.Windows.Forms.Button
     Friend WithEvents CaveInButton As System.Windows.Forms.Button
     Friend WithEvents WeatherButton As System.Windows.Forms.Button
     Friend WithEvents TemperatureButton As System.Windows.Forms.Button
@@ -1138,7 +1166,6 @@ Partial Class MainForm
     Friend WithEvents FPS_CapLabel As System.Windows.Forms.Label
     Friend WithEvents FPSCounterButton As System.Windows.Forms.Button
     Friend WithEvents StartupGroupBox As System.Windows.Forms.GroupBox
-    Friend WithEvents StartWindowedButton As System.Windows.Forms.Button
     Friend WithEvents IntroMovieButton As System.Windows.Forms.Button
     Friend WithEvents SoundGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents SoundButton As System.Windows.Forms.Button
@@ -1187,7 +1214,6 @@ Partial Class MainForm
     Friend WithEvents DFForumsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LNPForumThreadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TrueTypeButton As System.Windows.Forms.Button
-    Friend WithEvents VariedGroundButton As System.Windows.Forms.Button
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SavegameFolder As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UtilitiesFolder As System.Windows.Forms.ToolStripMenuItem
@@ -1209,5 +1235,10 @@ Partial Class MainForm
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents UtilityListBox As System.Windows.Forms.CheckedListBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents CurrentGraphicsLabel As System.Windows.Forms.Label
+    Friend WithEvents VariedGroundButton As System.Windows.Forms.Button
+    Friend WithEvents LiquidDepthButton As System.Windows.Forms.Button
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents StartWindowedButton As System.Windows.Forms.Button
 
 End Class

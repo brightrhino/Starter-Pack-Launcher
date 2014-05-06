@@ -24,6 +24,7 @@
             'create an array out of directory structure
             Dim dSplit = Split(item, "\")
             Dim fileName = dSplit(dSplit.Length - 1)
+            Dim fileNameWithoutExtension = Mid(fileName, 1, (Len(fileName) - 4))
 
             'Test if filename is in exlusion list
             Dim skip = False
@@ -37,7 +38,7 @@
             If Not skip Then
                 Utilities(j) = item 'add the FULL PATH to the array (to be returned to caller)
                 'Dim text = dSplit(dSplit.Length - 2) + "\" + fileName 'return parent directory and filename
-                MainForm.UtilityListBox.Items.Add(fileName) 'add them to the list
+                MainForm.UtilityListBox.Items.Add(fileNameWithoutExtension) 'add them to the list
                 j = j + 1
             End If
 
