@@ -12,11 +12,13 @@ Development
 -----------
 The Launcher was originally developed by Lucas Paquette/LucasUP in 2010, who later released it under the GPL3 in February 2013.  
 
-Building the project from source requires Microsoft Visual Basic 2008 Express or higher (open "LazyNewbPackGUI.vbproj").  The folder ``./bin/debug/`` is used when you export/test the program, it includes the LNP folder structure - which is explained below.  
+Building the project from source requires Microsoft Visual Basic 2008 Express or higher (open "LazyNewbPackGUI.vbproj").  The folder ``./bin/debug/`` is used when you export/test the program, it includes the LNP folder structure - which is explained below.  Daveralph1234 maintains the current branch, hosted `on DFFD`_.
+
+.. _`on DFFD`: http://dffd.wimbli.com/file.php?id=7426
 
 *Dwarf Fortress* is not included, and nor are any other files and utilities; they can be added individually or you can download a pre-configured package such as the `Dwarf Fortress Starter Pack`_.  See also the `Bay12 Forums thread for development`_ of this launcher.
 
-.. _`Dwarf Fortress Starter Pack`: http://dffd.wimbli.com/file.php?id=7622
+.. _`Dwarf Fortress Starter Pack`: http://www.bay12forums.com/smf/index.php?topic=126076
 .. _`Bay12 Forums thread for development`: http://www.bay12forums.com/smf/index.php?topic=123384
 
 Contributors:  
