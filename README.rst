@@ -81,6 +81,6 @@ A folder provided as a default place to put useful things, such as saved copies 
 Put ANY utilities you want to use into the "LNP\Utilities" folder. LNP automatically recognizes .exe, .bat, and .jar files.  
 You can hide files from the utilities pane of the launcher by adding their filenames to "LNP\exclude.txt".  The configuration for Soundsense is provided as an example.  
 
-``./LNP/LNPWin.txt/``
+``./LNP/LNPWin.txt``
 ---------------------
 Defines the entries in the dropdown menus 'links' and 'folders'.  Modifiable to add or remove entries; sensible defaults are provided.  
