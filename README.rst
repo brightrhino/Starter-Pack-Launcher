@@ -14,7 +14,7 @@ The Launcher was originally developed by Lucas Paquette/LucasUP in 2010, who lat
 
 Building the project from source requires Microsoft Visual Basic 2008 Express or higher (open "LazyNewbPackGUI.vbproj").  The folder ``./bin/debug/`` is used when you export/test the program, it includes the LNP folder structure - which is explained below.  
 
-*Dwarf Fortress* is not included, and nor are any other files and utilities; they can be added individually or you can download a pre-configured package such as the *`Dwarf Fortress Starter Pack`_*.  See also the `Bay12 Forums thread for development`_ of this launcher.
+*Dwarf Fortress* is not included, and nor are any other files and utilities; they can be added individually or you can download a pre-configured package such as the `Dwarf Fortress Starter Pack`_.  See also the `Bay12 Forums thread for development`_ of this launcher.
 
 .. _`Dwarf Fortress Starter Pack`: http://dffd.wimbli.com/file.php?id=7622
 .. _`Bay12 Forums thread for development`: http://www.bay12forums.com/smf/index.php?topic=123384
@@ -34,7 +34,7 @@ Contributors:
 -------------------------------------
 Lazy Newb Pack Launcher documentation
 -------------------------------------
-*As used in the `Dwarf Fortress Starter Pack`_*
+As used in the `Dwarf Fortress Starter Pack`_
 
 Besides the GUI itself the launcher comes with a folder structure, each part of which has a purpose.  At the top level, there is the GUI, the "Dwarf Fortress" folder, and the "LNP" folder.  An explanation of each component follows.  
 
