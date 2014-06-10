@@ -8,8 +8,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Lazy Newb Pack GUI")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyTitle("Starter Pack Launcher")> 
+<Assembly: AssemblyDescription("GUI to configure and launch an install of Dwarf Fortress and associated utilities")> 
 <Assembly: AssemblyCompany("LucasUP, TolyK and others")> 
 <Assembly: AssemblyProduct("")> 
 <Assembly: AssemblyCopyright("GNU GPL V3")> 

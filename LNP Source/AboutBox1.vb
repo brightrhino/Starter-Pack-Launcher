@@ -1,7 +1,7 @@
 ﻿Public NotInheritable Class AboutBox1
 
     Private Sub AboutBox1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        LabelVersion.Text = "Version " + My.Application.Info.Version.Major.ToString + "." + My.Application.Info.Version.Minor.ToString
+        LabelVersion.Text = "Version 18.4"
 
     End Sub
 

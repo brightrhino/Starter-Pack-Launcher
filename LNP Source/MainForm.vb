@@ -683,7 +683,7 @@ Public Class MainForm
     End Sub
 
     Private Sub HowToUseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HowToUseToolStripMenuItem.Click
-        MsgBox("Press Button. Obtain Lazy.", MsgBoxStyle.Information, "How to Use")
+        MsgBox("Use the buttons to change settings and run programs.  See links menu for more help.", MsgBoxStyle.Information, "How to Use")
     End Sub
 
     Private Sub PlayDF(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click, DwarfFortressToolStripMenuItem.Click
