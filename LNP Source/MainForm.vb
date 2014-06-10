@@ -703,7 +703,7 @@ Public Class MainForm
         FileWorking.RunFile("", saveDir)
     End Sub
 
-    Private Sub OpenUtilityFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenUtilityFolderButton.Click
+    Private Sub OpenUtilityFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         FileWorking.RunFile("", utilityD)
     End Sub
 
@@ -865,4 +865,7 @@ Public Class MainForm
     '    RunFile("http://www.bay12forums.com/smf/index.php?topic=59026.0")
     'End Sub
 
+    Private Sub RunSelectedUtility(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UtilityListBox.DoubleClick, RunProgramButton.Click
+
+    End Sub
 End Class
