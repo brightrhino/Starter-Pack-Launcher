@@ -1,5 +1,5 @@
 =======================================
-README for the Lazy Newb Pack GUI V18.3
+README for the Lazy Newb Pack GUI V18.4
 =======================================
 
 The Lazy Newb Pack is an open-source third party launcher for the game Dwarf Fortress
