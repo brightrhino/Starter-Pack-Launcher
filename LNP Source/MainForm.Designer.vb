@@ -62,8 +62,6 @@ Partial Class MainForm
         Me.GraphicsTab = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.CurrentGraphicsLabel = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.OpenGraphicsFolderButton = New System.Windows.Forms.Button()
         Me.UpdateGraphicsListButton = New System.Windows.Forms.Button()
         Me.UtilitiesTab = New System.Windows.Forms.TabPage()
         Me.AdvancedTab = New System.Windows.Forms.TabPage()
@@ -118,7 +116,6 @@ Partial Class MainForm
         Me.GroupBox1.SuspendLayout()
         Me.GraphicsTab.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.UtilitiesTab.SuspendLayout()
         Me.AdvancedTab.SuspendLayout()
         Me.SaveGroupBox.SuspendLayout()
@@ -164,21 +161,23 @@ Partial Class MainForm
         '
         'GraphicsGroupBox
         '
+        Me.GraphicsGroupBox.Controls.Add(Me.UpdateGraphicsListButton)
         Me.GraphicsGroupBox.Controls.Add(Me.TrueTypeButton)
+        Me.GraphicsGroupBox.Controls.Add(Me.SimplifyGraphicsButtons)
+        Me.GraphicsGroupBox.Controls.Add(Me.GraphicsListBox)
         Me.GraphicsGroupBox.Controls.Add(Me.UpdateSaveGamesButton)
         Me.GraphicsGroupBox.Controls.Add(Me.ChangeGraphicsButton)
-        Me.GraphicsGroupBox.Controls.Add(Me.GraphicsListBox)
         Me.GraphicsGroupBox.Location = New System.Drawing.Point(6, 54)
         Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GraphicsGroupBox.Name = "GraphicsGroupBox"
-        Me.GraphicsGroupBox.Size = New System.Drawing.Size(280, 197)
+        Me.GraphicsGroupBox.Size = New System.Drawing.Size(280, 273)
         Me.GraphicsGroupBox.TabIndex = 1
         Me.GraphicsGroupBox.TabStop = False
         Me.GraphicsGroupBox.Text = "Change Graphics"
         '
         'TrueTypeButton
         '
-        Me.TrueTypeButton.Location = New System.Drawing.Point(6, 166)
+        Me.TrueTypeButton.Location = New System.Drawing.Point(6, 213)
         Me.TrueTypeButton.Name = "TrueTypeButton"
         Me.TrueTypeButton.Size = New System.Drawing.Size(268, 23)
         Me.TrueTypeButton.TabIndex = 5
@@ -188,7 +187,7 @@ Partial Class MainForm
         '
         'UpdateSaveGamesButton
         '
-        Me.UpdateSaveGamesButton.Location = New System.Drawing.Point(143, 137)
+        Me.UpdateSaveGamesButton.Location = New System.Drawing.Point(143, 184)
         Me.UpdateSaveGamesButton.Name = "UpdateSaveGamesButton"
         Me.UpdateSaveGamesButton.Size = New System.Drawing.Size(131, 23)
         Me.UpdateSaveGamesButton.TabIndex = 4
@@ -198,7 +197,7 @@ Partial Class MainForm
         '
         'ChangeGraphicsButton
         '
-        Me.ChangeGraphicsButton.Location = New System.Drawing.Point(6, 137)
+        Me.ChangeGraphicsButton.Location = New System.Drawing.Point(6, 184)
         Me.ChangeGraphicsButton.Name = "ChangeGraphicsButton"
         Me.ChangeGraphicsButton.Size = New System.Drawing.Size(131, 23)
         Me.ChangeGraphicsButton.TabIndex = 3
@@ -211,12 +210,12 @@ Partial Class MainForm
         Me.GraphicsListBox.FormattingEnabled = True
         Me.GraphicsListBox.Location = New System.Drawing.Point(6, 19)
         Me.GraphicsListBox.Name = "GraphicsListBox"
-        Me.GraphicsListBox.Size = New System.Drawing.Size(268, 108)
+        Me.GraphicsListBox.Size = New System.Drawing.Size(268, 147)
         Me.GraphicsListBox.TabIndex = 2
         '
         'SimplifyGraphicsButtons
         '
-        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(143, 44)
+        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(144, 242)
         Me.SimplifyGraphicsButtons.Name = "SimplifyGraphicsButtons"
         Me.SimplifyGraphicsButtons.Size = New System.Drawing.Size(131, 23)
         Me.SimplifyGraphicsButtons.TabIndex = 9
@@ -528,7 +527,6 @@ Partial Class MainForm
         'GraphicsTab
         '
         Me.GraphicsTab.Controls.Add(Me.GroupBox5)
-        Me.GraphicsTab.Controls.Add(Me.GroupBox3)
         Me.GraphicsTab.Controls.Add(Me.GraphicsGroupBox)
         Me.GraphicsTab.Location = New System.Drawing.Point(4, 22)
         Me.GraphicsTab.Name = "GraphicsTab"
@@ -561,32 +559,9 @@ Partial Class MainForm
         Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
         Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.OpenGraphicsFolderButton)
-        Me.GroupBox3.Controls.Add(Me.UpdateGraphicsListButton)
-        Me.GroupBox3.Controls.Add(Me.SimplifyGraphicsButtons)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 251)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(280, 73)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Advanced"
-        '
-        'OpenGraphicsFolderButton
-        '
-        Me.OpenGraphicsFolderButton.Location = New System.Drawing.Point(6, 15)
-        Me.OpenGraphicsFolderButton.Name = "OpenGraphicsFolderButton"
-        Me.OpenGraphicsFolderButton.Size = New System.Drawing.Size(268, 23)
-        Me.OpenGraphicsFolderButton.TabIndex = 7
-        Me.OpenGraphicsFolderButton.Text = "Open Graphics Folder"
-        Me.ToolTipMaker.SetToolTip(Me.OpenGraphicsFolderButton, "Add your own graphic sets here!")
-        Me.OpenGraphicsFolderButton.UseVisualStyleBackColor = True
-        '
         'UpdateGraphicsListButton
         '
-        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(6, 44)
+        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(7, 242)
         Me.UpdateGraphicsListButton.Name = "UpdateGraphicsListButton"
         Me.UpdateGraphicsListButton.Size = New System.Drawing.Size(130, 23)
         Me.UpdateGraphicsListButton.TabIndex = 8
@@ -1038,7 +1013,6 @@ Partial Class MainForm
         Me.GraphicsTab.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
         Me.UtilitiesTab.ResumeLayout(False)
         Me.AdvancedTab.ResumeLayout(False)
         Me.SaveGroupBox.ResumeLayout(False)
@@ -1103,8 +1077,6 @@ Partial Class MainForm
     Friend WithEvents UpdateSaveGamesButton As System.Windows.Forms.Button
     Friend WithEvents SimplifyGraphicsButtons As System.Windows.Forms.Button
     Friend WithEvents UpdateGraphicsListButton As System.Windows.Forms.Button
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents OpenGraphicsFolderButton As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents DeleteKeyBindingButton As System.Windows.Forms.Button
     Friend WithEvents RefreshKBButton As System.Windows.Forms.Button

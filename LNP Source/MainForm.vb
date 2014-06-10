@@ -707,7 +707,7 @@ Public Class MainForm
         FileWorking.RunFile("", utilityD)
     End Sub
 
-    Private Sub OpenGraphicsFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OpenGraphicsFolderButton.Click
+    Private Sub OpenGraphicsFolderButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         FileWorking.RunFile("", graphicsD)
     End Sub
 
