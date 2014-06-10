@@ -12,7 +12,7 @@ Development
 -----------
 The Launcher was originally developed by Lucas Paquette/LucasUP in 2010, who later released it under the GPL3 in February 2013.  
 
-Building the project from source requires Microsoft Visual Basic 2008 Express or higher (open "LazyNewbPackGUI.vbproj").  The folder ``./bin/debug/`` is used when you export/test the program, it includes the LNP folder structure - which is explained below.  Daveralph1234 maintains the current branch, hosted `on DFFD`_.
+Building the project from source requires Microsoft Visual Basic 2010 Express or higher (open "LazyNewbPackGUI.vbproj").  The folder ``./bin/debug/`` is used when you export/test the program, it includes the LNP folder structure - which is explained below.  Daveralph1234 maintains the current branch, hosted `on DFFD`_.
 
 .. _`on DFFD`: http://dffd.wimbli.com/file.php?id=7426
 
