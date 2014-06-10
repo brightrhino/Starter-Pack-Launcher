@@ -104,8 +104,8 @@ Partial Class MainForm
         Me.ToolTipMaker = New System.Windows.Forms.ToolTip(Me.components)
         Me.InitEditorButton = New System.Windows.Forms.Button()
         Me.DefaultsButton = New System.Windows.Forms.Button()
-        Me.PictureBox = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -970,18 +970,18 @@ Partial Class MainForm
         Me.ToolTipMaker.SetToolTip(Me.DefaultsButton, "Reset everything to default settings")
         Me.DefaultsButton.UseVisualStyleBackColor = True
         '
-        'PictureBox
-        '
-        Me.PictureBox.Image = Global.LazyNewbPack.My.Resources.Resources.LNPSMALL
-        Me.PictureBox.Location = New System.Drawing.Point(32, 28)
-        Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(260, 43)
-        Me.PictureBox.TabIndex = 4
-        Me.PictureBox.TabStop = False
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBox
+        '
+        Me.PictureBox.Image = Global.LazyNewbPack.My.Resources.Resources.LNPSMALL
+        Me.PictureBox.Location = New System.Drawing.Point(22, 32)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(300, 43)
+        Me.PictureBox.TabIndex = 4
+        Me.PictureBox.TabStop = False
         '
         'MainForm
         '
@@ -1000,7 +1000,7 @@ Partial Class MainForm
         Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Lazy Newb Pack GUI"
+        Me.Text = "Starter Pack Launcher"
         Me.GraphicsGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.PerformLayout()
