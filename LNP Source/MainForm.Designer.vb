@@ -22,93 +22,90 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.CaveInButton = New System.Windows.Forms.Button
-        Me.WeatherButton = New System.Windows.Forms.Button
-        Me.TemperatureButton = New System.Windows.Forms.Button
-        Me.GraphicsGroupBox = New System.Windows.Forms.GroupBox
-        Me.TrueTypeButton = New System.Windows.Forms.Button
-        Me.UpdateSaveGamesButton = New System.Windows.Forms.Button
-        Me.ChangeGraphicsButton = New System.Windows.Forms.Button
-        Me.GraphicsListBox = New System.Windows.Forms.ListBox
-        Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button
-        Me.AquiferButton = New System.Windows.Forms.Button
-        Me.UtilityGroupBox = New System.Windows.Forms.GroupBox
-        Me.UtilityListBox = New System.Windows.Forms.ListView
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.OpenUtilityFolderButton = New System.Windows.Forms.Button
-        Me.RunProgramButton = New System.Windows.Forms.Button
-        Me.UpdateUtilsButton = New System.Windows.Forms.Button
-        Me.PlayDFButton = New System.Windows.Forms.Button
-        Me.TabControl1 = New System.Windows.Forms.TabControl
-        Me.OptionsTab = New System.Windows.Forms.TabPage
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox
-        Me.LiquidDepthButton = New System.Windows.Forms.Button
-        Me.VariedGroundButton = New System.Windows.Forms.Button
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox
-        Me.DeleteKeyBindingButton = New System.Windows.Forms.Button
-        Me.RefreshKBButton = New System.Windows.Forms.Button
-        Me.KeyBindingList = New System.Windows.Forms.ListBox
-        Me.LoadKeyBindingButton = New System.Windows.Forms.Button
-        Me.SaveKeyBindingButton = New System.Windows.Forms.Button
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.EntombPetsButton = New System.Windows.Forms.Button
-        Me.InvadersButton = New System.Windows.Forms.Button
-        Me.ArtifactsButton = New System.Windows.Forms.Button
-        Me.LaborButton = New System.Windows.Forms.Button
-        Me.ChildCapButton = New System.Windows.Forms.Button
-        Me.PopCapButton = New System.Windows.Forms.Button
-        Me.GraphicsTab = New System.Windows.Forms.TabPage
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.OpenGraphicsFolderButton = New System.Windows.Forms.Button
-        Me.UpdateGraphicsListButton = New System.Windows.Forms.Button
-        Me.UtilitiesTab = New System.Windows.Forms.TabPage
-        Me.AdvancedTab = New System.Windows.Forms.TabPage
-        Me.CloseOnLaunchButton = New System.Windows.Forms.Button
-        Me.SaveGroupBox = New System.Windows.Forms.GroupBox
-        Me.OpenSaveGameButton = New System.Windows.Forms.Button
-        Me.PauseOnLoadButton = New System.Windows.Forms.Button
-        Me.InitialSaveButton = New System.Windows.Forms.Button
-        Me.CompressSavesButton = New System.Windows.Forms.Button
-        Me.AutosavePauseButton = New System.Windows.Forms.Button
-        Me.AutoBackupButton = New System.Windows.Forms.Button
-        Me.AutoSaveButton = New System.Windows.Forms.Button
-        Me.ProcessPriorityButton = New System.Windows.Forms.Button
-        Me.FPSGroupBox = New System.Windows.Forms.GroupBox
-        Me.GFPS_Capper = New System.Windows.Forms.TextBox
-        Me.FPS_Capper = New System.Windows.Forms.TextBox
-        Me.GFPS_CapLabel = New System.Windows.Forms.Label
-        Me.FPS_CapLabel = New System.Windows.Forms.Label
-        Me.FPSCounterButton = New System.Windows.Forms.Button
-        Me.StartupGroupBox = New System.Windows.Forms.GroupBox
-        Me.StartWindowedButton = New System.Windows.Forms.Button
-        Me.IntroMovieButton = New System.Windows.Forms.Button
-        Me.SoundGroupBox = New System.Windows.Forms.GroupBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.VolumeBox = New System.Windows.Forms.TextBox
-        Me.SoundButton = New System.Windows.Forms.Button
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ReloadParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ResaveParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.RunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.DwarfFortressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.InitTextEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.LinksToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.HowToUseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CaveInButton = New System.Windows.Forms.Button()
+        Me.WeatherButton = New System.Windows.Forms.Button()
+        Me.TemperatureButton = New System.Windows.Forms.Button()
+        Me.GraphicsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.TrueTypeButton = New System.Windows.Forms.Button()
+        Me.UpdateSaveGamesButton = New System.Windows.Forms.Button()
+        Me.ChangeGraphicsButton = New System.Windows.Forms.Button()
+        Me.GraphicsListBox = New System.Windows.Forms.ListBox()
+        Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button()
+        Me.AquiferButton = New System.Windows.Forms.Button()
+        Me.UtilityGroupBox = New System.Windows.Forms.GroupBox()
+        Me.UtilityListBox = New System.Windows.Forms.ListView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.RunProgramButton = New System.Windows.Forms.Button()
+        Me.UpdateUtilsButton = New System.Windows.Forms.Button()
+        Me.PlayDFButton = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.OptionsTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.LiquidDepthButton = New System.Windows.Forms.Button()
+        Me.VariedGroundButton = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DeleteKeyBindingButton = New System.Windows.Forms.Button()
+        Me.RefreshKBButton = New System.Windows.Forms.Button()
+        Me.KeyBindingList = New System.Windows.Forms.ListBox()
+        Me.LoadKeyBindingButton = New System.Windows.Forms.Button()
+        Me.SaveKeyBindingButton = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.EntombPetsButton = New System.Windows.Forms.Button()
+        Me.InvadersButton = New System.Windows.Forms.Button()
+        Me.ArtifactsButton = New System.Windows.Forms.Button()
+        Me.LaborButton = New System.Windows.Forms.Button()
+        Me.ChildCapButton = New System.Windows.Forms.Button()
+        Me.PopCapButton = New System.Windows.Forms.Button()
+        Me.GraphicsTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label()
+        Me.UpdateGraphicsListButton = New System.Windows.Forms.Button()
+        Me.UtilitiesTab = New System.Windows.Forms.TabPage()
+        Me.AdvancedTab = New System.Windows.Forms.TabPage()
+        Me.CloseOnLaunchButton = New System.Windows.Forms.Button()
+        Me.SaveGroupBox = New System.Windows.Forms.GroupBox()
+        Me.OpenSaveGameButton = New System.Windows.Forms.Button()
+        Me.PauseOnLoadButton = New System.Windows.Forms.Button()
+        Me.InitialSaveButton = New System.Windows.Forms.Button()
+        Me.CompressSavesButton = New System.Windows.Forms.Button()
+        Me.AutosavePauseButton = New System.Windows.Forms.Button()
+        Me.AutoBackupButton = New System.Windows.Forms.Button()
+        Me.AutoSaveButton = New System.Windows.Forms.Button()
+        Me.ProcessPriorityButton = New System.Windows.Forms.Button()
+        Me.FPSGroupBox = New System.Windows.Forms.GroupBox()
+        Me.GFPS_Capper = New System.Windows.Forms.TextBox()
+        Me.FPS_Capper = New System.Windows.Forms.TextBox()
+        Me.GFPS_CapLabel = New System.Windows.Forms.Label()
+        Me.FPS_CapLabel = New System.Windows.Forms.Label()
+        Me.FPSCounterButton = New System.Windows.Forms.Button()
+        Me.StartupGroupBox = New System.Windows.Forms.GroupBox()
+        Me.StartWindowedButton = New System.Windows.Forms.Button()
+        Me.IntroMovieButton = New System.Windows.Forms.Button()
+        Me.SoundGroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.VolumeBox = New System.Windows.Forms.TextBox()
+        Me.SoundButton = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReloadParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResaveParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DwarfFortressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InitTextEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LinksToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HowToUseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTipMaker = New System.Windows.Forms.ToolTip(Me.components)
-        Me.InitEditorButton = New System.Windows.Forms.Button
-        Me.DefaultsButton = New System.Windows.Forms.Button
-        Me.PictureBox = New System.Windows.Forms.PictureBox
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.InitEditorButton = New System.Windows.Forms.Button()
+        Me.DefaultsButton = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -119,7 +116,6 @@ Partial Class MainForm
         Me.GroupBox1.SuspendLayout()
         Me.GraphicsTab.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.UtilitiesTab.SuspendLayout()
         Me.AdvancedTab.SuspendLayout()
         Me.SaveGroupBox.SuspendLayout()
@@ -132,10 +128,10 @@ Partial Class MainForm
         '
         'CaveInButton
         '
-        Me.CaveInButton.Location = New System.Drawing.Point(191, 54)
-        Me.CaveInButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.CaveInButton.Location = New System.Drawing.Point(143, 44)
+        Me.CaveInButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.CaveInButton.Name = "CaveInButton"
-        Me.CaveInButton.Size = New System.Drawing.Size(175, 28)
+        Me.CaveInButton.Size = New System.Drawing.Size(131, 23)
         Me.CaveInButton.TabIndex = 6
         Me.CaveInButton.Text = "Cave-ins"
         Me.ToolTipMaker.SetToolTip(Me.CaveInButton, "Whether unsupported bits of terrain will collapse.")
@@ -143,10 +139,10 @@ Partial Class MainForm
         '
         'WeatherButton
         '
-        Me.WeatherButton.Location = New System.Drawing.Point(191, 85)
-        Me.WeatherButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.WeatherButton.Location = New System.Drawing.Point(143, 69)
+        Me.WeatherButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.WeatherButton.Name = "WeatherButton"
-        Me.WeatherButton.Size = New System.Drawing.Size(175, 28)
+        Me.WeatherButton.Size = New System.Drawing.Size(131, 23)
         Me.WeatherButton.TabIndex = 4
         Me.WeatherButton.Text = "Weather"
         Me.ToolTipMaker.SetToolTip(Me.WeatherButton, "Rain/Snow/Etc" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Turn off for better FPS")
@@ -154,10 +150,10 @@ Partial Class MainForm
         '
         'TemperatureButton
         '
-        Me.TemperatureButton.Location = New System.Drawing.Point(8, 85)
-        Me.TemperatureButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.TemperatureButton.Location = New System.Drawing.Point(6, 69)
+        Me.TemperatureButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TemperatureButton.Name = "TemperatureButton"
-        Me.TemperatureButton.Size = New System.Drawing.Size(175, 28)
+        Me.TemperatureButton.Size = New System.Drawing.Size(131, 23)
         Me.TemperatureButton.TabIndex = 3
         Me.TemperatureButton.Text = "Temperature"
         Me.ToolTipMaker.SetToolTip(Me.TemperatureButton, "If things will burn/melt/freeze/etc" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Turn off for better FPS")
@@ -165,25 +161,25 @@ Partial Class MainForm
         '
         'GraphicsGroupBox
         '
+        Me.GraphicsGroupBox.Controls.Add(Me.UpdateGraphicsListButton)
         Me.GraphicsGroupBox.Controls.Add(Me.TrueTypeButton)
+        Me.GraphicsGroupBox.Controls.Add(Me.SimplifyGraphicsButtons)
+        Me.GraphicsGroupBox.Controls.Add(Me.GraphicsListBox)
         Me.GraphicsGroupBox.Controls.Add(Me.UpdateSaveGamesButton)
         Me.GraphicsGroupBox.Controls.Add(Me.ChangeGraphicsButton)
-        Me.GraphicsGroupBox.Controls.Add(Me.GraphicsListBox)
-        Me.GraphicsGroupBox.Location = New System.Drawing.Point(8, 66)
-        Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GraphicsGroupBox.Location = New System.Drawing.Point(6, 54)
+        Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GraphicsGroupBox.Name = "GraphicsGroupBox"
-        Me.GraphicsGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.GraphicsGroupBox.Size = New System.Drawing.Size(373, 242)
+        Me.GraphicsGroupBox.Size = New System.Drawing.Size(280, 273)
         Me.GraphicsGroupBox.TabIndex = 1
         Me.GraphicsGroupBox.TabStop = False
         Me.GraphicsGroupBox.Text = "Change Graphics"
         '
         'TrueTypeButton
         '
-        Me.TrueTypeButton.Location = New System.Drawing.Point(8, 204)
-        Me.TrueTypeButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.TrueTypeButton.Location = New System.Drawing.Point(6, 213)
         Me.TrueTypeButton.Name = "TrueTypeButton"
-        Me.TrueTypeButton.Size = New System.Drawing.Size(357, 28)
+        Me.TrueTypeButton.Size = New System.Drawing.Size(268, 23)
         Me.TrueTypeButton.TabIndex = 5
         Me.TrueTypeButton.Text = "TrueType Fonts"
         Me.ToolTipMaker.SetToolTip(Me.TrueTypeButton, "Use TrueType fonts? Or use tileset for text?")
@@ -191,10 +187,9 @@ Partial Class MainForm
         '
         'UpdateSaveGamesButton
         '
-        Me.UpdateSaveGamesButton.Location = New System.Drawing.Point(191, 169)
-        Me.UpdateSaveGamesButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.UpdateSaveGamesButton.Location = New System.Drawing.Point(143, 184)
         Me.UpdateSaveGamesButton.Name = "UpdateSaveGamesButton"
-        Me.UpdateSaveGamesButton.Size = New System.Drawing.Size(175, 28)
+        Me.UpdateSaveGamesButton.Size = New System.Drawing.Size(131, 23)
         Me.UpdateSaveGamesButton.TabIndex = 4
         Me.UpdateSaveGamesButton.Text = "Update Savegames"
         Me.ToolTipMaker.SetToolTip(Me.UpdateSaveGamesButton, "Install current graphics/raws to all savegames")
@@ -202,10 +197,9 @@ Partial Class MainForm
         '
         'ChangeGraphicsButton
         '
-        Me.ChangeGraphicsButton.Location = New System.Drawing.Point(8, 169)
-        Me.ChangeGraphicsButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.ChangeGraphicsButton.Location = New System.Drawing.Point(6, 184)
         Me.ChangeGraphicsButton.Name = "ChangeGraphicsButton"
-        Me.ChangeGraphicsButton.Size = New System.Drawing.Size(175, 28)
+        Me.ChangeGraphicsButton.Size = New System.Drawing.Size(131, 23)
         Me.ChangeGraphicsButton.TabIndex = 3
         Me.ChangeGraphicsButton.Text = "Install Graphics"
         Me.ToolTipMaker.SetToolTip(Me.ChangeGraphicsButton, "Install Graphics")
@@ -214,19 +208,16 @@ Partial Class MainForm
         'GraphicsListBox
         '
         Me.GraphicsListBox.FormattingEnabled = True
-        Me.GraphicsListBox.ItemHeight = 16
-        Me.GraphicsListBox.Location = New System.Drawing.Point(8, 23)
-        Me.GraphicsListBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.GraphicsListBox.Location = New System.Drawing.Point(6, 19)
         Me.GraphicsListBox.Name = "GraphicsListBox"
-        Me.GraphicsListBox.Size = New System.Drawing.Size(356, 132)
+        Me.GraphicsListBox.Size = New System.Drawing.Size(268, 147)
         Me.GraphicsListBox.TabIndex = 2
         '
         'SimplifyGraphicsButtons
         '
-        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(191, 54)
-        Me.SimplifyGraphicsButtons.Margin = New System.Windows.Forms.Padding(4)
+        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(144, 242)
         Me.SimplifyGraphicsButtons.Name = "SimplifyGraphicsButtons"
-        Me.SimplifyGraphicsButtons.Size = New System.Drawing.Size(175, 28)
+        Me.SimplifyGraphicsButtons.Size = New System.Drawing.Size(131, 23)
         Me.SimplifyGraphicsButtons.TabIndex = 9
         Me.SimplifyGraphicsButtons.Text = "Simplify Graphic Folders"
         Me.ToolTipMaker.SetToolTip(Me.SimplifyGraphicsButtons, "Delete unnecessary graphics files (Saves on space. Useful for re-packaging)")
@@ -234,10 +225,9 @@ Partial Class MainForm
         '
         'AquiferButton
         '
-        Me.AquiferButton.Location = New System.Drawing.Point(8, 23)
-        Me.AquiferButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.AquiferButton.Location = New System.Drawing.Point(6, 19)
         Me.AquiferButton.Name = "AquiferButton"
-        Me.AquiferButton.Size = New System.Drawing.Size(175, 28)
+        Me.AquiferButton.Size = New System.Drawing.Size(131, 23)
         Me.AquiferButton.TabIndex = 9
         Me.AquiferButton.Text = "Aquifers"
         Me.ToolTipMaker.SetToolTip(Me.AquiferButton, "Whether newly generated worlds will have aquifers in them (Infinite underground s" & _
@@ -248,14 +238,12 @@ Partial Class MainForm
         '
         Me.UtilityGroupBox.Controls.Add(Me.UtilityListBox)
         Me.UtilityGroupBox.Controls.Add(Me.Label2)
-        Me.UtilityGroupBox.Controls.Add(Me.OpenUtilityFolderButton)
         Me.UtilityGroupBox.Controls.Add(Me.RunProgramButton)
         Me.UtilityGroupBox.Controls.Add(Me.UpdateUtilsButton)
-        Me.UtilityGroupBox.Location = New System.Drawing.Point(8, 7)
-        Me.UtilityGroupBox.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.UtilityGroupBox.Location = New System.Drawing.Point(6, 6)
+        Me.UtilityGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.UtilityGroupBox.Name = "UtilityGroupBox"
-        Me.UtilityGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.UtilityGroupBox.Size = New System.Drawing.Size(373, 395)
+        Me.UtilityGroupBox.Size = New System.Drawing.Size(280, 321)
         Me.UtilityGroupBox.TabIndex = 3
         Me.UtilityGroupBox.TabStop = False
         Me.UtilityGroupBox.Text = "Programs/Utilities"
@@ -263,10 +251,11 @@ Partial Class MainForm
         'UtilityListBox
         '
         Me.UtilityListBox.CheckBoxes = True
-        Me.UtilityListBox.Location = New System.Drawing.Point(11, 78)
+        Me.UtilityListBox.Location = New System.Drawing.Point(8, 63)
+        Me.UtilityListBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UtilityListBox.MultiSelect = False
         Me.UtilityListBox.Name = "UtilityListBox"
-        Me.UtilityListBox.Size = New System.Drawing.Size(355, 276)
+        Me.UtilityListBox.Size = New System.Drawing.Size(267, 253)
         Me.UtilityListBox.TabIndex = 7
         Me.UtilityListBox.UseCompatibleStateImageBehavior = False
         Me.UtilityListBox.View = System.Windows.Forms.View.List
@@ -275,29 +264,18 @@ Partial Class MainForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 55)
+        Me.Label2.Location = New System.Drawing.Point(5, 45)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(228, 20)
+        Me.Label2.Size = New System.Drawing.Size(187, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Check utilities to run on launch:"
         '
-        'OpenUtilityFolderButton
-        '
-        Me.OpenUtilityFolderButton.Location = New System.Drawing.Point(191, 23)
-        Me.OpenUtilityFolderButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.OpenUtilityFolderButton.Name = "OpenUtilityFolderButton"
-        Me.OpenUtilityFolderButton.Size = New System.Drawing.Size(175, 28)
-        Me.OpenUtilityFolderButton.TabIndex = 1
-        Me.OpenUtilityFolderButton.Text = "Open Utilities Folder"
-        Me.ToolTipMaker.SetToolTip(Me.OpenUtilityFolderButton, "Open the utilities folder")
-        Me.OpenUtilityFolderButton.UseVisualStyleBackColor = True
-        '
         'RunProgramButton
         '
-        Me.RunProgramButton.Location = New System.Drawing.Point(8, 23)
-        Me.RunProgramButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.RunProgramButton.Location = New System.Drawing.Point(8, 19)
         Me.RunProgramButton.Name = "RunProgramButton"
-        Me.RunProgramButton.Size = New System.Drawing.Size(175, 28)
+        Me.RunProgramButton.Size = New System.Drawing.Size(129, 23)
         Me.RunProgramButton.TabIndex = 0
         Me.RunProgramButton.Text = "Run Program"
         Me.ToolTipMaker.SetToolTip(Me.RunProgramButton, "Runs selected program. You can also doubleclick on the program name!")
@@ -305,10 +283,9 @@ Partial Class MainForm
         '
         'UpdateUtilsButton
         '
-        Me.UpdateUtilsButton.Location = New System.Drawing.Point(8, 359)
-        Me.UpdateUtilsButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.UpdateUtilsButton.Location = New System.Drawing.Point(143, 19)
         Me.UpdateUtilsButton.Name = "UpdateUtilsButton"
-        Me.UpdateUtilsButton.Size = New System.Drawing.Size(358, 28)
+        Me.UpdateUtilsButton.Size = New System.Drawing.Size(132, 23)
         Me.UpdateUtilsButton.TabIndex = 3
         Me.UpdateUtilsButton.Text = "Reset List"
         Me.ToolTipMaker.SetToolTip(Me.UpdateUtilsButton, "Refresh the list of utilities")
@@ -316,10 +293,9 @@ Partial Class MainForm
         '
         'PlayDFButton
         '
-        Me.PlayDFButton.Location = New System.Drawing.Point(16, 549)
-        Me.PlayDFButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.PlayDFButton.Location = New System.Drawing.Point(12, 446)
         Me.PlayDFButton.Name = "PlayDFButton"
-        Me.PlayDFButton.Size = New System.Drawing.Size(152, 31)
+        Me.PlayDFButton.Size = New System.Drawing.Size(114, 25)
         Me.PlayDFButton.TabIndex = 1
         Me.PlayDFButton.Text = "Play Dwarf Fortress!"
         Me.ToolTipMaker.SetToolTip(Me.PlayDFButton, "Play the game!")
@@ -328,14 +304,13 @@ Partial Class MainForm
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.OptionsTab)
+        Me.TabControl1.Controls.Add(Me.AdvancedTab)
         Me.TabControl1.Controls.Add(Me.GraphicsTab)
         Me.TabControl1.Controls.Add(Me.UtilitiesTab)
-        Me.TabControl1.Controls.Add(Me.AdvancedTab)
-        Me.TabControl1.Location = New System.Drawing.Point(16, 100)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 81)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(400, 442)
+        Me.TabControl1.Size = New System.Drawing.Size(300, 359)
         Me.TabControl1.TabIndex = 0
         Me.ToolTipMaker.SetToolTip(Me.TabControl1, "What it says on the tin")
         '
@@ -345,11 +320,10 @@ Partial Class MainForm
         Me.OptionsTab.Controls.Add(Me.GroupBox4)
         Me.OptionsTab.Controls.Add(Me.GroupBox2)
         Me.OptionsTab.Controls.Add(Me.GroupBox1)
-        Me.OptionsTab.Location = New System.Drawing.Point(4, 25)
-        Me.OptionsTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.OptionsTab.Location = New System.Drawing.Point(4, 22)
         Me.OptionsTab.Name = "OptionsTab"
-        Me.OptionsTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.OptionsTab.Size = New System.Drawing.Size(392, 413)
+        Me.OptionsTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.OptionsTab.Size = New System.Drawing.Size(292, 333)
         Me.OptionsTab.TabIndex = 0
         Me.OptionsTab.Text = "Options"
         Me.OptionsTab.UseVisualStyleBackColor = True
@@ -358,21 +332,19 @@ Partial Class MainForm
         '
         Me.GroupBox6.Controls.Add(Me.LiquidDepthButton)
         Me.GroupBox6.Controls.Add(Me.VariedGroundButton)
-        Me.GroupBox6.Location = New System.Drawing.Point(8, 195)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 158)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox6.Size = New System.Drawing.Size(373, 58)
+        Me.GroupBox6.Size = New System.Drawing.Size(280, 47)
         Me.GroupBox6.TabIndex = 11
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Display Options"
         '
         'LiquidDepthButton
         '
-        Me.LiquidDepthButton.Location = New System.Drawing.Point(10, 20)
-        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.LiquidDepthButton.Location = New System.Drawing.Point(8, 16)
+        Me.LiquidDepthButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.LiquidDepthButton.Name = "LiquidDepthButton"
-        Me.LiquidDepthButton.Size = New System.Drawing.Size(175, 28)
+        Me.LiquidDepthButton.Size = New System.Drawing.Size(131, 23)
         Me.LiquidDepthButton.TabIndex = 9
         Me.LiquidDepthButton.Text = "Liquid Depth"
         Me.ToolTipMaker.SetToolTip(Me.LiquidDepthButton, "Displays the depth of liquid using numbers from 1-7")
@@ -381,10 +353,10 @@ Partial Class MainForm
         'VariedGroundButton
         '
         Me.VariedGroundButton.BackColor = System.Drawing.Color.Transparent
-        Me.VariedGroundButton.Location = New System.Drawing.Point(192, 20)
-        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.VariedGroundButton.Location = New System.Drawing.Point(144, 16)
+        Me.VariedGroundButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.VariedGroundButton.Name = "VariedGroundButton"
-        Me.VariedGroundButton.Size = New System.Drawing.Size(175, 28)
+        Me.VariedGroundButton.Size = New System.Drawing.Size(131, 23)
         Me.VariedGroundButton.TabIndex = 10
         Me.VariedGroundButton.Text = "Varied Ground"
         Me.ToolTipMaker.SetToolTip(Me.VariedGroundButton, "If ground tiles use a variety of punctiation, or only periods")
@@ -397,21 +369,19 @@ Partial Class MainForm
         Me.GroupBox4.Controls.Add(Me.KeyBindingList)
         Me.GroupBox4.Controls.Add(Me.LoadKeyBindingButton)
         Me.GroupBox4.Controls.Add(Me.SaveKeyBindingButton)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 314)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 255)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox4.Size = New System.Drawing.Size(373, 91)
+        Me.GroupBox4.Size = New System.Drawing.Size(280, 74)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Key Bindings"
         '
         'DeleteKeyBindingButton
         '
-        Me.DeleteKeyBindingButton.Location = New System.Drawing.Point(283, 52)
-        Me.DeleteKeyBindingButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DeleteKeyBindingButton.Location = New System.Drawing.Point(212, 42)
         Me.DeleteKeyBindingButton.Name = "DeleteKeyBindingButton"
-        Me.DeleteKeyBindingButton.Size = New System.Drawing.Size(83, 25)
+        Me.DeleteKeyBindingButton.Size = New System.Drawing.Size(62, 20)
         Me.DeleteKeyBindingButton.TabIndex = 5
         Me.DeleteKeyBindingButton.Text = "Delete"
         Me.ToolTipMaker.SetToolTip(Me.DeleteKeyBindingButton, "Delete selected keybinding")
@@ -419,10 +389,9 @@ Partial Class MainForm
         '
         'RefreshKBButton
         '
-        Me.RefreshKBButton.Location = New System.Drawing.Point(283, 23)
-        Me.RefreshKBButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.RefreshKBButton.Location = New System.Drawing.Point(212, 19)
         Me.RefreshKBButton.Name = "RefreshKBButton"
-        Me.RefreshKBButton.Size = New System.Drawing.Size(83, 25)
+        Me.RefreshKBButton.Size = New System.Drawing.Size(62, 20)
         Me.RefreshKBButton.TabIndex = 4
         Me.RefreshKBButton.Text = "Refresh List"
         Me.ToolTipMaker.SetToolTip(Me.RefreshKBButton, "Refresh keybinding list")
@@ -431,19 +400,16 @@ Partial Class MainForm
         'KeyBindingList
         '
         Me.KeyBindingList.FormattingEnabled = True
-        Me.KeyBindingList.ItemHeight = 16
-        Me.KeyBindingList.Location = New System.Drawing.Point(8, 23)
-        Me.KeyBindingList.Margin = New System.Windows.Forms.Padding(4)
+        Me.KeyBindingList.Location = New System.Drawing.Point(6, 19)
         Me.KeyBindingList.Name = "KeyBindingList"
-        Me.KeyBindingList.Size = New System.Drawing.Size(173, 52)
+        Me.KeyBindingList.Size = New System.Drawing.Size(131, 43)
         Me.KeyBindingList.TabIndex = 1
         '
         'LoadKeyBindingButton
         '
-        Me.LoadKeyBindingButton.Location = New System.Drawing.Point(192, 23)
-        Me.LoadKeyBindingButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.LoadKeyBindingButton.Location = New System.Drawing.Point(144, 19)
         Me.LoadKeyBindingButton.Name = "LoadKeyBindingButton"
-        Me.LoadKeyBindingButton.Size = New System.Drawing.Size(84, 25)
+        Me.LoadKeyBindingButton.Size = New System.Drawing.Size(63, 20)
         Me.LoadKeyBindingButton.TabIndex = 2
         Me.LoadKeyBindingButton.Text = "Load"
         Me.ToolTipMaker.SetToolTip(Me.LoadKeyBindingButton, "Load selected keybindings")
@@ -451,10 +417,9 @@ Partial Class MainForm
         '
         'SaveKeyBindingButton
         '
-        Me.SaveKeyBindingButton.Location = New System.Drawing.Point(192, 52)
-        Me.SaveKeyBindingButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.SaveKeyBindingButton.Location = New System.Drawing.Point(144, 42)
         Me.SaveKeyBindingButton.Name = "SaveKeyBindingButton"
-        Me.SaveKeyBindingButton.Size = New System.Drawing.Size(84, 25)
+        Me.SaveKeyBindingButton.Size = New System.Drawing.Size(63, 20)
         Me.SaveKeyBindingButton.TabIndex = 3
         Me.SaveKeyBindingButton.Text = "Save Current As"
         Me.ToolTipMaker.SetToolTip(Me.SaveKeyBindingButton, "Save your current keybindings")
@@ -463,11 +428,9 @@ Partial Class MainForm
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.AquiferButton)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 251)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 204)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(192, 63)
+        Me.GroupBox2.Size = New System.Drawing.Size(144, 51)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Modifications"
@@ -483,11 +446,9 @@ Partial Class MainForm
         Me.GroupBox1.Controls.Add(Me.ChildCapButton)
         Me.GroupBox1.Controls.Add(Me.TemperatureButton)
         Me.GroupBox1.Controls.Add(Me.PopCapButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 5)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(373, 190)
+        Me.GroupBox1.Size = New System.Drawing.Size(280, 154)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gameplay Options"
@@ -495,10 +456,10 @@ Partial Class MainForm
         'EntombPetsButton
         '
         Me.EntombPetsButton.BackColor = System.Drawing.Color.Transparent
-        Me.EntombPetsButton.Location = New System.Drawing.Point(9, 117)
-        Me.EntombPetsButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.EntombPetsButton.Location = New System.Drawing.Point(7, 95)
+        Me.EntombPetsButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.EntombPetsButton.Name = "EntombPetsButton"
-        Me.EntombPetsButton.Size = New System.Drawing.Size(175, 28)
+        Me.EntombPetsButton.Size = New System.Drawing.Size(131, 23)
         Me.EntombPetsButton.TabIndex = 13
         Me.EntombPetsButton.Text = "Entomb Pets"
         Me.ToolTipMaker.SetToolTip(Me.EntombPetsButton, "Whether deceased pets should be entombed in coffins by default.")
@@ -506,10 +467,10 @@ Partial Class MainForm
         '
         'InvadersButton
         '
-        Me.InvadersButton.Location = New System.Drawing.Point(8, 53)
-        Me.InvadersButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.InvadersButton.Location = New System.Drawing.Point(6, 43)
+        Me.InvadersButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.InvadersButton.Name = "InvadersButton"
-        Me.InvadersButton.Size = New System.Drawing.Size(175, 28)
+        Me.InvadersButton.Size = New System.Drawing.Size(131, 23)
         Me.InvadersButton.TabIndex = 5
         Me.InvadersButton.Text = "Invaders"
         Me.ToolTipMaker.SetToolTip(Me.InvadersButton, "Whether invaders (goblins, megabeasts, etc) show up")
@@ -518,10 +479,10 @@ Partial Class MainForm
         'ArtifactsButton
         '
         Me.ArtifactsButton.BackColor = System.Drawing.Color.Transparent
-        Me.ArtifactsButton.Location = New System.Drawing.Point(192, 117)
-        Me.ArtifactsButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.ArtifactsButton.Location = New System.Drawing.Point(144, 95)
+        Me.ArtifactsButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.ArtifactsButton.Name = "ArtifactsButton"
-        Me.ArtifactsButton.Size = New System.Drawing.Size(175, 28)
+        Me.ArtifactsButton.Size = New System.Drawing.Size(131, 23)
         Me.ArtifactsButton.TabIndex = 12
         Me.ArtifactsButton.Text = "Artifacts"
         Me.ToolTipMaker.SetToolTip(Me.ArtifactsButton, "Whether dwarfs should enter artifact producing moods.")
@@ -529,10 +490,10 @@ Partial Class MainForm
         '
         'LaborButton
         '
-        Me.LaborButton.Location = New System.Drawing.Point(9, 151)
-        Me.LaborButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LaborButton.Location = New System.Drawing.Point(7, 123)
+        Me.LaborButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LaborButton.Name = "LaborButton"
-        Me.LaborButton.Size = New System.Drawing.Size(357, 28)
+        Me.LaborButton.Size = New System.Drawing.Size(268, 23)
         Me.LaborButton.TabIndex = 9
         Me.LaborButton.Text = "Labor"
         Me.ToolTipMaker.SetToolTip(Me.LaborButton, "What labors are enabled by default for new migrants.")
@@ -540,10 +501,10 @@ Partial Class MainForm
         '
         'ChildCapButton
         '
-        Me.ChildCapButton.Location = New System.Drawing.Point(191, 23)
-        Me.ChildCapButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.ChildCapButton.Location = New System.Drawing.Point(143, 19)
+        Me.ChildCapButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.ChildCapButton.Name = "ChildCapButton"
-        Me.ChildCapButton.Size = New System.Drawing.Size(175, 28)
+        Me.ChildCapButton.Size = New System.Drawing.Size(131, 23)
         Me.ChildCapButton.TabIndex = 2
         Me.ChildCapButton.Text = "Child Cap"
         Me.ToolTipMaker.SetToolTip(Me.ChildCapButton, "No new pregnancies when either value is exceeded." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "First is the maximum number of" & _
@@ -553,10 +514,10 @@ Partial Class MainForm
         '
         'PopCapButton
         '
-        Me.PopCapButton.Location = New System.Drawing.Point(8, 23)
-        Me.PopCapButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.PopCapButton.Location = New System.Drawing.Point(6, 19)
+        Me.PopCapButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PopCapButton.Name = "PopCapButton"
-        Me.PopCapButton.Size = New System.Drawing.Size(175, 28)
+        Me.PopCapButton.Size = New System.Drawing.Size(131, 23)
         Me.PopCapButton.TabIndex = 1
         Me.PopCapButton.Text = "Population Cap"
         Me.ToolTipMaker.SetToolTip(Me.PopCapButton, "You will only get more migrants if your population is less than this number. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Pr" & _
@@ -566,13 +527,11 @@ Partial Class MainForm
         'GraphicsTab
         '
         Me.GraphicsTab.Controls.Add(Me.GroupBox5)
-        Me.GraphicsTab.Controls.Add(Me.GroupBox3)
         Me.GraphicsTab.Controls.Add(Me.GraphicsGroupBox)
-        Me.GraphicsTab.Location = New System.Drawing.Point(4, 25)
-        Me.GraphicsTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.GraphicsTab.Location = New System.Drawing.Point(4, 22)
         Me.GraphicsTab.Name = "GraphicsTab"
-        Me.GraphicsTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.GraphicsTab.Size = New System.Drawing.Size(392, 413)
+        Me.GraphicsTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.GraphicsTab.Size = New System.Drawing.Size(292, 333)
         Me.GraphicsTab.TabIndex = 1
         Me.GraphicsTab.Text = "Graphics"
         Me.GraphicsTab.UseVisualStyleBackColor = True
@@ -580,11 +539,10 @@ Partial Class MainForm
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
-        Me.GroupBox5.Location = New System.Drawing.Point(8, 11)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 9)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(373, 52)
+        Me.GroupBox5.Size = New System.Drawing.Size(280, 42)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Currently installed graphics"
@@ -593,44 +551,19 @@ Partial Class MainForm
         '
         Me.CurrentGraphicsLabel.AutoSize = True
         Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(12, 19)
+        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(9, 15)
+        Me.CurrentGraphicsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
-        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(152, 18)
+        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(127, 15)
         Me.CurrentGraphicsLabel.TabIndex = 0
         Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
         Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.OpenGraphicsFolderButton)
-        Me.GroupBox3.Controls.Add(Me.UpdateGraphicsListButton)
-        Me.GroupBox3.Controls.Add(Me.SimplifyGraphicsButtons)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 309)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(373, 90)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Advanced"
-        '
-        'OpenGraphicsFolderButton
-        '
-        Me.OpenGraphicsFolderButton.Location = New System.Drawing.Point(8, 18)
-        Me.OpenGraphicsFolderButton.Margin = New System.Windows.Forms.Padding(4)
-        Me.OpenGraphicsFolderButton.Name = "OpenGraphicsFolderButton"
-        Me.OpenGraphicsFolderButton.Size = New System.Drawing.Size(357, 28)
-        Me.OpenGraphicsFolderButton.TabIndex = 7
-        Me.OpenGraphicsFolderButton.Text = "Open Graphics Folder"
-        Me.ToolTipMaker.SetToolTip(Me.OpenGraphicsFolderButton, "Add your own graphic sets here!")
-        Me.OpenGraphicsFolderButton.UseVisualStyleBackColor = True
-        '
         'UpdateGraphicsListButton
         '
-        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(8, 54)
-        Me.UpdateGraphicsListButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(7, 242)
         Me.UpdateGraphicsListButton.Name = "UpdateGraphicsListButton"
-        Me.UpdateGraphicsListButton.Size = New System.Drawing.Size(173, 28)
+        Me.UpdateGraphicsListButton.Size = New System.Drawing.Size(130, 23)
         Me.UpdateGraphicsListButton.TabIndex = 8
         Me.UpdateGraphicsListButton.Text = "Refresh List"
         Me.ToolTipMaker.SetToolTip(Me.UpdateGraphicsListButton, "Refreh the list of graphic packs")
@@ -639,11 +572,10 @@ Partial Class MainForm
         'UtilitiesTab
         '
         Me.UtilitiesTab.Controls.Add(Me.UtilityGroupBox)
-        Me.UtilitiesTab.Location = New System.Drawing.Point(4, 25)
-        Me.UtilitiesTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.UtilitiesTab.Location = New System.Drawing.Point(4, 22)
         Me.UtilitiesTab.Name = "UtilitiesTab"
-        Me.UtilitiesTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.UtilitiesTab.Size = New System.Drawing.Size(392, 413)
+        Me.UtilitiesTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.UtilitiesTab.Size = New System.Drawing.Size(292, 333)
         Me.UtilitiesTab.TabIndex = 2
         Me.UtilitiesTab.Text = "Utilities"
         Me.UtilitiesTab.UseVisualStyleBackColor = True
@@ -657,21 +589,19 @@ Partial Class MainForm
         Me.AdvancedTab.Controls.Add(Me.FPSGroupBox)
         Me.AdvancedTab.Controls.Add(Me.StartupGroupBox)
         Me.AdvancedTab.Controls.Add(Me.SoundGroupBox)
-        Me.AdvancedTab.Location = New System.Drawing.Point(4, 25)
-        Me.AdvancedTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.AdvancedTab.Location = New System.Drawing.Point(4, 22)
         Me.AdvancedTab.Name = "AdvancedTab"
-        Me.AdvancedTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.AdvancedTab.Size = New System.Drawing.Size(392, 413)
+        Me.AdvancedTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.AdvancedTab.Size = New System.Drawing.Size(292, 333)
         Me.AdvancedTab.TabIndex = 3
-        Me.AdvancedTab.Text = "Advanced"
+        Me.AdvancedTab.Text = "Settings"
         Me.AdvancedTab.UseVisualStyleBackColor = True
         '
         'CloseOnLaunchButton
         '
-        Me.CloseOnLaunchButton.Location = New System.Drawing.Point(16, 377)
-        Me.CloseOnLaunchButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.CloseOnLaunchButton.Location = New System.Drawing.Point(12, 306)
         Me.CloseOnLaunchButton.Name = "CloseOnLaunchButton"
-        Me.CloseOnLaunchButton.Size = New System.Drawing.Size(357, 28)
+        Me.CloseOnLaunchButton.Size = New System.Drawing.Size(268, 23)
         Me.CloseOnLaunchButton.TabIndex = 11
         Me.CloseOnLaunchButton.Text = "Close on launch"
         Me.ToolTipMaker.SetToolTip(Me.CloseOnLaunchButton, "Whether this GUI should close when Dwarf Fortress is launched")
@@ -686,21 +616,19 @@ Partial Class MainForm
         Me.SaveGroupBox.Controls.Add(Me.AutosavePauseButton)
         Me.SaveGroupBox.Controls.Add(Me.AutoBackupButton)
         Me.SaveGroupBox.Controls.Add(Me.AutoSaveButton)
-        Me.SaveGroupBox.Location = New System.Drawing.Point(8, 178)
-        Me.SaveGroupBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.SaveGroupBox.Location = New System.Drawing.Point(6, 145)
         Me.SaveGroupBox.Name = "SaveGroupBox"
-        Me.SaveGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.SaveGroupBox.Size = New System.Drawing.Size(373, 158)
+        Me.SaveGroupBox.Size = New System.Drawing.Size(280, 128)
         Me.SaveGroupBox.TabIndex = 9
         Me.SaveGroupBox.TabStop = False
         Me.SaveGroupBox.Text = "Save Options"
         '
         'OpenSaveGameButton
         '
-        Me.OpenSaveGameButton.Location = New System.Drawing.Point(8, 121)
-        Me.OpenSaveGameButton.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.OpenSaveGameButton.Location = New System.Drawing.Point(6, 98)
+        Me.OpenSaveGameButton.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.OpenSaveGameButton.Name = "OpenSaveGameButton"
-        Me.OpenSaveGameButton.Size = New System.Drawing.Size(357, 28)
+        Me.OpenSaveGameButton.Size = New System.Drawing.Size(268, 23)
         Me.OpenSaveGameButton.TabIndex = 12
         Me.OpenSaveGameButton.Text = "Open Savegame Folder"
         Me.ToolTipMaker.SetToolTip(Me.OpenSaveGameButton, "Open the savegame folder")
@@ -708,10 +636,10 @@ Partial Class MainForm
         '
         'PauseOnLoadButton
         '
-        Me.PauseOnLoadButton.Location = New System.Drawing.Point(191, 54)
-        Me.PauseOnLoadButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.PauseOnLoadButton.Location = New System.Drawing.Point(143, 44)
+        Me.PauseOnLoadButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.PauseOnLoadButton.Name = "PauseOnLoadButton"
-        Me.PauseOnLoadButton.Size = New System.Drawing.Size(175, 28)
+        Me.PauseOnLoadButton.Size = New System.Drawing.Size(131, 23)
         Me.PauseOnLoadButton.TabIndex = 3
         Me.PauseOnLoadButton.Text = "Pause on Load"
         Me.ToolTipMaker.SetToolTip(Me.PauseOnLoadButton, "Pauses the game as soon as it loads")
@@ -719,10 +647,10 @@ Partial Class MainForm
         '
         'InitialSaveButton
         '
-        Me.InitialSaveButton.Location = New System.Drawing.Point(191, 23)
-        Me.InitialSaveButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.InitialSaveButton.Location = New System.Drawing.Point(143, 19)
+        Me.InitialSaveButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.InitialSaveButton.Name = "InitialSaveButton"
-        Me.InitialSaveButton.Size = New System.Drawing.Size(175, 28)
+        Me.InitialSaveButton.Size = New System.Drawing.Size(131, 23)
         Me.InitialSaveButton.TabIndex = 1
         Me.InitialSaveButton.Text = "Initial Save"
         Me.ToolTipMaker.SetToolTip(Me.InitialSaveButton, "Saves as soon as you embark")
@@ -730,10 +658,10 @@ Partial Class MainForm
         '
         'CompressSavesButton
         '
-        Me.CompressSavesButton.Location = New System.Drawing.Point(191, 85)
-        Me.CompressSavesButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.CompressSavesButton.Location = New System.Drawing.Point(143, 69)
+        Me.CompressSavesButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.CompressSavesButton.Name = "CompressSavesButton"
-        Me.CompressSavesButton.Size = New System.Drawing.Size(175, 28)
+        Me.CompressSavesButton.Size = New System.Drawing.Size(131, 23)
         Me.CompressSavesButton.TabIndex = 5
         Me.CompressSavesButton.Text = "Compress Saves"
         Me.ToolTipMaker.SetToolTip(Me.CompressSavesButton, "Whether to compress saves (Keep this on unless you have bugs with your saves)")
@@ -741,10 +669,10 @@ Partial Class MainForm
         '
         'AutosavePauseButton
         '
-        Me.AutosavePauseButton.Location = New System.Drawing.Point(8, 54)
-        Me.AutosavePauseButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.AutosavePauseButton.Location = New System.Drawing.Point(6, 44)
+        Me.AutosavePauseButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.AutosavePauseButton.Name = "AutosavePauseButton"
-        Me.AutosavePauseButton.Size = New System.Drawing.Size(175, 28)
+        Me.AutosavePauseButton.Size = New System.Drawing.Size(131, 23)
         Me.AutosavePauseButton.TabIndex = 2
         Me.AutosavePauseButton.Text = "Pause on Save"
         Me.ToolTipMaker.SetToolTip(Me.AutosavePauseButton, "Pauses the game when it autosaves")
@@ -752,10 +680,10 @@ Partial Class MainForm
         '
         'AutoBackupButton
         '
-        Me.AutoBackupButton.Location = New System.Drawing.Point(8, 85)
-        Me.AutoBackupButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.AutoBackupButton.Location = New System.Drawing.Point(6, 69)
+        Me.AutoBackupButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.AutoBackupButton.Name = "AutoBackupButton"
-        Me.AutoBackupButton.Size = New System.Drawing.Size(175, 28)
+        Me.AutoBackupButton.Size = New System.Drawing.Size(131, 23)
         Me.AutoBackupButton.TabIndex = 4
         Me.AutoBackupButton.Text = "Backup Saves"
         Me.ToolTipMaker.SetToolTip(Me.AutoBackupButton, "If the game makes a backup of every save")
@@ -763,10 +691,10 @@ Partial Class MainForm
         '
         'AutoSaveButton
         '
-        Me.AutoSaveButton.Location = New System.Drawing.Point(8, 23)
-        Me.AutoSaveButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.AutoSaveButton.Location = New System.Drawing.Point(6, 19)
+        Me.AutoSaveButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.AutoSaveButton.Name = "AutoSaveButton"
-        Me.AutoSaveButton.Size = New System.Drawing.Size(175, 28)
+        Me.AutoSaveButton.Size = New System.Drawing.Size(131, 23)
         Me.AutoSaveButton.TabIndex = 0
         Me.AutoSaveButton.Text = "Autosave"
         Me.ToolTipMaker.SetToolTip(Me.AutoSaveButton, "How often the game will automatically save")
@@ -774,10 +702,9 @@ Partial Class MainForm
         '
         'ProcessPriorityButton
         '
-        Me.ProcessPriorityButton.Location = New System.Drawing.Point(16, 344)
-        Me.ProcessPriorityButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.ProcessPriorityButton.Location = New System.Drawing.Point(12, 280)
         Me.ProcessPriorityButton.Name = "ProcessPriorityButton"
-        Me.ProcessPriorityButton.Size = New System.Drawing.Size(357, 28)
+        Me.ProcessPriorityButton.Size = New System.Drawing.Size(268, 23)
         Me.ProcessPriorityButton.TabIndex = 10
         Me.ProcessPriorityButton.Text = "Processor Priority"
         Me.ToolTipMaker.SetToolTip(Me.ProcessPriorityButton, "How much priority your OS will put on Dwarf Fortress")
@@ -790,22 +717,20 @@ Partial Class MainForm
         Me.FPSGroupBox.Controls.Add(Me.GFPS_CapLabel)
         Me.FPSGroupBox.Controls.Add(Me.FPS_CapLabel)
         Me.FPSGroupBox.Controls.Add(Me.FPSCounterButton)
-        Me.FPSGroupBox.Location = New System.Drawing.Point(205, 7)
-        Me.FPSGroupBox.Margin = New System.Windows.Forms.Padding(4, 7, 8, 4)
+        Me.FPSGroupBox.Location = New System.Drawing.Point(154, 6)
+        Me.FPSGroupBox.Margin = New System.Windows.Forms.Padding(3, 6, 6, 3)
         Me.FPSGroupBox.Name = "FPSGroupBox"
-        Me.FPSGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.FPSGroupBox.Size = New System.Drawing.Size(176, 164)
+        Me.FPSGroupBox.Size = New System.Drawing.Size(132, 133)
         Me.FPSGroupBox.TabIndex = 8
         Me.FPSGroupBox.TabStop = False
         Me.FPSGroupBox.Text = "FPS"
         '
         'GFPS_Capper
         '
-        Me.GFPS_Capper.Location = New System.Drawing.Point(8, 124)
-        Me.GFPS_Capper.Margin = New System.Windows.Forms.Padding(4)
+        Me.GFPS_Capper.Location = New System.Drawing.Point(6, 101)
         Me.GFPS_Capper.MaxLength = 3
         Me.GFPS_Capper.Name = "GFPS_Capper"
-        Me.GFPS_Capper.Size = New System.Drawing.Size(32, 22)
+        Me.GFPS_Capper.Size = New System.Drawing.Size(25, 20)
         Me.GFPS_Capper.TabIndex = 6
         Me.GFPS_Capper.Text = "50"
         Me.ToolTipMaker.SetToolTip(Me.GFPS_Capper, "How fast the game visualy updates" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lower value may give small boost to FPS but wi" & _
@@ -813,11 +738,10 @@ Partial Class MainForm
         '
         'FPS_Capper
         '
-        Me.FPS_Capper.Location = New System.Drawing.Point(8, 76)
-        Me.FPS_Capper.Margin = New System.Windows.Forms.Padding(4)
+        Me.FPS_Capper.Location = New System.Drawing.Point(6, 62)
         Me.FPS_Capper.MaxLength = 3
         Me.FPS_Capper.Name = "FPS_Capper"
-        Me.FPS_Capper.Size = New System.Drawing.Size(32, 22)
+        Me.FPS_Capper.Size = New System.Drawing.Size(25, 20)
         Me.FPS_Capper.TabIndex = 5
         Me.FPS_Capper.Text = "100"
         Me.ToolTipMaker.SetToolTip(Me.FPS_Capper, "How fast the game runs")
@@ -825,29 +749,26 @@ Partial Class MainForm
         'GFPS_CapLabel
         '
         Me.GFPS_CapLabel.AutoSize = True
-        Me.GFPS_CapLabel.Location = New System.Drawing.Point(8, 105)
-        Me.GFPS_CapLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.GFPS_CapLabel.Location = New System.Drawing.Point(6, 85)
         Me.GFPS_CapLabel.Name = "GFPS_CapLabel"
-        Me.GFPS_CapLabel.Size = New System.Drawing.Size(132, 17)
+        Me.GFPS_CapLabel.Size = New System.Drawing.Size(100, 13)
         Me.GFPS_CapLabel.TabIndex = 2
         Me.GFPS_CapLabel.Text = "Graphical FPS Cap:"
         '
         'FPS_CapLabel
         '
         Me.FPS_CapLabel.AutoSize = True
-        Me.FPS_CapLabel.Location = New System.Drawing.Point(8, 57)
-        Me.FPS_CapLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.FPS_CapLabel.Location = New System.Drawing.Point(6, 46)
         Me.FPS_CapLabel.Name = "FPS_CapLabel"
-        Me.FPS_CapLabel.Size = New System.Drawing.Size(140, 17)
+        Me.FPS_CapLabel.Size = New System.Drawing.Size(107, 13)
         Me.FPS_CapLabel.TabIndex = 1
         Me.FPS_CapLabel.Text = "Calculation FPS Cap:"
         '
         'FPSCounterButton
         '
-        Me.FPSCounterButton.Location = New System.Drawing.Point(8, 23)
-        Me.FPSCounterButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.FPSCounterButton.Location = New System.Drawing.Point(6, 19)
         Me.FPSCounterButton.Name = "FPSCounterButton"
-        Me.FPSCounterButton.Size = New System.Drawing.Size(149, 28)
+        Me.FPSCounterButton.Size = New System.Drawing.Size(112, 23)
         Me.FPSCounterButton.TabIndex = 0
         Me.FPSCounterButton.Text = "FPS Counter: NO"
         Me.ToolTipMaker.SetToolTip(Me.FPSCounterButton, "Whether to show the FPS")
@@ -857,21 +778,19 @@ Partial Class MainForm
         '
         Me.StartupGroupBox.Controls.Add(Me.StartWindowedButton)
         Me.StartupGroupBox.Controls.Add(Me.IntroMovieButton)
-        Me.StartupGroupBox.Location = New System.Drawing.Point(8, 81)
-        Me.StartupGroupBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.StartupGroupBox.Location = New System.Drawing.Point(6, 66)
         Me.StartupGroupBox.Name = "StartupGroupBox"
-        Me.StartupGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.StartupGroupBox.Size = New System.Drawing.Size(189, 90)
+        Me.StartupGroupBox.Size = New System.Drawing.Size(142, 73)
         Me.StartupGroupBox.TabIndex = 7
         Me.StartupGroupBox.TabStop = False
         Me.StartupGroupBox.Text = "Startup"
         '
         'StartWindowedButton
         '
-        Me.StartWindowedButton.Location = New System.Drawing.Point(8, 54)
-        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.StartWindowedButton.Location = New System.Drawing.Point(6, 44)
+        Me.StartWindowedButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.StartWindowedButton.Name = "StartWindowedButton"
-        Me.StartWindowedButton.Size = New System.Drawing.Size(173, 28)
+        Me.StartWindowedButton.Size = New System.Drawing.Size(130, 23)
         Me.StartWindowedButton.TabIndex = 1
         Me.StartWindowedButton.Text = "Windowed"
         Me.ToolTipMaker.SetToolTip(Me.StartWindowedButton, "Start windowed or fullscreen")
@@ -879,10 +798,10 @@ Partial Class MainForm
         '
         'IntroMovieButton
         '
-        Me.IntroMovieButton.Location = New System.Drawing.Point(8, 23)
-        Me.IntroMovieButton.Margin = New System.Windows.Forms.Padding(4, 1, 4, 1)
+        Me.IntroMovieButton.Location = New System.Drawing.Point(6, 19)
+        Me.IntroMovieButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.IntroMovieButton.Name = "IntroMovieButton"
-        Me.IntroMovieButton.Size = New System.Drawing.Size(173, 28)
+        Me.IntroMovieButton.Size = New System.Drawing.Size(130, 23)
         Me.IntroMovieButton.TabIndex = 0
         Me.IntroMovieButton.Text = "Intro Movie"
         Me.ToolTipMaker.SetToolTip(Me.IntroMovieButton, "Do you want to see the beautiful ASCII intro movie?")
@@ -893,11 +812,10 @@ Partial Class MainForm
         Me.SoundGroupBox.Controls.Add(Me.Label1)
         Me.SoundGroupBox.Controls.Add(Me.VolumeBox)
         Me.SoundGroupBox.Controls.Add(Me.SoundButton)
-        Me.SoundGroupBox.Location = New System.Drawing.Point(8, 7)
-        Me.SoundGroupBox.Margin = New System.Windows.Forms.Padding(8, 7, 4, 4)
+        Me.SoundGroupBox.Location = New System.Drawing.Point(6, 6)
+        Me.SoundGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 3, 3)
         Me.SoundGroupBox.Name = "SoundGroupBox"
-        Me.SoundGroupBox.Padding = New System.Windows.Forms.Padding(4)
-        Me.SoundGroupBox.Size = New System.Drawing.Size(189, 66)
+        Me.SoundGroupBox.Size = New System.Drawing.Size(142, 54)
         Me.SoundGroupBox.TabIndex = 6
         Me.SoundGroupBox.TabStop = False
         Me.SoundGroupBox.Text = "Sound"
@@ -905,30 +823,27 @@ Partial Class MainForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(149, 31)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(112, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(36, 17)
+        Me.Label1.Size = New System.Drawing.Size(30, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "/255"
         '
         'VolumeBox
         '
-        Me.VolumeBox.Location = New System.Drawing.Point(116, 27)
-        Me.VolumeBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.VolumeBox.Location = New System.Drawing.Point(87, 22)
         Me.VolumeBox.MaxLength = 3
         Me.VolumeBox.Name = "VolumeBox"
-        Me.VolumeBox.Size = New System.Drawing.Size(32, 22)
+        Me.VolumeBox.Size = New System.Drawing.Size(25, 20)
         Me.VolumeBox.TabIndex = 2
         Me.VolumeBox.Text = "255"
         Me.ToolTipMaker.SetToolTip(Me.VolumeBox, "Music volume (0 to 255)")
         '
         'SoundButton
         '
-        Me.SoundButton.Location = New System.Drawing.Point(8, 23)
-        Me.SoundButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.SoundButton.Location = New System.Drawing.Point(6, 19)
         Me.SoundButton.Name = "SoundButton"
-        Me.SoundButton.Size = New System.Drawing.Size(100, 28)
+        Me.SoundButton.Size = New System.Drawing.Size(75, 23)
         Me.SoundButton.TabIndex = 1
         Me.SoundButton.Text = "Sound: YES"
         Me.ToolTipMaker.SetToolTip(Me.SoundButton, "Turn game music on/off")
@@ -939,8 +854,7 @@ Partial Class MainForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.RunToolStripMenuItem, Me.OpenToolStripMenuItem, Me.LinksToolStripMenuItem1, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(432, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(324, 24)
         Me.MenuStrip1.TabIndex = 6
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -948,7 +862,7 @@ Partial Class MainForm
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReloadParamSetToolStripMenuItem, Me.ResaveParamSetToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         Me.FileToolStripMenuItem.ToolTipText = "Your memories away"
         '
@@ -956,7 +870,7 @@ Partial Class MainForm
         '
         Me.ReloadParamSetToolStripMenuItem.Name = "ReloadParamSetToolStripMenuItem"
         Me.ReloadParamSetToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
-        Me.ReloadParamSetToolStripMenuItem.Size = New System.Drawing.Size(250, 24)
+        Me.ReloadParamSetToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ReloadParamSetToolStripMenuItem.Text = "Re-load param set"
         Me.ReloadParamSetToolStripMenuItem.ToolTipText = "NOTE: LNP Loads when opened"
         '
@@ -964,7 +878,7 @@ Partial Class MainForm
         '
         Me.ResaveParamSetToolStripMenuItem.Name = "ResaveParamSetToolStripMenuItem"
         Me.ResaveParamSetToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.ResaveParamSetToolStripMenuItem.Size = New System.Drawing.Size(250, 24)
+        Me.ResaveParamSetToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ResaveParamSetToolStripMenuItem.Text = "Re-save param set"
         Me.ResaveParamSetToolStripMenuItem.ToolTipText = "NOTE: LNP Saves automatically"
         '
@@ -972,14 +886,14 @@ Partial Class MainForm
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(250, 24)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'RunToolStripMenuItem
         '
         Me.RunToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DwarfFortressToolStripMenuItem, Me.InitTextEditorToolStripMenuItem})
         Me.RunToolStripMenuItem.Name = "RunToolStripMenuItem"
-        Me.RunToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
+        Me.RunToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.RunToolStripMenuItem.Text = "Run"
         Me.RunToolStripMenuItem.ToolTipText = "Away"
         '
@@ -987,47 +901,47 @@ Partial Class MainForm
         '
         Me.DwarfFortressToolStripMenuItem.Name = "DwarfFortressToolStripMenuItem"
         Me.DwarfFortressToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.DwarfFortressToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.DwarfFortressToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.DwarfFortressToolStripMenuItem.Text = "Dwarf Fortress"
         '
         'InitTextEditorToolStripMenuItem
         '
         Me.InitTextEditorToolStripMenuItem.Name = "InitTextEditorToolStripMenuItem"
         Me.InitTextEditorToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.I), System.Windows.Forms.Keys)
-        Me.InitTextEditorToolStripMenuItem.Size = New System.Drawing.Size(224, 24)
+        Me.InitTextEditorToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.InitTextEditorToolStripMenuItem.Text = "Init Editor"
         '
         'OpenToolStripMenuItem
         '
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(69, 24)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.OpenToolStripMenuItem.Text = "Folders"
         '
         'LinksToolStripMenuItem1
         '
         Me.LinksToolStripMenuItem1.Name = "LinksToolStripMenuItem1"
-        Me.LinksToolStripMenuItem1.Size = New System.Drawing.Size(53, 24)
+        Me.LinksToolStripMenuItem1.Size = New System.Drawing.Size(46, 20)
         Me.LinksToolStripMenuItem1.Text = "Links"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HowToUseToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(53, 24)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'HowToUseToolStripMenuItem
         '
         Me.HowToUseToolStripMenuItem.Name = "HowToUseToolStripMenuItem"
         Me.HowToUseToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(182, 24)
+        Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.HowToUseToolStripMenuItem.Text = "How To Use"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(182, 24)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ToolTipMaker
@@ -1038,10 +952,9 @@ Partial Class MainForm
         '
         'InitEditorButton
         '
-        Me.InitEditorButton.Location = New System.Drawing.Point(176, 549)
-        Me.InitEditorButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.InitEditorButton.Location = New System.Drawing.Point(132, 446)
         Me.InitEditorButton.Name = "InitEditorButton"
-        Me.InitEditorButton.Size = New System.Drawing.Size(116, 31)
+        Me.InitEditorButton.Size = New System.Drawing.Size(87, 25)
         Me.InitEditorButton.TabIndex = 2
         Me.InitEditorButton.Text = "Init Editor"
         Me.ToolTipMaker.SetToolTip(Me.InitEditorButton, "Edit init and d_init in a built-in text editor!")
@@ -1049,34 +962,32 @@ Partial Class MainForm
         '
         'DefaultsButton
         '
-        Me.DefaultsButton.Location = New System.Drawing.Point(300, 549)
-        Me.DefaultsButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.DefaultsButton.Location = New System.Drawing.Point(225, 446)
         Me.DefaultsButton.Name = "DefaultsButton"
-        Me.DefaultsButton.Size = New System.Drawing.Size(116, 31)
+        Me.DefaultsButton.Size = New System.Drawing.Size(87, 25)
         Me.DefaultsButton.TabIndex = 3
         Me.DefaultsButton.Text = "Defaults"
         Me.ToolTipMaker.SetToolTip(Me.DefaultsButton, "Reset everything to default settings")
         Me.DefaultsButton.UseVisualStyleBackColor = True
         '
-        'PictureBox
-        '
-        Me.PictureBox.Image = Global.LazyNewbPack.My.Resources.Resources.LNPSMALL
-        Me.PictureBox.Location = New System.Drawing.Point(43, 34)
-        Me.PictureBox.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(347, 53)
-        Me.PictureBox.TabIndex = 4
-        Me.PictureBox.TabStop = False
-        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'PictureBox
+        '
+        Me.PictureBox.Image = Global.LazyNewbPack.My.Resources.Resources.LNPSMALL
+        Me.PictureBox.Location = New System.Drawing.Point(22, 32)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(300, 43)
+        Me.PictureBox.TabIndex = 4
+        Me.PictureBox.TabStop = False
+        '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 588)
+        Me.ClientSize = New System.Drawing.Size(324, 478)
         Me.Controls.Add(Me.DefaultsButton)
         Me.Controls.Add(Me.InitEditorButton)
         Me.Controls.Add(Me.TabControl1)
@@ -1086,11 +997,10 @@ Partial Class MainForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Lazy Newb Pack GUI"
+        Me.Text = "Starter Pack Launcher"
         Me.GraphicsGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.PerformLayout()
@@ -1103,7 +1013,6 @@ Partial Class MainForm
         Me.GraphicsTab.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
         Me.UtilitiesTab.ResumeLayout(False)
         Me.AdvancedTab.ResumeLayout(False)
         Me.SaveGroupBox.ResumeLayout(False)
@@ -1167,10 +1076,7 @@ Partial Class MainForm
     Friend WithEvents FPS_Capper As System.Windows.Forms.TextBox
     Friend WithEvents UpdateSaveGamesButton As System.Windows.Forms.Button
     Friend WithEvents SimplifyGraphicsButtons As System.Windows.Forms.Button
-    Friend WithEvents OpenUtilityFolderButton As System.Windows.Forms.Button
     Friend WithEvents UpdateGraphicsListButton As System.Windows.Forms.Button
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents OpenGraphicsFolderButton As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents DeleteKeyBindingButton As System.Windows.Forms.Button
     Friend WithEvents RefreshKBButton As System.Windows.Forms.Button

@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-LazyNewbPack
+StarterPackLauncher
 </name>
 </assembly>
 <members>
@@ -14,6 +14,10 @@ LazyNewbPack
 	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:LazyNewbPack.My.Resources.Resources.LNPSMALL">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="T:LazyNewbPack.My.Resources.Resources">
 	<summary>
