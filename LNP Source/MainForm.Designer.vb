@@ -28,11 +28,12 @@ Partial Class MainForm
         Me.WeatherButton = New System.Windows.Forms.Button()
         Me.TemperatureButton = New System.Windows.Forms.Button()
         Me.GraphicsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.UpdateGraphicsListButton = New System.Windows.Forms.Button()
         Me.TrueTypeButton = New System.Windows.Forms.Button()
+        Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button()
+        Me.GraphicsListBox = New System.Windows.Forms.ListBox()
         Me.UpdateSaveGamesButton = New System.Windows.Forms.Button()
         Me.ChangeGraphicsButton = New System.Windows.Forms.Button()
-        Me.GraphicsListBox = New System.Windows.Forms.ListBox()
-        Me.SimplifyGraphicsButtons = New System.Windows.Forms.Button()
         Me.AquiferButton = New System.Windows.Forms.Button()
         Me.UtilityGroupBox = New System.Windows.Forms.GroupBox()
         Me.UtilityListBox = New System.Windows.Forms.ListView()
@@ -40,7 +41,7 @@ Partial Class MainForm
         Me.RunProgramButton = New System.Windows.Forms.Button()
         Me.UpdateUtilsButton = New System.Windows.Forms.Button()
         Me.PlayDFButton = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.DFHack = New System.Windows.Forms.TabControl()
         Me.OptionsTab = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.LiquidDepthButton = New System.Windows.Forms.Button()
@@ -59,11 +60,6 @@ Partial Class MainForm
         Me.LaborButton = New System.Windows.Forms.Button()
         Me.ChildCapButton = New System.Windows.Forms.Button()
         Me.PopCapButton = New System.Windows.Forms.Button()
-        Me.GraphicsTab = New System.Windows.Forms.TabPage()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label()
-        Me.UpdateGraphicsListButton = New System.Windows.Forms.Button()
-        Me.UtilitiesTab = New System.Windows.Forms.TabPage()
         Me.AdvancedTab = New System.Windows.Forms.TabPage()
         Me.CloseOnLaunchButton = New System.Windows.Forms.Button()
         Me.SaveGroupBox = New System.Windows.Forms.GroupBox()
@@ -88,6 +84,11 @@ Partial Class MainForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.VolumeBox = New System.Windows.Forms.TextBox()
         Me.SoundButton = New System.Windows.Forms.Button()
+        Me.GraphicsTab = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.CurrentGraphicsLabel = New System.Windows.Forms.Label()
+        Me.UtilitiesTab = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReloadParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -108,20 +109,20 @@ Partial Class MainForm
         Me.PictureBox = New System.Windows.Forms.PictureBox()
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.DFHack.SuspendLayout()
         Me.OptionsTab.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GraphicsTab.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.UtilitiesTab.SuspendLayout()
         Me.AdvancedTab.SuspendLayout()
         Me.SaveGroupBox.SuspendLayout()
         Me.FPSGroupBox.SuspendLayout()
         Me.StartupGroupBox.SuspendLayout()
         Me.SoundGroupBox.SuspendLayout()
+        Me.GraphicsTab.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.UtilitiesTab.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,12 +169,22 @@ Partial Class MainForm
         Me.GraphicsGroupBox.Controls.Add(Me.UpdateSaveGamesButton)
         Me.GraphicsGroupBox.Controls.Add(Me.ChangeGraphicsButton)
         Me.GraphicsGroupBox.Location = New System.Drawing.Point(6, 54)
-        Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GraphicsGroupBox.Margin = New System.Windows.Forms.Padding(6)
         Me.GraphicsGroupBox.Name = "GraphicsGroupBox"
         Me.GraphicsGroupBox.Size = New System.Drawing.Size(280, 273)
         Me.GraphicsGroupBox.TabIndex = 1
         Me.GraphicsGroupBox.TabStop = False
         Me.GraphicsGroupBox.Text = "Change Graphics"
+        '
+        'UpdateGraphicsListButton
+        '
+        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(7, 242)
+        Me.UpdateGraphicsListButton.Name = "UpdateGraphicsListButton"
+        Me.UpdateGraphicsListButton.Size = New System.Drawing.Size(130, 23)
+        Me.UpdateGraphicsListButton.TabIndex = 8
+        Me.UpdateGraphicsListButton.Text = "Refresh List"
+        Me.ToolTipMaker.SetToolTip(Me.UpdateGraphicsListButton, "Refreh the list of graphic packs")
+        Me.UpdateGraphicsListButton.UseVisualStyleBackColor = True
         '
         'TrueTypeButton
         '
@@ -184,6 +195,24 @@ Partial Class MainForm
         Me.TrueTypeButton.Text = "TrueType Fonts"
         Me.ToolTipMaker.SetToolTip(Me.TrueTypeButton, "Use TrueType fonts? Or use tileset for text?")
         Me.TrueTypeButton.UseVisualStyleBackColor = True
+        '
+        'SimplifyGraphicsButtons
+        '
+        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(144, 242)
+        Me.SimplifyGraphicsButtons.Name = "SimplifyGraphicsButtons"
+        Me.SimplifyGraphicsButtons.Size = New System.Drawing.Size(131, 23)
+        Me.SimplifyGraphicsButtons.TabIndex = 9
+        Me.SimplifyGraphicsButtons.Text = "Simplify Graphic Folders"
+        Me.ToolTipMaker.SetToolTip(Me.SimplifyGraphicsButtons, "Delete unnecessary graphics files (Saves on space. Useful for re-packaging)")
+        Me.SimplifyGraphicsButtons.UseVisualStyleBackColor = True
+        '
+        'GraphicsListBox
+        '
+        Me.GraphicsListBox.FormattingEnabled = True
+        Me.GraphicsListBox.Location = New System.Drawing.Point(6, 19)
+        Me.GraphicsListBox.Name = "GraphicsListBox"
+        Me.GraphicsListBox.Size = New System.Drawing.Size(268, 147)
+        Me.GraphicsListBox.TabIndex = 2
         '
         'UpdateSaveGamesButton
         '
@@ -205,24 +234,6 @@ Partial Class MainForm
         Me.ToolTipMaker.SetToolTip(Me.ChangeGraphicsButton, "Install Graphics")
         Me.ChangeGraphicsButton.UseVisualStyleBackColor = True
         '
-        'GraphicsListBox
-        '
-        Me.GraphicsListBox.FormattingEnabled = True
-        Me.GraphicsListBox.Location = New System.Drawing.Point(6, 19)
-        Me.GraphicsListBox.Name = "GraphicsListBox"
-        Me.GraphicsListBox.Size = New System.Drawing.Size(268, 147)
-        Me.GraphicsListBox.TabIndex = 2
-        '
-        'SimplifyGraphicsButtons
-        '
-        Me.SimplifyGraphicsButtons.Location = New System.Drawing.Point(144, 242)
-        Me.SimplifyGraphicsButtons.Name = "SimplifyGraphicsButtons"
-        Me.SimplifyGraphicsButtons.Size = New System.Drawing.Size(131, 23)
-        Me.SimplifyGraphicsButtons.TabIndex = 9
-        Me.SimplifyGraphicsButtons.Text = "Simplify Graphic Folders"
-        Me.ToolTipMaker.SetToolTip(Me.SimplifyGraphicsButtons, "Delete unnecessary graphics files (Saves on space. Useful for re-packaging)")
-        Me.SimplifyGraphicsButtons.UseVisualStyleBackColor = True
-        '
         'AquiferButton
         '
         Me.AquiferButton.Location = New System.Drawing.Point(6, 19)
@@ -241,7 +252,7 @@ Partial Class MainForm
         Me.UtilityGroupBox.Controls.Add(Me.RunProgramButton)
         Me.UtilityGroupBox.Controls.Add(Me.UpdateUtilsButton)
         Me.UtilityGroupBox.Location = New System.Drawing.Point(6, 6)
-        Me.UtilityGroupBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UtilityGroupBox.Margin = New System.Windows.Forms.Padding(6)
         Me.UtilityGroupBox.Name = "UtilityGroupBox"
         Me.UtilityGroupBox.Size = New System.Drawing.Size(280, 321)
         Me.UtilityGroupBox.TabIndex = 3
@@ -252,7 +263,7 @@ Partial Class MainForm
         '
         Me.UtilityListBox.CheckBoxes = True
         Me.UtilityListBox.Location = New System.Drawing.Point(8, 63)
-        Me.UtilityListBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UtilityListBox.Margin = New System.Windows.Forms.Padding(2)
         Me.UtilityListBox.MultiSelect = False
         Me.UtilityListBox.Name = "UtilityListBox"
         Me.UtilityListBox.Size = New System.Drawing.Size(267, 253)
@@ -301,18 +312,19 @@ Partial Class MainForm
         Me.ToolTipMaker.SetToolTip(Me.PlayDFButton, "Play the game!")
         Me.PlayDFButton.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'DFHack
         '
-        Me.TabControl1.Controls.Add(Me.OptionsTab)
-        Me.TabControl1.Controls.Add(Me.AdvancedTab)
-        Me.TabControl1.Controls.Add(Me.GraphicsTab)
-        Me.TabControl1.Controls.Add(Me.UtilitiesTab)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 81)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(300, 359)
-        Me.TabControl1.TabIndex = 0
-        Me.ToolTipMaker.SetToolTip(Me.TabControl1, "What it says on the tin")
+        Me.DFHack.Controls.Add(Me.OptionsTab)
+        Me.DFHack.Controls.Add(Me.AdvancedTab)
+        Me.DFHack.Controls.Add(Me.GraphicsTab)
+        Me.DFHack.Controls.Add(Me.UtilitiesTab)
+        Me.DFHack.Controls.Add(Me.TabPage1)
+        Me.DFHack.Location = New System.Drawing.Point(12, 81)
+        Me.DFHack.Name = "DFHack"
+        Me.DFHack.SelectedIndex = 0
+        Me.DFHack.Size = New System.Drawing.Size(300, 359)
+        Me.DFHack.TabIndex = 0
+        Me.ToolTipMaker.SetToolTip(Me.DFHack, "What it says on the tin")
         '
         'OptionsTab
         '
@@ -322,7 +334,7 @@ Partial Class MainForm
         Me.OptionsTab.Controls.Add(Me.GroupBox1)
         Me.OptionsTab.Location = New System.Drawing.Point(4, 22)
         Me.OptionsTab.Name = "OptionsTab"
-        Me.OptionsTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.OptionsTab.Padding = New System.Windows.Forms.Padding(3)
         Me.OptionsTab.Size = New System.Drawing.Size(292, 333)
         Me.OptionsTab.TabIndex = 0
         Me.OptionsTab.Text = "Options"
@@ -370,7 +382,7 @@ Partial Class MainForm
         Me.GroupBox4.Controls.Add(Me.LoadKeyBindingButton)
         Me.GroupBox4.Controls.Add(Me.SaveKeyBindingButton)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 255)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(6)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(280, 74)
         Me.GroupBox4.TabIndex = 3
@@ -524,62 +536,6 @@ Partial Class MainForm
                 "egnancies are unaffected.")
         Me.PopCapButton.UseVisualStyleBackColor = True
         '
-        'GraphicsTab
-        '
-        Me.GraphicsTab.Controls.Add(Me.GroupBox5)
-        Me.GraphicsTab.Controls.Add(Me.GraphicsGroupBox)
-        Me.GraphicsTab.Location = New System.Drawing.Point(4, 22)
-        Me.GraphicsTab.Name = "GraphicsTab"
-        Me.GraphicsTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.GraphicsTab.Size = New System.Drawing.Size(292, 333)
-        Me.GraphicsTab.TabIndex = 1
-        Me.GraphicsTab.Text = "Graphics"
-        Me.GraphicsTab.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
-        Me.GroupBox5.Location = New System.Drawing.Point(6, 9)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(280, 42)
-        Me.GroupBox5.TabIndex = 3
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Currently installed graphics"
-        '
-        'CurrentGraphicsLabel
-        '
-        Me.CurrentGraphicsLabel.AutoSize = True
-        Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(9, 15)
-        Me.CurrentGraphicsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
-        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(127, 15)
-        Me.CurrentGraphicsLabel.TabIndex = 0
-        Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
-        Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'UpdateGraphicsListButton
-        '
-        Me.UpdateGraphicsListButton.Location = New System.Drawing.Point(7, 242)
-        Me.UpdateGraphicsListButton.Name = "UpdateGraphicsListButton"
-        Me.UpdateGraphicsListButton.Size = New System.Drawing.Size(130, 23)
-        Me.UpdateGraphicsListButton.TabIndex = 8
-        Me.UpdateGraphicsListButton.Text = "Refresh List"
-        Me.ToolTipMaker.SetToolTip(Me.UpdateGraphicsListButton, "Refreh the list of graphic packs")
-        Me.UpdateGraphicsListButton.UseVisualStyleBackColor = True
-        '
-        'UtilitiesTab
-        '
-        Me.UtilitiesTab.Controls.Add(Me.UtilityGroupBox)
-        Me.UtilitiesTab.Location = New System.Drawing.Point(4, 22)
-        Me.UtilitiesTab.Name = "UtilitiesTab"
-        Me.UtilitiesTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.UtilitiesTab.Size = New System.Drawing.Size(292, 333)
-        Me.UtilitiesTab.TabIndex = 2
-        Me.UtilitiesTab.Text = "Utilities"
-        Me.UtilitiesTab.UseVisualStyleBackColor = True
-        '
         'AdvancedTab
         '
         Me.AdvancedTab.AutoScroll = True
@@ -591,7 +547,7 @@ Partial Class MainForm
         Me.AdvancedTab.Controls.Add(Me.SoundGroupBox)
         Me.AdvancedTab.Location = New System.Drawing.Point(4, 22)
         Me.AdvancedTab.Name = "AdvancedTab"
-        Me.AdvancedTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.AdvancedTab.Padding = New System.Windows.Forms.Padding(3)
         Me.AdvancedTab.Size = New System.Drawing.Size(292, 333)
         Me.AdvancedTab.TabIndex = 3
         Me.AdvancedTab.Text = "Settings"
@@ -849,6 +805,62 @@ Partial Class MainForm
         Me.ToolTipMaker.SetToolTip(Me.SoundButton, "Turn game music on/off")
         Me.SoundButton.UseVisualStyleBackColor = True
         '
+        'GraphicsTab
+        '
+        Me.GraphicsTab.Controls.Add(Me.GroupBox5)
+        Me.GraphicsTab.Controls.Add(Me.GraphicsGroupBox)
+        Me.GraphicsTab.Location = New System.Drawing.Point(4, 22)
+        Me.GraphicsTab.Name = "GraphicsTab"
+        Me.GraphicsTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.GraphicsTab.Size = New System.Drawing.Size(292, 333)
+        Me.GraphicsTab.TabIndex = 1
+        Me.GraphicsTab.Text = "Graphics"
+        Me.GraphicsTab.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.CurrentGraphicsLabel)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 9)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(6)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(280, 42)
+        Me.GroupBox5.TabIndex = 3
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Currently installed graphics"
+        '
+        'CurrentGraphicsLabel
+        '
+        Me.CurrentGraphicsLabel.AutoSize = True
+        Me.CurrentGraphicsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CurrentGraphicsLabel.Location = New System.Drawing.Point(9, 15)
+        Me.CurrentGraphicsLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.CurrentGraphicsLabel.Name = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.Size = New System.Drawing.Size(127, 15)
+        Me.CurrentGraphicsLabel.TabIndex = 0
+        Me.CurrentGraphicsLabel.Text = "CurrentGraphicsLabel"
+        Me.CurrentGraphicsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'UtilitiesTab
+        '
+        Me.UtilitiesTab.Controls.Add(Me.UtilityGroupBox)
+        Me.UtilitiesTab.Location = New System.Drawing.Point(4, 22)
+        Me.UtilitiesTab.Name = "UtilitiesTab"
+        Me.UtilitiesTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.UtilitiesTab.Size = New System.Drawing.Size(292, 333)
+        Me.UtilitiesTab.TabIndex = 2
+        Me.UtilitiesTab.Text = "Utilities"
+        Me.UtilitiesTab.UseVisualStyleBackColor = True
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(292, 333)
+        Me.TabPage1.TabIndex = 4
+        Me.TabPage1.Text = "DFHack"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.RunToolStripMenuItem, Me.OpenToolStripMenuItem, Me.LinksToolStripMenuItem1, Me.HelpToolStripMenuItem})
@@ -990,7 +1002,7 @@ Partial Class MainForm
         Me.ClientSize = New System.Drawing.Size(324, 478)
         Me.Controls.Add(Me.DefaultsButton)
         Me.Controls.Add(Me.InitEditorButton)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.DFHack)
         Me.Controls.Add(Me.PlayDFButton)
         Me.Controls.Add(Me.PictureBox)
         Me.Controls.Add(Me.MenuStrip1)
@@ -1004,16 +1016,12 @@ Partial Class MainForm
         Me.GraphicsGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.ResumeLayout(False)
         Me.UtilityGroupBox.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        Me.DFHack.ResumeLayout(False)
         Me.OptionsTab.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GraphicsTab.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.UtilitiesTab.ResumeLayout(False)
         Me.AdvancedTab.ResumeLayout(False)
         Me.SaveGroupBox.ResumeLayout(False)
         Me.FPSGroupBox.ResumeLayout(False)
@@ -1021,6 +1029,10 @@ Partial Class MainForm
         Me.StartupGroupBox.ResumeLayout(False)
         Me.SoundGroupBox.ResumeLayout(False)
         Me.SoundGroupBox.PerformLayout()
+        Me.GraphicsTab.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.UtilitiesTab.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1036,7 +1048,7 @@ Partial Class MainForm
     Friend WithEvents AquiferButton As System.Windows.Forms.Button
     Friend WithEvents PictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents PlayDFButton As System.Windows.Forms.Button
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents DFHack As System.Windows.Forms.TabControl
     Friend WithEvents OptionsTab As System.Windows.Forms.TabPage
     Friend WithEvents GraphicsTab As System.Windows.Forms.TabPage
     Friend WithEvents UtilitiesTab As System.Windows.Forms.TabPage
@@ -1110,5 +1122,6 @@ Partial Class MainForm
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents CloseOnLaunchButton As System.Windows.Forms.Button
     Friend WithEvents UtilityListBox As System.Windows.Forms.ListView
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
 
 End Class
