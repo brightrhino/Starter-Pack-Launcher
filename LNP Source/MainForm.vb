@@ -630,6 +630,7 @@ Public Class MainForm
                 text = text & UtilityListBox.CheckedItems(i).Text & vbCrLf
             Next
             SaveFile(DFFolderName() + " OnLaunchSettings.txt", utilityD, text)
+            saveDFHackInit()
         End If
     End Sub
 
@@ -687,6 +688,7 @@ Public Class MainForm
     End Sub
 
     Private Sub PlayDF(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlayDFButton.Click, DwarfFortressToolStripMenuItem.Click
+        saveDFHackInit()
         RunFileByBatch("Dwarf Fortress.exe", dfDir)
         RunStartupUtilities()
         If closeOnLaunch Then
@@ -716,7 +718,7 @@ Public Class MainForm
         Dim line As String
         line = LineInput(1)
         Do While Not EOF(1)
-            If line.StartsWith("folders:") Or line.StartsWith("links:") Then
+            If line.StartsWith("folders:") Or line.StartsWith("links:") Or line.ToLower.StartsWith("onload.init") Then
                 Dim menu As ToolStripMenuItem = Nothing
                 If line.StartsWith("folders:") Then
                     menu = OpenToolStripMenuItem
@@ -725,20 +727,39 @@ Public Class MainForm
                 End If
                 line = LineInput(1)
                 While line.StartsWith("-")
-                    If line.StartsWith("-  separator") Then
-                        menu.DropDown.Items.Add(New ToolStripSeparator)
-                    Else
-                        Dim NewItem As New ToolStripMenuItem
-                        AddHandler NewItem.Click, AddressOf Me.MenuItem_Click
-                        NewItem.Text = Mid(line, 11) 'display text
-                        Dim path As String = Mid(LineInput(1), 10)
-                        If path.StartsWith("Dwarf Fortress") Then 'supports variable DF folder location
-                            path = dfDir & Mid(path, 15)
-                        ElseIf path = "[Root directory]" Then 'special case for Main Folder
-                            path = My.Application.Info.DirectoryPath
+                    If menu IsNot Nothing Then
+                        If line.StartsWith("-  separator") Then
+                            menu.DropDown.Items.Add(New ToolStripSeparator)
+                        Else
+                            Dim NewItem As New ToolStripMenuItem
+                            AddHandler NewItem.Click, AddressOf Me.MenuItem_Click
+                            NewItem.Text = Mid(line, 11) 'display text
+                            Dim path As String = Mid(LineInput(1), 10)
+                            If path.StartsWith("Dwarf Fortress") Then 'supports variable DF folder location
+                                path = dfDir & Mid(path, 15)
+                            ElseIf path = "[Root directory]" Then 'special case for Main Folder
+                                path = My.Application.Info.DirectoryPath
+                            End If
+                            NewItem.Name = path 'directory of folder
+                            menu.DropDown.Items.Add(NewItem)
                         End If
-                        NewItem.Name = path 'directory of folder
-                        menu.DropDown.Items.Add(NewItem)
+                    Else
+                        Try
+                            Dim title As String = StrConv(line.Substring(line.IndexOf(":") + 1), VbStrConv.ProperCase)
+                            line = LineInput(1)
+                            Dim command As String = line.Substring(line.IndexOf(":") + 1).Trim
+                            line = LineInput(1)
+                            Dim enabled As Boolean = If(line.Substring(line.IndexOf(":") + 1).ToLower.Trim = "true", True, False)
+                            line = LineInput(1)
+                            Dim tooltip As String = line.Substring(line.IndexOf(":") + 1).Trim
+                            Dim item As New ListViewItem(title)
+                            item.SubItems.Add(command)
+                            item.ToolTipText = tooltip
+                            item.Checked = enabled
+                            DFHackListView.Items.Add(item)
+                        Catch ex As Exception
+                            MsgBox("Failed to find or load a DFHack option!" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "")
+                        End Try
                     End If
                     If EOF(1) Then
                         FileClose(1)
@@ -798,6 +819,34 @@ Public Class MainForm
             MessageBox.Show("All settings reset to defaults!")
         End If
     End Sub
+
+#Region "DFHack"
+
+    Private Sub saveDFHackInit()
+        Try
+            Dim strNewFile As String = ""
+            For Each item As ListViewItem In DFHackListView.CheckedItems
+                strNewFile &= "#" & item.ToolTipText & vbNewLine
+                strNewFile &= item.SubItems(1).Text & vbNewLine & vbNewLine
+            Next
+            Dim strPath As String
+            'save the main df folder's onload
+            IO.File.WriteAllText(IO.Path.Combine(dfDir, "raw", "onLoad.init"), strNewFile)
+            'update any saved games
+            For Each dirPath As String In IO.Directory.GetDirectories(IO.Path.Combine(dfDir, "data", "save"), "*.*", IO.SearchOption.TopDirectoryOnly)
+                strPath = IO.Path.Combine(dirPath, "raw")
+                If IO.Directory.Exists(strPath) Then
+                    IO.File.WriteAllText(IO.Path.Combine(strPath, "onLoad.init"), strNewFile)
+                End If
+            Next
+
+        Catch ex As Exception
+            MsgBox("Failed to save DFHack onLoad.init files!" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "DFHack Onload Failed")
+        End Try
+    End Sub
+
+
+#End Region
 
 
     'DEPRECATED
