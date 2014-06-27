@@ -830,6 +830,9 @@ Public Class MainForm
                 strNewFile &= item.SubItems(1).Text & vbNewLine & vbNewLine
             Next
             Dim strPath As String
+            'save the main df folder's onload
+            IO.File.WriteAllText(IO.Path.Combine(dfDir, "raw", "onLoad.init"), strNewFile)
+            'update any saved games
             For Each dirPath As String In IO.Directory.GetDirectories(IO.Path.Combine(dfDir, "data", "save"), "*.*", IO.SearchOption.TopDirectoryOnly)
                 strPath = IO.Path.Combine(dirPath, "raw")
                 If IO.Directory.Exists(strPath) Then
