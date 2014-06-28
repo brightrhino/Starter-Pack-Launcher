@@ -745,7 +745,7 @@ Public Class MainForm
                         End If
                     Else
                         Try
-                            Dim title As String = StrConv(line.Substring(line.IndexOf(":") + 1), VbStrConv.ProperCase)
+                            Dim title As String = StrConv(line.Substring(line.IndexOf(":") + 1), VbStrConv.ProperCase).Trim
                             line = LineInput(1)
                             Dim command As String = line.Substring(line.IndexOf(":") + 1).Trim
                             line = LineInput(1)
@@ -753,7 +753,7 @@ Public Class MainForm
                             line = LineInput(1)
                             Dim tooltip As String = line.Substring(line.IndexOf(":") + 1).Trim
                             Dim item As New ListViewItem(title)
-                            item.SubItems.Add(command)
+                            item.Tag = command
                             item.ToolTipText = tooltip
                             item.Checked = enabled
                             DFHackListView.Items.Add(item)
@@ -824,11 +824,25 @@ Public Class MainForm
 
     Private Sub saveDFHackInit()
         Try
+            'read the lnpwin.txt and split it to write a new onload section
+            Dim lnpWinPath As String = IO.Path.Combine(lnpD, "LNPWin.txt")
+            Dim lnpWin As String = IO.File.ReadAllText(lnpWinPath)
+            If Not lnpWin = String.Empty Then
+                lnpWin = lnpWin.Substring(0, lnpWin.IndexOf("Onload.init") + 13)
+            End If
+
             Dim strNewFile As String = ""
-            For Each item As ListViewItem In DFHackListView.CheckedItems
-                strNewFile &= "#" & item.ToolTipText & vbNewLine
-                strNewFile &= item.SubItems(1).Text & vbNewLine & vbNewLine
+            For Each item As ListViewItem In DFHackListView.Items
+                lnpWin &= String.Format("-  title: {0}{1}command: {2}{1}enabled: {3}{1}tooltip: {4}{5}", item.Text, vbNewLine & "   ", item.Tag, item.Checked.ToString, item.ToolTipText, vbNewLine)
+
+                If item.Checked Then
+                    strNewFile &= "#" & item.ToolTipText & vbNewLine
+                    strNewFile &= Tag & vbNewLine & vbNewLine
+                End If
             Next
+            'save the lnpwin
+            IO.File.WriteAllText(lnpWinPath, lnpWin)
+
             Dim strPath As String
             'save the main df folder's onload
             IO.File.WriteAllText(IO.Path.Combine(dfDir, "raw", "onLoad.init"), strNewFile)

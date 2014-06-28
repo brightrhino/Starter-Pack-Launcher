@@ -45,24 +45,23 @@ links:
    path: http://shop.oreilly.com/product/0636920022565.do
 -  title: Free, old basis of book
    path: http://afteractionreporter.com/2009/02/09/the-complete-and-utter-newby-tutorial-for-dwarf-fortress-part-1-wtf/
-Onload.init:
--  title: use isometric graphics
+Onload.init:-  title: Use Isometric Graphics
    command: stonesense overlay
-   enabled: true
+   enabled: True
    tooltip: enables an experimental isometric overlay
--  title: partial mouse control
+-  title: Partial Mouse Control
    command: mousequery edge enable
-   enabled: true
+   enabled: True
    tooltip: allows scrolling by hovering near edge of map; conflicts with isometric view; may cause trouble with levers or macros
-- title: automatic job assignments
+-  title: Automatic Job Assignments
    command: autolabor 1
-   enabled: true
+   enabled: True
    tooltip: automatic job assignments means you don't need Dwarf Therapist; the price of convenience is perfection
--  title: more automation tools
+-  title: More Automation Tools
    command: multicmd autobutcher start; autobutcher all 5 5 5 5; autonestbox; seedwatch;
-   enabled: true
+   enabled: True
    tooltip: some more automation options, less noticable but good for beginning players
--  title: recurring fixes
+-  title: Recurring Fixes
    command: multicmd cleanowned X; clean all;
-   enabled: true
+   enabled: True
    tooltip: dfhack fixes to run regularly, changes the game a little but helps a lot on old or slow hardware

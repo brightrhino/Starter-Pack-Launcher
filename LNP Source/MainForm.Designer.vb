@@ -88,6 +88,9 @@ Partial Class MainForm
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.CurrentGraphicsLabel = New System.Windows.Forms.Label()
         Me.UtilitiesTab = New System.Windows.Forms.TabPage()
+        Me.DFHackTab = New System.Windows.Forms.TabPage()
+        Me.DFHackListView = New System.Windows.Forms.ListView()
+        Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReloadParamSetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -106,10 +109,6 @@ Partial Class MainForm
         Me.DefaultsButton = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.PictureBox = New System.Windows.Forms.PictureBox()
-        Me.DFHackTab = New System.Windows.Forms.TabPage()
-        Me.DFHackListView = New System.Windows.Forms.ListView()
-        Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Command = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GraphicsGroupBox.SuspendLayout()
         Me.UtilityGroupBox.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -126,9 +125,9 @@ Partial Class MainForm
         Me.GraphicsTab.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.UtilitiesTab.SuspendLayout()
+        Me.DFHackTab.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DFHackTab.SuspendLayout()
         Me.SuspendLayout()
         '
         'CaveInButton
@@ -855,6 +854,38 @@ Partial Class MainForm
         Me.UtilitiesTab.Text = "Utilities"
         Me.UtilitiesTab.UseVisualStyleBackColor = True
         '
+        'DFHackTab
+        '
+        Me.DFHackTab.Controls.Add(Me.DFHackListView)
+        Me.DFHackTab.Location = New System.Drawing.Point(4, 22)
+        Me.DFHackTab.Name = "DFHackTab"
+        Me.DFHackTab.Size = New System.Drawing.Size(292, 333)
+        Me.DFHackTab.TabIndex = 4
+        Me.DFHackTab.Text = "DFHack"
+        Me.DFHackTab.UseVisualStyleBackColor = True
+        '
+        'DFHackListView
+        '
+        Me.DFHackListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DFHackListView.CheckBoxes = True
+        Me.DFHackListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title})
+        Me.DFHackListView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DFHackListView.FullRowSelect = True
+        Me.DFHackListView.GridLines = True
+        Me.DFHackListView.Location = New System.Drawing.Point(0, 0)
+        Me.DFHackListView.Name = "DFHackListView"
+        Me.DFHackListView.ShowGroups = False
+        Me.DFHackListView.ShowItemToolTips = True
+        Me.DFHackListView.Size = New System.Drawing.Size(292, 333)
+        Me.DFHackListView.TabIndex = 0
+        Me.DFHackListView.UseCompatibleStateImageBehavior = False
+        Me.DFHackListView.View = System.Windows.Forms.View.Details
+        '
+        'Title
+        '
+        Me.Title.Text = "Title"
+        Me.Title.Width = 270
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.RunToolStripMenuItem, Me.OpenToolStripMenuItem, Me.LinksToolStripMenuItem1, Me.HelpToolStripMenuItem})
@@ -989,39 +1020,6 @@ Partial Class MainForm
         Me.PictureBox.TabIndex = 4
         Me.PictureBox.TabStop = False
         '
-        'DFHackTab
-        '
-        Me.DFHackTab.Controls.Add(Me.DFHackListView)
-        Me.DFHackTab.Location = New System.Drawing.Point(4, 22)
-        Me.DFHackTab.Name = "DFHackTab"
-        Me.DFHackTab.Size = New System.Drawing.Size(292, 333)
-        Me.DFHackTab.TabIndex = 4
-        Me.DFHackTab.Text = "DFHack"
-        Me.DFHackTab.UseVisualStyleBackColor = True
-        '
-        'DFHackListView
-        '
-        Me.DFHackListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.DFHackListView.CheckBoxes = True
-        Me.DFHackListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Command})
-        Me.DFHackListView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DFHackListView.FullRowSelect = True
-        Me.DFHackListView.GridLines = True
-        Me.DFHackListView.Location = New System.Drawing.Point(0, 0)
-        Me.DFHackListView.Name = "DFHackListView"
-        Me.DFHackListView.Size = New System.Drawing.Size(292, 333)
-        Me.DFHackListView.TabIndex = 0
-        Me.DFHackListView.UseCompatibleStateImageBehavior = False
-        Me.DFHackListView.View = System.Windows.Forms.View.Details
-        '
-        'Title
-        '
-        Me.Title.Text = "Title"
-        '
-        'Command
-        '
-        Me.Command.Text = "Command"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1060,10 +1058,10 @@ Partial Class MainForm
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.UtilitiesTab.ResumeLayout(False)
+        Me.DFHackTab.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DFHackTab.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1153,6 +1151,5 @@ Partial Class MainForm
     Friend WithEvents DFHackTab As System.Windows.Forms.TabPage
     Friend WithEvents DFHackListView As System.Windows.Forms.ListView
     Friend WithEvents Title As System.Windows.Forms.ColumnHeader
-    Friend WithEvents Command As System.Windows.Forms.ColumnHeader
 
 End Class
