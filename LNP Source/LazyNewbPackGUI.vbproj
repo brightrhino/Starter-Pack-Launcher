@@ -149,6 +149,7 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InitEditor.resx">
       <DependentUpon>InitEditor.vb</DependentUpon>
