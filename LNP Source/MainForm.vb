@@ -837,7 +837,7 @@ Public Class MainForm
 
                 If item.Checked Then
                     strNewFile &= "#" & item.ToolTipText & vbNewLine
-                    strNewFile &= Tag & vbNewLine & vbNewLine
+                    strNewFile &= item.Tag & vbNewLine & vbNewLine
                 End If
             Next
             'save the lnpwin
