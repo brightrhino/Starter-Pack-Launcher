@@ -1,0 +1,12 @@
+#allows scrolling by hovering near edge of map; conflicts with isometric view; may cause trouble with levers or macros
+mousequery edge enable
+
+#automatic job assignments means you don't need Dwarf Therapist; the price of convenience is perfection
+autolabor 1
+
+#some more automation options, less noticable but good for beginning players
+multicmd autobutcher start; autobutcher all 5 5 5 5; autonestbox; seedwatch;
+
+#dfhack fixes to run regularly, changes the game a little but helps a lot on old or slow hardware
+multicmd cleanowned X; clean all;
+

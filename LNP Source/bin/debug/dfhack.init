@@ -1,0 +1,1 @@
+:lua dfhack.onStateChange.onloadscript = function(state) if state == SC_WORLD_LOADED then print((dfhack.run_command('script LNP_dfhack_onLoad.init'))) end end

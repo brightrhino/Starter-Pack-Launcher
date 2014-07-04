@@ -824,7 +824,7 @@ Public Class MainForm
 
     Private Sub saveDFHackInit()
         Try
-            'read the lnpwin.txt and split it to write a new onload section
+            'read the lnpwin.txt and split it to save the onLoad settings
             Dim lnpWinPath As String = IO.Path.Combine(lnpD, "LNPWin.txt")
             Dim lnpWin As String = IO.File.ReadAllText(lnpWinPath)
             If Not lnpWin = String.Empty Then
@@ -840,19 +840,11 @@ Public Class MainForm
                     strNewFile &= item.Tag & vbNewLine & vbNewLine
                 End If
             Next
-            'save the lnpwin
+            'save the settings
             IO.File.WriteAllText(lnpWinPath, lnpWin)
 
-            Dim strPath As String
-            'save the main df folder's onload
-            IO.File.WriteAllText(IO.Path.Combine(dfDir, "raw", "onLoad.init"), strNewFile)
-            'update any saved games
-            For Each dirPath As String In IO.Directory.GetDirectories(IO.Path.Combine(dfDir, "data", "save"), "*.*", IO.SearchOption.TopDirectoryOnly)
-                strPath = IO.Path.Combine(dirPath, "raw")
-                If IO.Directory.Exists(strPath) Then
-                    IO.File.WriteAllText(IO.Path.Combine(strPath, "onLoad.init"), strNewFile)
-                End If
-            Next
+            'save to a special file to be run as a script on load
+            IO.File.WriteAllText(IO.Path.Combine(dfDir, "LNP_dfhack_onLoad.init"), strNewFile)
 
         Catch ex As Exception
             MsgBox("Failed to save DFHack onLoad.init files!" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "DFHack Onload Failed")

@@ -47,7 +47,7 @@ links:
    path: http://afteractionreporter.com/2009/02/09/the-complete-and-utter-newby-tutorial-for-dwarf-fortress-part-1-wtf/
 Onload.init:-  title: Use Isometric Graphics
    command: stonesense overlay
-   enabled: True
+   enabled: False
    tooltip: enables an experimental isometric overlay
 -  title: Partial Mouse Control
    command: mousequery edge enable
